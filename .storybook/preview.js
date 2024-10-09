@@ -1,4 +1,6 @@
 /** @type { import('@storybook/vue3').Preview } */
+import { themes } from '@storybook/theming'
+
 const preview = {
   parameters: {
     controls: {
@@ -14,6 +16,9 @@ const preview = {
         useTabs: true,
         htmlWhitespaceSensitivity: 'strict'
       }
+    },
+    docs: {
+      theme: themes.light
     }
   },
   globalTypes: {

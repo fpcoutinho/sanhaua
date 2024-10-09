@@ -60,25 +60,25 @@ export default {
           summary: 'html'
         }
       }
+    },
+    click: {
+      name: '@click',
+      type: {
+        name: 'function',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'This defines the function that should be executed when the component emits the click event.',
+      table: {
+        type: {
+          summary: 'function'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
     }
-    // onClick: {
-    //   name: '@click',
-    //   type: {
-    //     name: 'function',
-    //     required: false
-    //   },
-    //   defaultValue: null,
-    //   description:
-    //     'This defines the function that should be executed when the component emits the click event.',
-    //   table: {
-    //     type: {
-    //       summary: 'function'
-    //     },
-    //     defaultValue: {
-    //       summary: null
-    //     }
-    //   }
-    // }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
