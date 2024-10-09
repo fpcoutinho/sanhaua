@@ -1,0 +1,17 @@
+.sanhaua {
+  .ua-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    &.auto {
+      width: fit-content;
+    }
+
+    &.full {
+      width: 100%;
+    }
+  }
+}

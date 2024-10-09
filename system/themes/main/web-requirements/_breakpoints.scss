@@ -1,0 +1,10 @@
+$breakpoints: (
+  'nn': 360px,
+  'mc': 576px,
+  'xs': 768px,
+  'sm': 992px,
+  'md': 1280px,
+  'lg': 1400px,
+  'gt': 1920px
+);
+$default-breakpoint: 'mc';

@@ -1,0 +1,10 @@
+.storybook
+storybook-static
+
+node_modules
+dist/
+
+public/
+
+.eslintrc.cjs
+vite.config.js
