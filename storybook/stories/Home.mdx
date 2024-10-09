@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Sanhauá Design System" />
+
+<div className="sb-container">
+  <div className="sb-section-title"># Bem vindo ao Sanhauá Design System</div>
+</div>
+
+<style>
+  {`
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .sb-section {
+      flex-direction: column;
+    }
+  }
+  `}
+</style>

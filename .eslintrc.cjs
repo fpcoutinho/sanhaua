@@ -5,11 +5,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended'
-    //,'plugin:storybook/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:storybook/recommended'],
   overrides: [
     {
       env: {
@@ -25,7 +21,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['vue' /*, 'storybook'*/],
+  plugins: ['vue', 'storybook'],
   rules: {
     indent: ['error', 2],
     quotes: ['error', 'single'],

@@ -31,3 +31,6 @@ coverage
 
 package-lock.json
 .vscode
+*storybook.log
+
+storybook/stories/ignore
