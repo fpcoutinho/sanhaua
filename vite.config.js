@@ -48,8 +48,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) =>
-          assetInfo.names.includes('ua-')
-            ? `components/${assetInfo.names.split('/').at(-1)}`
+          assetInfo.name.includes('ua-')
+            ? `components/${assetInfo.name.split('/').at(-1)}`
             : assetInfo.name
       }
     }
