@@ -1,7 +1,7 @@
 {
   "name": "sanhaua",
   "description": "Sanhaua design system",
-  "version": "0.1.54",
+  "version": "0.1.55",
   "type": "module",
   "files": [
     "dist",
@@ -9,14 +9,12 @@
   ],
   "main": "./dist/sanhaua.umd.cjs",
   "module": "./dist/sanhaua.js",
+  "style": "./dist/style.css",
+  "sass": "./system/themes/system.scss",
   "exports": {
     ".": {
       "import": "./dist/sanhaua.js",
       "require": "./dist/sanhaua.umd.cjs"
-    },
-    "./styles": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
     }
   },
   "license": "MIT",
