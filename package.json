@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "eslint": "eslint --fix --ext .vue,.js,.jsx . --ignore-path .gitignore",
     "eslint:fix": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
-    "stylelint": "stylelint \"/*.scss\"",
-    "stylelint:fix": "stylelint \"/*.scss\" --fix",
+    "stylelint": "stylelint \"**/*.scss\" --ignore-path .gitignore",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
