@@ -29,6 +29,10 @@
   },
   "license": "MIT",
   "repository": "https://github.com/fpcoutinho/sanhaua.git",
+  "keywords": [
+    "design system",
+    "components"
+  ],
   "private": false,
   "scripts": {
     "dev": "vite",
