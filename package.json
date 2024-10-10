@@ -10,7 +10,7 @@
     "eslint": "eslint --fix --ext .vue,.js,.jsx . --ignore-path .gitignore",
     "eslint:fix": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
     "stylelint": "stylelint \"/*.scss\"",
-    "stylelint:fix": "stylelint \"/*.scss\" --fix",
+    "stylelint:fix": "stylelint \"/*.scss\" --fix",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
