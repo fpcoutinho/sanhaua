@@ -60,7 +60,7 @@ export default defineConfig({
         additionalData: `
           @use 'sass:map';
           @import "sanhaua/system/themes/${SELECTED_THEME}/design-tokens/design-tokens.scss";
-          @import "@theme/global/global.scss";
+          @import "sanhaua/system/themes/${SELECTED_THEME}/global/global.scss";
           @import "sanhaua/system/themes/${SELECTED_THEME}/web-requirements/web-requirements.scss";
         `
       }
