@@ -1,6 +1,6 @@
 # Sanhauá
 
-<img src="../assets/logo.png" alt="sanhauá logo" style={{ marginBottom: 30 }} />
+![sanhauá logo](./assets/logo.png)
 
 Design System named after the famous river in City of Parahyba.
 
