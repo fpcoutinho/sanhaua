@@ -4,41 +4,37 @@ export default create({
   base: 'dark',
   brandTitle: 'Sanhauá',
   brandUrl: 'https://fpcoutinho.github.io/sanhaua/',
-  //brandImage: 'https://storybook.js.org/images/placeholders/350x150.png',
+  brandImage: '../assets/logo.png',
   brandTarget: '_self',
 
   // Typography
   fontBase: '"Lato", sans-serif',
-  fontCode: 'monospace'
+  fontCode: 'monospace',
 
   // Base Colors
-  // colorPrimary: '#3A10E5',
-  // colorSecondary: '#585C6D'
+  colorPrimary: '#1E4950',
+  colorSecondary: '#027C9B',
 
-  // // UI
-  // appBg: '#FF0000'
-  // appContentBg: '#ffffff'
-  // appPreviewBg: '#FF0000'
-  // appBorderColor: '#585C6D',
-  // appBorderRadius: 4,
+  // UI
+  appBg: '#09141B',
+  appContentBg: '#0C1A24',
+  appPreviewBg: '#FFFFFF',
+  appBorderColor: '#09141B',
+  appBorderRadius: 4,
 
-  // // Text colors
-  // textColor: '#10162F',
-  // textInverseColor: '#ffffff',
+  // Text colors
+  textColor: '#C9CDCF',
+  textInverseColor: '#17384C',
 
-  // // Toolbar default and active colors
-  // barTextColor: '#9E9E9E',
-  // barSelectedColor: '#585C6D',
-  // barHoverColor: '#585C6D',
-  // barBg: '#ffffff',
+  // Toolbar default and active colors
+  barTextColor: '#C9CDCF',
+  barSelectedColor: '#50A3B5',
+  barHoverColor: '#1BBCDD',
+  barBg: '#09141B',
 
-  // // Form colors
-  // inputBg: '#FF0000',
-  // inputBorder: '#10162F',
-  // inputTextColor: '#10162F',
-  // inputBorderRadius: 2
-
-  // // Canva colors
-  // canvaBg: '#FF0000'
-  // canvasText: '#10162F',
+  // Form colors
+  inputBg: '#09141B',
+  inputBorder: '#1E4950',
+  inputTextColor: '#C9CDCF',
+  inputBorderRadius: 2
 })
