@@ -1,3 +1,15 @@
+# Only want to send in the themes folder
+src
+system/components
+.github
+.storybook
+.eslintignore
+.eslintrc.cjs
+.stylelintrc.cjs
+.prettierrc.json
+index.html
+
+
 .env
 
 # Logs
@@ -11,8 +23,6 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
-dist
-dist-ssr
 coverage
 *.local
 

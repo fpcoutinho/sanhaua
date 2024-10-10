@@ -33,6 +33,7 @@ export default defineConfig({
           @use 'sass:map';
           @import "@theme/design-tokens/design-tokens.scss";
           @import "@theme/web-requirements/web-requirements.scss";
+          @import "@theme/global/global.scss";
         `
       }
     }
@@ -40,17 +41,22 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     removeComments: false,
+    sourcemap: true,
+    emptyOutDir: true,
+    plugins: [vue()],
     lib: {
-      entry: [path.resolve(__dirname, './system/themes/system.scss')],
-      formats: ['cjs'],
-      name: 'sanhaua'
+      entry: [
+        path.resolve(__dirname, 'system/themes/system.scss'),
+        path.resolve(__dirname, 'system/components/components.js')
+      ],
+      name: 'Sanhaua'
     },
     rollupOptions: {
+      external: ['vue'],
       output: {
-        assetFileNames: (assetInfo) =>
-          assetInfo.name.includes('ua-')
-            ? `components/${assetInfo.name.split('/').at(-1)}`
-            : assetInfo.name
+        globals: {
+          vue: 'Vue'
+        }
       }
     }
   }
