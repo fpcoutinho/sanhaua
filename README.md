@@ -6,7 +6,7 @@ Check out our live **[documentation](https://fpcoutinho.github.io/sanhaua/)**.
 
 ## Usage
 
-This section describes how to import Sanhauá as an external package and use in within your project
+This section describes how to import Sanhauá as an external package and use it within your project
 
 <br>
 
@@ -30,7 +30,7 @@ If you need to use any component, import them as usual like:
 </template>
 ```
 
-To activate the components css, import it in you main.js file like this:
+Import Sanhauá's styling to your project it in you main.js file:
 
 ```js
 // src/main.js
@@ -38,7 +38,7 @@ To activate the components css, import it in you main.js file like this:
 import 'sanhaua/dist/style.css'
 ```
 
-If you have a bundler like [Vite](https://vitejs.dev), you can also use our design system tokens for your application. Just install [Sass](https://sass-lang.com/).
+If you have a bundler like [Vite](https://vitejs.dev), you can also use our design system tokens on your application. Just install [Sass](https://sass-lang.com/).
 You should be able to import all tokens and properties into your own project this way:
 
 ```js
