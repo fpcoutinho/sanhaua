@@ -47,7 +47,9 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, 'system/themes/system.scss'),
-        path.resolve(__dirname, 'system/components/components.js')
+        path.resolve(__dirname, 'system/components/components.js'),
+        path.resolve(__dirname, 'system/directives/directives.js'),
+        path.resolve(__dirname, 'system/utils/utils.js')
       ],
       name: 'Sanhaua'
     },

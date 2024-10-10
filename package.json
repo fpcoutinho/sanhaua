@@ -1,11 +1,11 @@
 {
   "name": "sanhaua",
   "description": "Sanhaua design system",
-  "version": "0.1.51",
+  "version": "0.1.52",
   "type": "module",
   "files": [
     "dist",
-    "system"
+    "system/themes"
   ],
   "main": "./dist/sanhaua.umd.cjs",
   "module": "./dist/sanhaua.js",
