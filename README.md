@@ -1,4 +1,4 @@
-# Sanhuá
+# Sanhauá
 
 Design System named after the famous river in City of Parahyba.
 
