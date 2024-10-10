@@ -1,7 +1,10 @@
 {
   "name": "sanhaua",
   "version": "0.1.1",
-  "private": true,
+  "description": "Sanhaua design system",
+  "license": "MIT",
+  "repository": "https://github.com/fpcoutinho/sanhaua.git",
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",
