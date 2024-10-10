@@ -1,20 +1,20 @@
 {
   "name": "sanhaua",
   "description": "Sanhaua design system",
-  "version": "0.1.56",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist",
     "system/themes"
   ],
-  "main": "./dist/sanhaua.umd.cjs",
+  "main": "./dist/sanhaua.cjs",
   "module": "./dist/sanhaua.js",
   "style": "./dist/style.css",
   "sass": "./system/themes/system.scss",
   "exports": {
     ".": {
       "import": "./dist/sanhaua.js",
-      "require": "./dist/sanhaua.umd.cjs",
+      "require": "./dist/sanhaua.cjs",
       "style": "./dist/style.css",
       "scss": "./system/themes/system.scss"
     },
