@@ -1,52 +1,16 @@
-import vue from 'eslint-plugin-vue'
-import storybook from 'eslint-plugin-storybook'
-import globals from 'globals'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import pluginVue from 'eslint-plugin-vue'
+//import eslintPluginStorybook from 'eslint-plugin-storybook'
+import eslintConfigPrettier from 'eslint-config-prettier'
 import js from '@eslint/js'
-import { FlatCompat } from '@eslint/eslintrc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-})
 
 export default [
+  js.configs.recommended,
+  eslintConfigPrettier,
+  ...pluginVue.configs['flat/recommended'],
+  // Eslint plugin storybook is not working with Eslint 9
+  //...eslintPluginStorybook.configs['flat/recommended'],
   {
-    ignores: [
-      '**/.storybook',
-      '**/storybook-static',
-      '**/node_modules',
-      '**/dist/',
-      '**/public/',
-      '**/eslint.config.mjs',
-      '**/vite.config.js'
-    ]
-  },
-  ...compat.extends(
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended',
-    'plugin:storybook/recommended'
-  ),
-  {
-    plugins: {
-      vue,
-      storybook
-    },
-
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        process: true
-      },
-
-      ecmaVersion: 'latest',
-      sourceType: 'module'
-    },
-
+    files: ['**/*.js', '**/*.vue'],
     rules: {
       indent: ['error', 2],
       quotes: ['error', 'single'],
@@ -66,20 +30,17 @@ export default [
           math: 'always'
         }
       ],
-
-      'vue/require-default-prop': 'off'
-    }
-  },
-  {
-    files: ['**/*.js', '**/*.vue'],
-
-    languageOptions: {
-      globals: {
-        ...globals.node
-      },
-
-      ecmaVersion: 6,
-      sourceType: 'module'
-    }
+      'vue/require-default-prop': 'off',
+      'vue/max-attributes-per-line': 'off'
+    },
+    ignores: [
+      '**/.storybook',
+      '**/storybook-static',
+      '**/node_modules',
+      '**/dist/',
+      '**/public/',
+      '**/eslint.config.mjs',
+      '**/vite.config.js'
+    ]
   }
 ]
