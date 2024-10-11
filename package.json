@@ -40,7 +40,7 @@
     "eslint:fix": "eslint --fix .",
     "stylelint": "stylelint \"**/*.scss\" --ignore-path .gitignore",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
+    "format": "prettier --write system/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
