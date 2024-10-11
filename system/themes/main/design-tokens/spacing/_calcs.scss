@@ -1,0 +1,9 @@
+@function spacing($value) {
+  @if type-of($value) == number and $value > 0 and unitless($value) and floor($value) == $value {
+    @return #{$value * 4}px;
+  } @else if $value == "half" {
+    @return 2px;
+  } @else {
+    @error 'Spacing invalid: #{$value}.';
+  }
+}
