@@ -1,11 +1,24 @@
 <template>
   <button
     :type="props.type"
+    :disabled="props.disabled"
+    :autofocus="props.autofocus"
+    :value="props.value"
+    :name="props.name"
+    :form="props.form"
     :class="buttonClasses"
     class="ua-button"
     @click="emit('click', $event)"
   >
-    <slot></slot>
+    <span v-if="props.leftIcon" :class="iconSize" class="material-symbols-rounded icon">
+      {{ props.leftIcon }}
+    </span>
+    <div class="text">
+      <slot></slot>
+    </div>
+    <span v-if="props.rightIcon" :class="iconSize" class="material-symbols-rounded icon">
+      {{ props.rightIcon }}
+    </span>
   </button>
 </template>
 
@@ -20,18 +33,75 @@ const props = defineProps({
     required: true,
     validator: (value) => ['button', 'submit', 'reset'].includes(value)
   },
+  size: {
+    type: String,
+    required: true,
+    validator: (value) => ['small', 'medium', 'large'].includes(value)
+  },
+  appearance: {
+    type: String,
+    required: true,
+    validator: (value) =>
+      [
+        'primary',
+        'secondary',
+        'tertiary',
+        'success',
+        'warning',
+        'danger',
+        'info',
+        'ghost'
+      ].includes(value)
+  },
   widthBehavior: {
     type: String,
     default: 'auto',
     validator: (value) => ['auto', 'full'].includes(value)
+  },
+  borderStyle: {
+    type: String,
+    default: 'square',
+    validator: (value) => ['round', 'square'].includes(value)
+  },
+  leftIcon: {
+    type: String
+  },
+  rightIcon: {
+    type: String
+  },
+  disabled: {
+    type: Boolean
+  },
+  autofocus: {
+    type: Boolean
+  },
+  value: {
+    type: String
+  },
+  name: {
+    type: String
+  },
+  form: {
+    type: String
   }
 })
 
 const buttonClasses = computed(() => {
   return {
-    [props.widthBehavior]: props.widthBehavior
+    [props.size]: props.size,
+    [props.appearance]: props.appearance,
+    [props.widthBehavior]: props.widthBehavior,
+    [props.borderStyle]: props.borderStyle
   }
 })
+
+const ICON_SIZE_MAP = {
+  small: 'small',
+  medium: 'medium',
+  large: 'medium'
+}
+
+const iconSize = computed(() => ICON_SIZE_MAP[props.size])
 </script>
 
 <style lang="scss">
