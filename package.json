@@ -1,7 +1,7 @@
 {
   "name": "sanhaua",
   "description": "Sanhaua design system",
-  "version": "0.03.00",
+  "version": "0.3.0",
   "type": "module",
   "files": [
     "dist",
