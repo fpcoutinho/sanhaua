@@ -13,7 +13,7 @@
     <span v-if="props.leftIcon" :class="iconSize" class="material-symbols-rounded icon">
       {{ props.leftIcon }}
     </span>
-    <div class="text">
+    <div v-if="$slots.default" class="text">
       <slot></slot>
     </div>
     <span v-if="props.rightIcon" :class="iconSize" class="material-symbols-rounded icon">
