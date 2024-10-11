@@ -89,7 +89,7 @@
 
   @if $responsive {
     @include breakpoint-min($breakpoint) {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 }
@@ -101,7 +101,7 @@
 
   @if $responsive {
     @include breakpoint-min($breakpoint) {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 }
