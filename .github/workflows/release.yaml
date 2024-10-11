@@ -32,8 +32,7 @@ jobs:
       - name: Create GitHub Release
         if: success()
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git tag "v${{ steps.version_check.outputs.current_version }}"
           git push origin "v${{ steps.version_check.outputs.current_version }}"
