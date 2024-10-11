@@ -1,0 +1,169 @@
+@mixin headline-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 102px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 64px;
+    }
+  }
+}
+
+@mixin headline-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 64px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 51px;
+    }
+  }
+}
+
+@mixin headline-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 51px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 36px;
+    }
+  }
+}
+
+@mixin headline-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 36px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 25px;
+    }
+  }
+}
+
+@mixin headline-5($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 25px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 21px;
+    }
+  }
+}
+
+@mixin headline-6($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 21px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 17px;
+    }
+  }
+}
+
+@mixin body-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-family: $font-family;
+  font-size: 17px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 14px;
+    }
+  }
+}
+
+@mixin body-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-family: $font-family;
+  font-size: 15px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 12px;
+    }
+  }
+}
+
+@mixin subtitle-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-family: $font-family;
+  font-size: 15px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 12px;
+    }
+  }
+}
+
+@mixin subtitle-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 10px;
+    }
+  }
+}
+
+@mixin button-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 17px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 15px;
+    }
+  }
+}
+
+@mixin button-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+  font-family: $font-family;
+  font-size: 15px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 13px;
+    }
+  }
+}
+
+@mixin overline($responsive: false, $breakpoint: $default-breakpoint, $weight: "medium") {
+  font-family: $font-family;
+  font-size: 11px;
+  font-weight: map.get($font-weight, $weight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 9px;
+    }
+  }
+}
+
+@mixin caption($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 11px;
+    }
+  }
+}

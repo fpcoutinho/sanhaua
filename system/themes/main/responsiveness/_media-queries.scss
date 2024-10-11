@@ -1,0 +1,29 @@
+@mixin breakpoint-min($breakpoint) {
+  @if map.get($breakpoints, $breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints";
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  @if map.get($breakpoints, $breakpoint) {
+    @media screen and (max-width: map.get($breakpoints, $breakpoint) - 1) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints";
+  }
+}
+
+@mixin breakpoint-between($breakpoint-min, $breakpoint-max) {
+  @if map.get($breakpoints, $breakpoint-min) and map.get($breakpoints, $breakpoint-max) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint-min)) and (max-width: map.get($breakpoints, $breakpoint-max) - 1) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint-min} or #{$breakpoint-max} not found in $breakpoints";
+  }
+}
