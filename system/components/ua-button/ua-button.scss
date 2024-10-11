@@ -5,7 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: spacing(1);
+    border-width: map.get($border-width, "none");
 
     .text {
       font-family: $font-family;
@@ -20,21 +21,52 @@
     }
 
     &.small {
+      padding: spacing(1) spacing(2);
+
       .text {
         @include button-1;
+      }
+
+      .icon {
+        font-size: 16px;
       }
     }
 
     &.medium {
+      padding: spacing(2) spacing(3);
+
       .text {
         @include button-2;
+      }
+
+      .icon {
+        font-size: 24px;
       }
     }
 
     &.large {
+      padding: spacing(2) spacing(4);
+
       .text {
         @include button-2;
       }
+
+      .icon {
+        font-size: 24px;
+      }
+    }
+
+    &.square {
+      border-radius: map.get($border-radius, "small");
+    }
+
+    &.round {
+      border-radius: map.get($border-radius, "pill");
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: map.get($opacity, "medium");
     }
   }
 }
