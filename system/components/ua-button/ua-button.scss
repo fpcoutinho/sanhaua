@@ -1,11 +1,11 @@
 .sanhaua {
   .ua-button {
     cursor: pointer;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    font-family: $font-family;
+    gap: 4px;
 
     &.auto {
       width: fit-content;
@@ -13,6 +13,10 @@
 
     &.full {
       width: 100%;
+    }
+
+    .text {
+      font-family: $font-family;
     }
   }
 }
