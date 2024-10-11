@@ -302,3 +302,122 @@ Example.args = {
   form: null,
   default: 'Button'
 }
+
+export const Round = Template.bind({})
+Round.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'round',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Square = Template.bind({})
+Square.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Small = Template.bind({})
+Small.args = {
+  type: 'button',
+  size: 'small',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  type: 'button',
+  size: 'large',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Auto = Template.bind({})
+Auto.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Full = Template.bind({})
+Full.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'primary',
+  widthBehavior: 'full',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
