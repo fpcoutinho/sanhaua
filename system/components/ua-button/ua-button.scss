@@ -7,6 +7,10 @@
     justify-content: center;
     gap: 4px;
 
+    .text {
+      font-family: $font-family;
+    }
+
     &.auto {
       width: fit-content;
     }
@@ -15,8 +19,22 @@
       width: 100%;
     }
 
-    .text {
-      font-family: $font-family;
+    &.small {
+      .text {
+        @include button-1;
+      }
+    }
+
+    &.medium {
+      .text {
+        @include button-2;
+      }
+    }
+
+    &.large {
+      .text {
+        @include button-2;
+      }
     }
   }
 }
