@@ -22,7 +22,7 @@ export default [
       '**/node_modules',
       '**/dist/',
       '**/public/',
-      '**/.eslintrc.cjs',
+      '**/eslint.config.mjs',
       '**/vite.config.js'
     ]
   },
@@ -71,15 +71,15 @@ export default [
     }
   },
   {
-    files: ['**/.eslintrc.{js,cjs}'],
+    files: ['**/*.js', '**/*.vue'],
 
     languageOptions: {
       globals: {
         ...globals.node
       },
 
-      ecmaVersion: 5,
-      sourceType: 'commonjs'
+      ecmaVersion: 6,
+      sourceType: 'module'
     }
   }
 ]
