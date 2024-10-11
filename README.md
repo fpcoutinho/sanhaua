@@ -61,7 +61,7 @@ export default defineConfig({
           @use 'sass:map';
           @import "sanhaua/system/themes/${SELECTED_THEME}/design-tokens/design-tokens.scss";
           @import "sanhaua/system/themes/${SELECTED_THEME}/global/global.scss";
-          @import "sanhaua/system/themes/${SELECTED_THEME}/web-requirements/web-requirements.scss";
+          @import "sanhaua/system/themes/${SELECTED_THEME}/responsiveness/responsiveness.scss";
         `
       }
     }
