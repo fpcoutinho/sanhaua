@@ -167,7 +167,7 @@ export default {
       },
       defaultValue: null,
       description:
-        'The required attribute is one which most <input>s share. If any radio button in a same-named group of radio buttons has the required attribute, a radio button in that group must be checked, although it does not have to be the one with the attribute applied.',
+        'The required attribute is one which most inputs share. If any radio button in a same-named group of radio buttons has the required attribute, a radio button in that group must be checked, although it does not have to be the one with the attribute applied.',
       table: {
         type: {
           summary: 'boolean'

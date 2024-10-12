@@ -17,6 +17,10 @@
       border-style: solid;
     }
 
+    .label {
+      cursor: pointer;
+    }
+
     &.small {
       .radio-button {
         height: 12px;
