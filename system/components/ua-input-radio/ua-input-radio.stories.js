@@ -195,6 +195,25 @@ export default {
         }
       }
     },
+    modelValue: {
+      name: 'v-model',
+      type: {
+        name: 'string',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'The v-model directive creates a two-way binding on a form input element or a component.',
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: {
+          summary: null
+        }
+      },
+      control: { type: 'modelValue' }
+    },
     change: {
       name: '@change',
       type: {
@@ -255,6 +274,7 @@ const Template = (args) => ({
       :disabled=args.disabled
       :required=args.required
       :autofocus=args.autofocus
+      v-model=${args.modelValue}
       @change=args.change
       @input=args.input
     />
@@ -269,6 +289,98 @@ Default.args = {
   mode: 'normal',
   name: 'radio',
   id: 'radio',
+  modelValue: 'on',
+  checked: false,
+  disabled: false,
+  required: false,
+  autofocus: false
+}
+
+export const Reverse = Template.bind({})
+Reverse.storyName = 'With label on the left'
+Reverse.args = {
+  size: 'medium',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'reverse',
+  name: 'reverse',
+  id: 'reverse',
+  modelValue: 'on',
+  checked: false,
+  disabled: false,
+  required: false,
+  autofocus: false
+}
+
+export const Checked = Template.bind({})
+Checked.args = {
+  size: 'medium',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'normal',
+  name: 'checked',
+  id: 'checked',
+  modelValue: 'on',
+  checked: true,
+  disabled: false,
+  required: false,
+  autofocus: false
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  size: 'medium',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'normal',
+  name: 'disabled',
+  id: 'disabled',
+  modelValue: 'on',
+  checked: false,
+  disabled: true,
+  required: false,
+  autofocus: false
+}
+
+export const Small = Template.bind({})
+Small.args = {
+  size: 'small',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'normal',
+  name: 'small',
+  id: 'small',
+  modelValue: 'on',
+  checked: false,
+  disabled: false,
+  required: false,
+  autofocus: false
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+  size: 'medium',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'normal',
+  name: 'medium',
+  id: 'medium',
+  modelValue: 'on',
+  checked: false,
+  disabled: false,
+  required: false,
+  autofocus: false
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  size: 'large',
+  value: 'on',
+  label: 'Radio Label',
+  mode: 'normal',
+  name: 'large',
+  id: 'large',
+  modelValue: 'on',
   checked: false,
   disabled: false,
   required: false,

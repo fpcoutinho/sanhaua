@@ -2,7 +2,7 @@
   <label :class="classes" class="ua-input-radio">
     <input
       :id="props.id"
-      v-model="state"
+      v-model="modelValue"
       :name="props.name"
       :value="props.value"
       :checked="props.checked"
@@ -21,7 +21,7 @@
 <script setup>
 import { computed } from 'vue'
 
-const state = defineModel({ type: [Array, Boolean] })
+const modelValue = defineModel({ type: String })
 const emit = defineEmits(['change', 'input'])
 
 const props = defineProps({
