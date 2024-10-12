@@ -102,7 +102,7 @@ npm run build
 #### Run documentation in dev mode
 
 ```sh
-npm run storybook
+npm run docs
 ```
 
 #### Lint with [ESLint](https://eslint.org/)
