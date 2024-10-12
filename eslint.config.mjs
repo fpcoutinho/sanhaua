@@ -17,19 +17,7 @@ export default [
       semi: ['error', 'never'],
       'vue/multi-word-component-names': ['error'],
 
-      'vue/html-self-closing': [
-        'error',
-        {
-          html: {
-            void: 'never',
-            normal: 'never',
-            component: 'always'
-          },
-
-          svg: 'always',
-          math: 'always'
-        }
-      ],
+      'vue/html-self-closing': 'off',
       'vue/require-default-prop': 'off',
       'vue/max-attributes-per-line': 'off'
     },

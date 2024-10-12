@@ -1,7 +1,7 @@
 {
   "name": "sanhaua",
   "description": "Sanhaua design system",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "type": "module",
   "files": [
     "dist",
@@ -41,8 +41,8 @@
     "stylelint": "stylelint \"**/*.scss\" --ignore-path .gitignore",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix --ignore-path .gitignore",
     "format": "prettier --write system/",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "docs": "storybook dev -p 6006",
+    "build-docs": "storybook build"
   },
   "dependencies": {
     "sass-embedded": "^1.79.4",

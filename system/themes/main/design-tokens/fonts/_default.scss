@@ -1,4 +1,4 @@
-@mixin headline-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 102px;
   font-weight: map.get($font-weight, $weight);
@@ -10,7 +10,7 @@
   }
 }
 
-@mixin headline-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 64px;
   font-weight: map.get($font-weight, $weight);
@@ -22,7 +22,7 @@
   }
 }
 
-@mixin headline-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 51px;
   font-weight: map.get($font-weight, $weight);
@@ -34,7 +34,7 @@
   }
 }
 
-@mixin headline-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 36px;
   font-weight: map.get($font-weight, $weight);
@@ -46,7 +46,7 @@
   }
 }
 
-@mixin headline-5($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-5($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 25px;
   font-weight: map.get($font-weight, $weight);
@@ -58,7 +58,7 @@
   }
 }
 
-@mixin headline-6($responsive: false, $breakpoint: $default-breakpoint, $weight: "bold") {
+@mixin headline-6($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
   font-size: 21px;
   font-weight: map.get($font-weight, $weight);
@@ -94,7 +94,7 @@
   }
 }
 
-@mixin subtitle-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+@mixin subtitle-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "light") {
   font-family: $font-family;
   font-size: 15px;
   font-weight: map.get($font-weight, $weight);
@@ -106,7 +106,7 @@
   }
 }
 
-@mixin subtitle-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+@mixin subtitle-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "light") {
   font-family: $font-family;
   font-size: 12px;
   font-weight: map.get($font-weight, $weight);
@@ -142,7 +142,7 @@
   }
 }
 
-@mixin overline($responsive: false, $breakpoint: $default-breakpoint, $weight: "medium") {
+@mixin overline($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
   font-family: $font-family;
   font-size: 11px;
   font-weight: map.get($font-weight, $weight);
