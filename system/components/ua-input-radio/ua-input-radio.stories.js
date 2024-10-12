@@ -195,7 +195,7 @@ export default {
         }
       }
     },
-    modelValue: {
+    vModel: {
       name: 'v-model',
       type: {
         name: 'string',
@@ -211,8 +211,7 @@ export default {
         defaultValue: {
           summary: null
         }
-      },
-      control: { type: 'modelValue' }
+      }
     },
     change: {
       name: '@change',
@@ -274,7 +273,7 @@ const Template = (args) => ({
       :disabled=args.disabled
       :required=args.required
       :autofocus=args.autofocus
-      v-model=${args.modelValue}
+      v-model=args.vModel
       @change=args.change
       @input=args.input
     />
@@ -289,7 +288,7 @@ Default.args = {
   mode: 'normal',
   name: 'radio',
   id: 'radio',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: false,
   required: false,
@@ -305,7 +304,7 @@ Reverse.args = {
   mode: 'reverse',
   name: 'reverse',
   id: 'reverse',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: false,
   required: false,
@@ -320,7 +319,7 @@ Checked.args = {
   mode: 'normal',
   name: 'checked',
   id: 'checked',
-  modelValue: 'on',
+  vModel: 'on',
   checked: true,
   disabled: false,
   required: false,
@@ -335,7 +334,7 @@ Disabled.args = {
   mode: 'normal',
   name: 'disabled',
   id: 'disabled',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: true,
   required: false,
@@ -350,7 +349,7 @@ Small.args = {
   mode: 'normal',
   name: 'small',
   id: 'small',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: false,
   required: false,
@@ -365,7 +364,7 @@ Medium.args = {
   mode: 'normal',
   name: 'medium',
   id: 'medium',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: false,
   required: false,
@@ -380,7 +379,7 @@ Large.args = {
   mode: 'normal',
   name: 'large',
   id: 'large',
-  modelValue: 'on',
+  vModel: 'on',
   checked: false,
   disabled: false,
   required: false,
