@@ -11,8 +11,8 @@
       :autofocus="props.autofocus"
       class="radio-button"
       type="radio"
-      @change="() => emit('change', $event)"
-      @input="() => emit('input', $event)"
+      @change="emit('change', $event)"
+      @input="emit('input', $event)"
     />
     <span v-if="props.label" class="label">{{ props.label }}</span>
   </label>
