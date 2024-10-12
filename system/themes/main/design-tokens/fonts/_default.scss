@@ -1,30 +1,6 @@
 @mixin headline-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
-  font-size: 102px;
-  font-weight: map.get($font-weight, $weight);
-
-  @if $responsive {
-    @include breakpoint-min($breakpoint) {
-      font-size: 64px;
-    }
-  }
-}
-
-@mixin headline-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
-  font-family: $font-family;
-  font-size: 64px;
-  font-weight: map.get($font-weight, $weight);
-
-  @if $responsive {
-    @include breakpoint-min($breakpoint) {
-      font-size: 51px;
-    }
-  }
-}
-
-@mixin headline-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
-  font-family: $font-family;
-  font-size: 51px;
+  font-size: 48px;
   font-weight: map.get($font-weight, $weight);
 
   @if $responsive {
@@ -34,38 +10,62 @@
   }
 }
 
-@mixin headline-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
+@mixin headline-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: map.get($font-weight, $weight);
 
   @if $responsive {
     @include breakpoint-min($breakpoint) {
-      font-size: 25px;
+      font-size: 28px;
+    }
+  }
+}
+
+@mixin headline-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
+  font-family: $font-family;
+  font-size: 28px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 24px;
+    }
+  }
+}
+
+@mixin headline-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
+  font-family: $font-family;
+  font-size: 24px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 20px;
     }
   }
 }
 
 @mixin headline-5($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: map.get($font-weight, $weight);
 
   @if $responsive {
     @include breakpoint-min($breakpoint) {
-      font-size: 21px;
+      font-size: 18px;
     }
   }
 }
 
 @mixin headline-6($responsive: false, $breakpoint: $default-breakpoint, $weight: "black") {
   font-family: $font-family;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: map.get($font-weight, $weight);
 
   @if $responsive {
     @include breakpoint-min($breakpoint) {
-      font-size: 17px;
+      font-size: 15px;
     }
   }
 }
