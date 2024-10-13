@@ -63,8 +63,8 @@
       }
 
       &:focus-within {
+        outline-width: map.get($border-width, "large");
         outline-offset: calc(-1 * map.get($border-width, "small"));
-        outline-width: map.get($border-width, "medium");
         outline-style: solid;
 
         .field {
