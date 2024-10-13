@@ -15,7 +15,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: spacing(2);
       outline-width: map.get($border-width, "medium");
       outline-style: solid;
       cursor: text;
@@ -35,19 +34,34 @@
         align-items: center;
         justify-content: center;
 
-        @include subtitle-1;
+        @include body-2;
       }
 
       &.small {
         padding: spacing(1);
+        gap: spacing(1);
+
+        .icon {
+          font-size: 20px;
+        }
       }
 
       &.medium {
         padding: spacing(2);
+        gap: spacing(2);
+
+        .icon {
+          font-size: 22px;
+        }
       }
 
       &.large {
         padding: spacing(3);
+        gap: spacing(2);
+
+        .icon {
+          font-size: 24px;
+        }
       }
 
       &.square {
@@ -56,6 +70,10 @@
 
       &.round {
         border-radius: map.get($border-radius, "pill");
+      }
+
+      &.auto {
+        width: inherit;
       }
 
       &.full {
@@ -73,9 +91,15 @@
       }
     }
 
-    &:disabled {
+    &.disabled {
       cursor: not-allowed;
       opacity: map.get($opacity, "high");
+      user-select: none;
+
+      & * {
+        cursor: not-allowed;
+        opacity: map.get($opacity, "high");
+      }
     }
   }
 }

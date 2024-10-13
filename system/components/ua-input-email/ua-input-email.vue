@@ -4,8 +4,11 @@
       {{ props.label }}
     </span>
     <div :class="inputClasses" class="ua-input-email">
-      <span v-if="$slots.prefix" class="prefix">
-        <slot name="prefix" />
+      <span v-if="props.icon" class="material-symbols-rounded icon">
+        {{ props.icon }}
+      </span>
+      <span class="prefix">
+        {{ props.prefix }}
       </span>
       <input
         :id="props.id"
@@ -17,7 +20,7 @@
         :readonly="props.readonly"
         :maxlength="props.maxlength"
         :minlength="props.minlength"
-        :autocomplete="props.autocomplete"
+        :autocomplete="props.autocomplete && 'email'"
         :autofocus="props.autofocus"
         :name="props.name"
         :inputmode="props.inputmode"
@@ -30,8 +33,8 @@
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <span v-if="$slots.suffix" class="suffix">
-        <slot name="suffix" />
+      <span class="suffix">
+        {{ props.suffix }}
       </span>
     </div>
   </label>
@@ -44,8 +47,6 @@ const inputValue = defineModel({ type: String })
 const emit = defineEmits(['input', 'focus', 'blur', 'change'])
 
 const props = defineProps({
-  id: { type: String },
-  label: { type: String },
   appearance: {
     type: String,
     default: 'neutral',
@@ -66,6 +67,11 @@ const props = defineProps({
     default: 'auto',
     validator: (value) => ['auto', 'full'].includes(value)
   },
+  id: { type: String },
+  label: { type: String },
+  icon: { type: String },
+  prefix: { type: String },
+  suffix: { type: String },
   placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
@@ -73,7 +79,7 @@ const props = defineProps({
   readonly: { type: Boolean },
   maxlength: { type: Number },
   minlength: { type: Number },
-  autocomplete: { type: String },
+  autocomplete: { type: Boolean },
   autofocus: { type: Boolean },
   name: { type: String },
   inputmode: { type: String },

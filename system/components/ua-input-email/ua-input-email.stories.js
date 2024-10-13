@@ -16,7 +16,7 @@ export default {
       name: 'label',
       type: {
         name: 'string',
-        required: true
+        required: false
       },
       defaultValue: null,
       description: 'The label for the input field.',
@@ -33,7 +33,7 @@ export default {
       name: 'id',
       type: {
         name: 'string',
-        required: true
+        required: false
       },
       defaultValue: null,
       description:
@@ -120,6 +120,58 @@ export default {
       },
       control: { type: 'select' },
       options: ['round', 'square']
+    },
+    icon: {
+      name: 'icon',
+      type: {
+        name: 'string',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'The icon to display on the extreme left of the input, before the field and prefix.',
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
+    },
+    prefix: {
+      name: 'prefix',
+      type: {
+        name: 'string',
+        required: false
+      },
+      defaultValue: null,
+      description: 'The prefix to display on the left of the input field.',
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
+    },
+    suffix: {
+      name: 'suffix',
+      type: {
+        name: 'string',
+        required: false
+      },
+      defaultValue: null,
+      description: 'The suffix to display on the right of the input field.',
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
     },
     placeholder: {
       name: 'placeholder',
@@ -250,15 +302,15 @@ export default {
     autocomplete: {
       name: 'autocomplete',
       type: {
-        name: 'string',
+        name: 'boolean',
         required: false
       },
       defaultValue: null,
       description:
-        'A string which specifies whether the input field should have autocomplete enabled.',
+        'A boolean which specifies whether the input field should have autocomplete enabled.',
       table: {
         type: {
-          summary: 'string'
+          summary: 'boolean'
         },
         defaultValue: {
           summary: null
@@ -351,29 +403,6 @@ export default {
         },
         defaultValue: {
           summary: null
-        }
-      }
-    },
-    prefix: {
-      name: '#prefix',
-      description:
-        'The prefix slot of the input, used to insert the prefix before the input field.',
-      control: { type: 'text' },
-      table: {
-        category: 'Slots',
-        type: {
-          summary: 'html'
-        }
-      }
-    },
-    suffix: {
-      name: '#suffix',
-      description: 'The suffix slot of the input, used to insert the suffix after the input field.',
-      control: { type: 'text' },
-      table: {
-        category: 'Slots',
-        type: {
-          summary: 'html'
         }
       }
     },
@@ -471,6 +500,9 @@ const Template = (args) => ({
       :appearance="args.appearance"
       :width-behavior="args.widthBehavior"
       :border-style="args.borderStyle"
+      :icon="args.icon"
+      :prefix="args.prefix"
+      :suffix="args.suffix"
       :placeholder="args.placeholder"
       :required="args.required"
       :disabled="args.disabled"
@@ -495,11 +527,75 @@ const Template = (args) => ({
 export const Example = Template.bind({})
 Example.args = {
   label: 'Email',
+  size: 'medium',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  icon: 'mail',
+  prefix: null,
+  suffix: null,
+  placeholder: 'Enter your email address',
+  id: 'email',
+  disabled: false,
+  required: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const WithPrefixAndSuffix = Template.bind({})
+WithPrefixAndSuffix.storyName = 'With prefix and suffix'
+WithPrefixAndSuffix.args = {
+  label: 'Email',
   id: 'email',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
+  icon: 'mail',
+  prefix: 'email',
+  suffix: '@example.com',
+  placeholder: null,
+  required: false,
+  disabled: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const Small = Template.bind({})
+Small.args = {
+  label: 'Email',
+  id: 'email',
+  size: 'small',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  icon: null,
+  prefix: null,
+  suffix: null,
   placeholder: 'Enter your email address',
   required: false,
   disabled: false,
@@ -507,7 +603,127 @@ Example.args = {
   readonly: false,
   maxlength: null,
   minlength: null,
-  autocomplete: 'email',
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+  label: 'Email',
+  id: 'email',
+  size: 'medium',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  icon: null,
+  prefix: null,
+  suffix: null,
+  placeholder: 'Enter your email address',
+  required: false,
+  disabled: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  label: 'Email',
+  id: 'email',
+  size: 'large',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  icon: null,
+  prefix: null,
+  suffix: null,
+  placeholder: 'Enter your email address',
+  required: false,
+  disabled: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const Round = Template.bind({})
+Round.args = {
+  label: 'Email',
+  id: 'email',
+  size: 'medium',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'round',
+  icon: null,
+  prefix: null,
+  suffix: null,
+  placeholder: 'Enter your email address',
+  required: false,
+  disabled: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
+  autofocus: false,
+  name: 'email',
+  inputmode: 'email',
+  pattern: null,
+  vModel: '',
+  change: null,
+  input: null,
+  focus: null,
+  blur: null
+}
+
+export const Square = Template.bind({})
+Square.args = {
+  label: 'Email',
+  id: 'email',
+  size: 'medium',
+  appearance: 'neutral',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  icon: null,
+  prefix: null,
+  suffix: null,
+  placeholder: 'Enter your email address',
+  required: false,
+  disabled: false,
+  multiple: false,
+  readonly: false,
+  maxlength: null,
+  minlength: null,
+  autocomplete: true,
   autofocus: false,
   name: 'email',
   inputmode: 'email',
