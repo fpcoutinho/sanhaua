@@ -1,0 +1,81 @@
+.sanhaua {
+  .form-element-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(2);
+    font-family: $font-family;
+
+    .label {
+      cursor: pointer;
+
+      @include button-2;
+    }
+
+    .ua-input-email {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: spacing(2);
+      outline-width: map.get($border-width, "medium");
+      outline-style: solid;
+      cursor: text;
+
+      @include body-1;
+
+      .field {
+        flex: 1;
+        width: 100%;
+        font: inherit;
+        border: none;
+      }
+
+      .prefix,
+      .suffix {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include subtitle-1;
+      }
+
+      &.small {
+        padding: spacing(1);
+      }
+
+      &.medium {
+        padding: spacing(2);
+      }
+
+      &.large {
+        padding: spacing(3);
+      }
+
+      &.square {
+        border-radius: map.get($border-radius, "small");
+      }
+
+      &.round {
+        border-radius: map.get($border-radius, "pill");
+      }
+
+      &.full {
+        width: 100%;
+      }
+
+      &:focus-within {
+        outline-offset: calc(-1 * map.get($border-width, "small"));
+        outline-width: map.get($border-width, "medium");
+        outline-style: solid;
+
+        .field {
+          outline: none;
+        }
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: map.get($opacity, "high");
+    }
+  }
+}
