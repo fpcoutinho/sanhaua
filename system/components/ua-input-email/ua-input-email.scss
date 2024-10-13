@@ -15,7 +15,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      outline-width: map.get($border-width, "medium");
+      outline-width: map.get($border-width, "small");
       outline-style: solid;
       cursor: text;
 
@@ -81,7 +81,7 @@
       }
 
       &:focus-within {
-        outline-width: map.get($border-width, "large");
+        outline-width: map.get($border-width, "medium");
         outline-offset: calc(-1 * map.get($border-width, "small"));
         outline-style: solid;
 

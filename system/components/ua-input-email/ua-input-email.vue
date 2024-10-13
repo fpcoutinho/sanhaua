@@ -7,7 +7,7 @@
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
-      <span class="prefix">
+      <span v-if="props.prefix" class="prefix">
         {{ props.prefix }}
       </span>
       <input
@@ -33,7 +33,7 @@
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <span class="suffix">
+      <span v-if="props.suffix" class="suffix">
         {{ props.suffix }}
       </span>
     </div>
