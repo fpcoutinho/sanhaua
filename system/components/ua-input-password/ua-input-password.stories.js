@@ -503,7 +503,6 @@ const Template = (args) => ({
       :placeholder="args.placeholder"
       :required="args.required"
       :disabled="args.disabled"
-      :multiple="args.multiple"
       :readonly="args.readonly"
       :maxlength="args.maxlength"
       :minlength="args.minlength"
@@ -535,7 +534,6 @@ Example.args = {
   id: 'password',
   disabled: false,
   required: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -566,7 +564,6 @@ WithPrefixAndSuffix.args = {
   placeholder: null,
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -596,7 +593,6 @@ Small.args = {
   placeholder: 'Enter your password address',
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -626,7 +622,6 @@ Medium.args = {
   placeholder: 'Enter your password address',
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -656,7 +651,6 @@ Large.args = {
   placeholder: 'Enter your password address',
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -686,7 +680,6 @@ Round.args = {
   placeholder: 'Enter your password address',
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
@@ -716,7 +709,6 @@ Square.args = {
   placeholder: 'Enter your password address',
   required: false,
   disabled: false,
-  multiple: false,
   readonly: false,
   maxlength: null,
   minlength: null,
