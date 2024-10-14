@@ -3,7 +3,7 @@
     <span class="label">
       {{ props.label }}
     </span>
-    <div :class="inputClasses" class="ua-input-email">
+    <div :class="inputClasses" class="ua-input-date">
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
@@ -19,7 +19,7 @@
         :max="props.max"
         :min="props.min"
         :step="props.step"
-        :autocomplete="props.autocomplete && 'email'"
+        :autocomplete="props.autocomplete"
         :autofocus="props.autofocus"
         :name="props.name"
         :class="inputClasses"
@@ -75,7 +75,7 @@ const props = defineProps({
   max: { type: Number },
   min: { type: Number },
   step: { type: [Number, String] },
-  autocomplete: { type: Boolean },
+  autocomplete: { type: String },
   autofocus: { type: Boolean },
   name: { type: String }
 })
@@ -97,5 +97,5 @@ const wrapperClasses = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-input-email.scss';
+@import './ua-input-date.scss';
 </style>

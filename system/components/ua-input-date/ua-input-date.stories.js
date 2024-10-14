@@ -1,14 +1,14 @@
 import { fn } from '@storybook/test'
-import uaInputEmail from './ua-input-email.vue'
+import uaInputDate from './ua-input-date.vue'
 
 export default {
-  title: 'UA-Input-Email',
-  component: uaInputEmail,
+  title: 'UA-Input-Date',
+  component: uaInputDate,
   tags: ['autodocs'],
   parameters: {
     docs: {
       subtitle:
-        'Input elements of type email are used to let the user enter and edit an email address, or, if the multiple attribute is specified, a list of email addresses.'
+        'Input elements of type date are used to let the user enter and edit an date address, or, if the multiple attribute is specified, a list of date addresses.'
     }
   },
   argTypes: {
@@ -284,20 +284,35 @@ export default {
     autocomplete: {
       name: 'autocomplete',
       type: {
-        name: 'boolean',
+        name: 'string',
         required: false
       },
-      defaultValue: null,
+      defaultValue: true,
       description:
-        'A boolean which specifies whether the input field should have autocomplete enabled.',
+        'Hint for form autofill feature. The name of the attribute specifies what kind of information the input field expects.',
       table: {
         type: {
-          summary: 'boolean'
+          summary: 'string'
         },
         defaultValue: {
-          summary: null
+          summary: 'true'
         }
-      }
+      },
+      control: { type: 'select' },
+      options: [
+        'hidden',
+        'text',
+        'search',
+        'url',
+        'date',
+        'month',
+        'week',
+        'time',
+        'datetime-local',
+        'number',
+        'range',
+        'color'
+      ]
     },
     autofocus: {
       name: 'autofocus',
@@ -470,12 +485,12 @@ export default {
 }
 
 const Template = (args) => ({
-  components: { uaInputEmail },
+  components: { uaInputDate },
   setup() {
     return { args }
   },
   template: `
-    <ua-input-email
+    <ua-input-date
       :label="args.label"
       :id="args.id"
       :size="args.size"
@@ -508,7 +523,7 @@ const Template = (args) => ({
 
 export const Example = Template.bind({})
 Example.args = {
-  label: 'Email',
+  label: 'Date',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -516,8 +531,8 @@ Example.args = {
   icon: 'mail',
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
-  id: 'email',
+  placeholder: 'Enter your date address',
+  id: 'date',
   disabled: false,
   required: false,
   multiple: false,
@@ -526,8 +541,8 @@ Example.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -539,14 +554,14 @@ Example.args = {
 export const WithPrefixAndSuffix = Template.bind({})
 WithPrefixAndSuffix.storyName = 'With prefix and suffix'
 WithPrefixAndSuffix.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
   icon: 'mail',
-  prefix: 'email',
+  prefix: 'date',
   suffix: '@example.com',
   placeholder: null,
   required: false,
@@ -557,8 +572,8 @@ WithPrefixAndSuffix.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -569,8 +584,8 @@ WithPrefixAndSuffix.args = {
 
 export const Small = Template.bind({})
 Small.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -578,7 +593,7 @@ Small.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
+  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   multiple: false,
@@ -587,8 +602,8 @@ Small.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -599,8 +614,8 @@ Small.args = {
 
 export const Medium = Template.bind({})
 Medium.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -608,7 +623,7 @@ Medium.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
+  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   multiple: false,
@@ -617,8 +632,8 @@ Medium.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -629,8 +644,8 @@ Medium.args = {
 
 export const Large = Template.bind({})
 Large.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -638,7 +653,7 @@ Large.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
+  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   multiple: false,
@@ -647,8 +662,8 @@ Large.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -659,8 +674,8 @@ Large.args = {
 
 export const Round = Template.bind({})
 Round.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -668,7 +683,7 @@ Round.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
+  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   multiple: false,
@@ -677,8 +692,8 @@ Round.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
@@ -689,8 +704,8 @@ Round.args = {
 
 export const Square = Template.bind({})
 Square.args = {
-  label: 'Email',
-  id: 'email',
+  label: 'Date',
+  id: 'date',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -698,7 +713,7 @@ Square.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your email address',
+  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   multiple: false,
@@ -707,8 +722,8 @@ Square.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
-  inputmode: 'email',
+  name: 'date',
+  inputmode: 'date',
   pattern: null,
   vModel: '',
   change: null,
