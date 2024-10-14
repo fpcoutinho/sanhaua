@@ -1,14 +1,14 @@
 import { fn } from '@storybook/test'
-import uaInputDate from './ua-input-date.vue'
+import uaInputPassword from './ua-input-password.vue'
 
 export default {
-  title: 'UA-Input-Date',
-  component: uaInputDate,
+  title: 'UA-Input-Password',
+  component: uaInputPassword,
   tags: ['autodocs'],
   parameters: {
     docs: {
-      subtitle:
-        'Input elements of type "date" create input fields that let the user enter a date. The appearance of the date picker input UI varies based on the browser and operating system. The value is normalized to the format yyyy-mm-dd.'
+      subtitle: `Input elements of type password provide a way for the user to securely enter a password.
+      The element is presented as a one-line plain text editor control in which the text is obscured so that it cannot be read, usually by replacing each character with a symbol such as the asterisk ("*") or a dot ("•"). This character will vary depending on the user agent and operating system.`
     }
   },
   argTypes: {
@@ -173,6 +173,24 @@ export default {
         }
       }
     },
+    placeholder: {
+      name: 'placeholder',
+      type: {
+        name: 'string',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'The placeholder attribute is a string that provides a brief hint to the user as to what kind of information is expected in the field.',
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
+    },
     required: {
       name: 'required',
       type: {
@@ -209,78 +227,6 @@ export default {
         }
       }
     },
-    readonly: {
-      name: 'readonly',
-      type: {
-        name: 'boolean',
-        required: false
-      },
-      defaultValue: false,
-      description:
-        'A Boolean which, if present, specifies that the input field should be read-only.',
-      table: {
-        type: {
-          summary: 'boolean'
-        },
-        defaultValue: {
-          summary: 'false'
-        }
-      }
-    },
-    max: {
-      name: 'max',
-      type: {
-        name: 'number',
-        required: false
-      },
-      defaultValue: null,
-      description: `The latest date to accept. If the value entered into the element occurs afterward, the element fails constraint validation. If the value of the max attribute isn't a possible date string in the format yyyy-mm-dd, then the element has no maximum date value.
-        If both the max and min attributes are set, this value must be a date string later than or equal to the one in the min attribute.`,
-      table: {
-        type: {
-          summary: 'number'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
-    min: {
-      name: 'min',
-      type: {
-        name: 'number',
-        required: false
-      },
-      defaultValue: null,
-      description: `The earliest date to accept. If the value entered into the element occurs beforehand, the element fails constraint validation. If the value of the min attribute isn't a possible date string in the format yyyy-mm-dd, then the element has no minimum date value.
-      If both the max and min attributes are set, this value must be a date string earlier than or equal to the one in the max attribute.`,
-      table: {
-        type: {
-          summary: 'number'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
-    step: {
-      name: 'step',
-      type: {
-        name: ['number', 'string'],
-        required: false
-      },
-      defaultValue: null,
-      description: `The step attribute is a number that specifies the granularity that the value must adhere to, or the special value any, which is described below. Only values which are equal to the basis for stepping (min if specified, value otherwise, and an appropriate default value if neither of those is provided) are valid.
-      For date inputs, the value of step is given in days; and is treated as a number of milliseconds equal to 86,400,000 times the step value (the underlying numeric value is in milliseconds). The default value of step is 1, indicating 1 day.`,
-      table: {
-        type: {
-          summary: ['number', 'string']
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
     autocomplete: {
       name: 'autocomplete',
       type: {
@@ -313,6 +259,60 @@ export default {
         'range',
         'color'
       ]
+    },
+    readonly: {
+      name: 'readonly',
+      type: {
+        name: 'boolean',
+        required: false
+      },
+      defaultValue: false,
+      description:
+        'A Boolean which, if present, specifies that the input field should be read-only.',
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: 'false'
+        }
+      }
+    },
+    maxlength: {
+      name: 'maxlength',
+      type: {
+        name: 'number',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'The maximum string length (measured in UTF-16 code units) that the user can enter into the password input. This must be an integer value of 0 or higher.  This value must also be greater than or equal to the value of minlength.',
+      table: {
+        type: {
+          summary: 'number'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
+    },
+    minlength: {
+      name: 'minlength',
+      type: {
+        name: 'number',
+        required: false
+      },
+      defaultValue: null,
+      description:
+        'The minimum string length (measured in UTF-16 code units) that the user can enter into the password input. This must be a non-negative integer value smaller than or equal to the value specified by maxlength.',
+      table: {
+        type: {
+          summary: 'number'
+        },
+        defaultValue: {
+          summary: null
+        }
+      }
     },
     autofocus: {
       name: 'autofocus',
@@ -485,12 +485,12 @@ export default {
 }
 
 const Template = (args) => ({
-  components: { uaInputDate },
+  components: { uaInputPassword },
   setup() {
     return { args }
   },
   template: `
-    <ua-input-date
+    <ua-input-password
       :label="args.label"
       :id="args.id"
       :size="args.size"
@@ -505,8 +505,8 @@ const Template = (args) => ({
       :disabled="args.disabled"
       :multiple="args.multiple"
       :readonly="args.readonly"
-      :max="args.max"
-      :min="args.min"
+      :maxlength="args.maxlength"
+      :minlength="args.minlength"
       :autocomplete="args.autocomplete"
       :autofocus="args.autofocus"
       :name="args.name"
@@ -523,26 +523,26 @@ const Template = (args) => ({
 
 export const Example = Template.bind({})
 Example.args = {
-  label: 'Date',
+  label: 'Password',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
+  icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
-  id: 'date',
+  placeholder: 'Enter your password address',
+  id: 'password',
   disabled: false,
   required: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -554,26 +554,26 @@ Example.args = {
 export const WithPrefixAndSuffix = Template.bind({})
 WithPrefixAndSuffix.storyName = 'With prefix and suffix'
 WithPrefixAndSuffix.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
-  prefix: 'date',
+  icon: null,
+  prefix: 'password',
   suffix: '@example.com',
   placeholder: null,
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -584,8 +584,8 @@ WithPrefixAndSuffix.args = {
 
 export const Small = Template.bind({})
 Small.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -593,17 +593,17 @@ Small.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
+  placeholder: 'Enter your password address',
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -614,8 +614,8 @@ Small.args = {
 
 export const Medium = Template.bind({})
 Medium.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -623,17 +623,17 @@ Medium.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
+  placeholder: 'Enter your password address',
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -644,8 +644,8 @@ Medium.args = {
 
 export const Large = Template.bind({})
 Large.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -653,17 +653,17 @@ Large.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
+  placeholder: 'Enter your password address',
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -674,8 +674,8 @@ Large.args = {
 
 export const Round = Template.bind({})
 Round.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -683,17 +683,17 @@ Round.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
+  placeholder: 'Enter your password address',
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
@@ -704,8 +704,8 @@ Round.args = {
 
 export const Square = Template.bind({})
 Square.args = {
-  label: 'Date',
-  id: 'date',
+  label: 'Password',
+  id: 'password',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -713,17 +713,17 @@ Square.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
+  placeholder: 'Enter your password address',
   required: false,
   disabled: false,
   multiple: false,
   readonly: false,
-  max: null,
-  min: null,
-  autocomplete: true,
+  maxlength: null,
+  minlength: null,
+  autocomplete: null,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
+  name: 'password',
+  inputmode: 'password',
   pattern: null,
   vModel: '',
   change: null,
