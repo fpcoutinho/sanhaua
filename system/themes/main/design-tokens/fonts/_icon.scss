@@ -1,0 +1,43 @@
+@mixin icon-1($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-size: 24px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 22px;
+    }
+  }
+}
+
+@mixin icon-2($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-size: 22px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 20px;
+    }
+  }
+}
+
+@mixin icon-3($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-size: 20px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 18px;
+    }
+  }
+}
+
+@mixin icon-4($responsive: false, $breakpoint: $default-breakpoint, $weight: "regular") {
+  font-size: 16px;
+  font-weight: map.get($font-weight, $weight);
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 14px;
+    }
+  }
+}
