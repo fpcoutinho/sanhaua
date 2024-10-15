@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputRadio from './ua-input-radio.vue'
 
 export default {
-  title: 'UA-Input-Radio',
+  title: 'Components/UA-Input-Radio',
   component: uaInputRadio,
   tags: ['autodocs'],
   parameters: {
@@ -205,6 +205,7 @@ export default {
       description:
         'The v-model directive creates a two-way binding on a form input element or a component.',
       table: {
+        category: 'v-model',
         type: {
           summary: 'string'
         },

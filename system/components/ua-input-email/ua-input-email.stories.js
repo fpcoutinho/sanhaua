@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputEmail from './ua-input-email.vue'
 
 export default {
-  title: 'UA-Input-Email',
+  title: 'Components/UA-Input-Email',
   component: uaInputEmail,
   tags: ['autodocs'],
   parameters: {
@@ -398,6 +398,7 @@ export default {
       description:
         'The v-model directive creates a two-way binding on a form input element or a component.',
       table: {
+        category: 'v-model',
         type: {
           summary: 'string'
         },
@@ -558,7 +559,7 @@ export const WithPrefixAndSuffix = Template.bind({})
 WithPrefixAndSuffix.storyName = 'With prefix and suffix'
 WithPrefixAndSuffix.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email2',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -575,7 +576,7 @@ WithPrefixAndSuffix.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email2',
   inputmode: 'email',
   pattern: null,
   vModel: '',
@@ -588,7 +589,7 @@ WithPrefixAndSuffix.args = {
 export const Small = Template.bind({})
 Small.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email3',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -605,7 +606,7 @@ Small.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email3',
   inputmode: 'email',
   pattern: null,
   vModel: '',
@@ -618,7 +619,7 @@ Small.args = {
 export const Medium = Template.bind({})
 Medium.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email4',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -635,7 +636,7 @@ Medium.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email4',
   inputmode: 'email',
   pattern: null,
   vModel: '',
@@ -648,7 +649,7 @@ Medium.args = {
 export const Large = Template.bind({})
 Large.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email5',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -665,7 +666,7 @@ Large.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email5',
   inputmode: 'email',
   pattern: null,
   vModel: '',
@@ -678,7 +679,7 @@ Large.args = {
 export const Round = Template.bind({})
 Round.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email6',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -695,7 +696,7 @@ Round.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email6',
   inputmode: 'email',
   pattern: null,
   vModel: '',
@@ -708,7 +709,7 @@ Round.args = {
 export const Square = Template.bind({})
 Square.args = {
   label: 'Email',
-  id: 'email',
+  id: 'email7',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -725,7 +726,7 @@ Square.args = {
   minlength: null,
   autocomplete: true,
   autofocus: false,
-  name: 'email',
+  name: 'email7',
   inputmode: 'email',
   pattern: null,
   vModel: '',

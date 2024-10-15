@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputDate from './ua-input-date.vue'
 
 export default {
-  title: 'UA-Input-Date',
+  title: 'Components/UA-Input-Date',
   component: uaInputDate,
   tags: ['autodocs'],
   parameters: {
@@ -393,42 +393,6 @@ export default {
         }
       }
     },
-    inputmode: {
-      name: 'inputmode',
-      type: {
-        name: 'string',
-        required: false
-      },
-      defaultValue: null,
-      description:
-        'A string which specifies the type of data that is expected to be entered in the input field.',
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
-    pattern: {
-      name: 'pattern',
-      type: {
-        name: 'string',
-        required: false
-      },
-      defaultValue: null,
-      description:
-        'The pattern attribute, when specified, is a regular expression that the input value must match for the value to pass constraint validation. It must be a valid JavaScript regular expression, as used by the RegExp type.',
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
     vModel: {
       name: 'v-model',
       type: {
@@ -439,6 +403,7 @@ export default {
       description:
         'The v-model directive creates a two-way binding on a form input element or a component.',
       table: {
+        category: 'v-model',
         type: {
           summary: 'string'
         },
@@ -544,7 +509,6 @@ const Template = (args) => ({
       :icon="args.icon"
       :prefix="args.prefix"
       :suffix="args.suffix"
-      :placeholder="args.placeholder"
       :required="args.required"
       :disabled="args.disabled"
       :readonly="args.readonly"
@@ -553,8 +517,6 @@ const Template = (args) => ({
       :autocomplete="args.autocomplete"
       :autofocus="args.autofocus"
       :name="args.name"
-      :inputmode="args.inputmode"
-      :pattern="args.pattern"
       v-model="args.vModel"
       @change="args.change"
       @input="args.input"
@@ -571,11 +533,10 @@ Example.args = {
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
+  icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
-  id: 'date',
+  id: 'date1',
   disabled: false,
   required: false,
   readonly: false,
@@ -583,9 +544,7 @@ Example.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date1',
   vModel: '',
   change: null,
   input: null,
@@ -593,18 +552,18 @@ Example.args = {
   blur: null
 }
 
-export const WithPrefixAndSuffix = Template.bind({})
-WithPrefixAndSuffix.storyName = 'With prefix and suffix'
-WithPrefixAndSuffix.args = {
+export const WithPrefix = Template.bind({})
+WithPrefix.storyName = 'With prefix'
+WithPrefix.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date2',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
-  prefix: 'date',
-  suffix: '@example.com',
+  icon: null,
+  prefix: 'João Pessoa, ',
+  suffix: null,
   placeholder: null,
   required: false,
   disabled: false,
@@ -613,9 +572,7 @@ WithPrefixAndSuffix.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date2',
   vModel: '',
   change: null,
   input: null,
@@ -626,7 +583,7 @@ WithPrefixAndSuffix.args = {
 export const Small = Template.bind({})
 Small.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date3',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -634,7 +591,6 @@ Small.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   readonly: false,
@@ -642,9 +598,7 @@ Small.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date3',
   vModel: '',
   change: null,
   input: null,
@@ -655,7 +609,7 @@ Small.args = {
 export const Medium = Template.bind({})
 Medium.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date4',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -663,7 +617,6 @@ Medium.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   readonly: false,
@@ -671,9 +624,7 @@ Medium.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date4',
   vModel: '',
   change: null,
   input: null,
@@ -684,7 +635,7 @@ Medium.args = {
 export const Large = Template.bind({})
 Large.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date5',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -692,7 +643,6 @@ Large.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   readonly: false,
@@ -700,9 +650,7 @@ Large.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date5',
   vModel: '',
   change: null,
   input: null,
@@ -713,7 +661,7 @@ Large.args = {
 export const Round = Template.bind({})
 Round.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date6',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -721,7 +669,6 @@ Round.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   readonly: false,
@@ -729,9 +676,7 @@ Round.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date6',
   vModel: '',
   change: null,
   input: null,
@@ -742,7 +687,7 @@ Round.args = {
 export const Square = Template.bind({})
 Square.args = {
   label: 'Date',
-  id: 'date',
+  id: 'date7',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -750,7 +695,6 @@ Square.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your date address',
   required: false,
   disabled: false,
   readonly: false,
@@ -758,9 +702,7 @@ Square.args = {
   min: null,
   autocomplete: true,
   autofocus: false,
-  name: 'date',
-  inputmode: 'date',
-  pattern: null,
+  name: 'date7',
   vModel: '',
   change: null,
   input: null,

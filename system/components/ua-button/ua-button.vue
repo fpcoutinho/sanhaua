@@ -10,13 +10,13 @@
     class="ua-button"
     @click="emit('click', $event)"
   >
-    <span v-if="props.leftIcon" :class="iconSize" class="material-symbols-rounded icon">
+    <span v-if="props.leftIcon" class="material-symbols-rounded icon">
       {{ props.leftIcon }}
     </span>
     <div v-if="$slots.default" class="text">
       <slot></slot>
     </div>
-    <span v-if="props.rightIcon" :class="iconSize" class="material-symbols-rounded icon">
+    <span v-if="props.rightIcon" class="material-symbols-rounded icon">
       {{ props.rightIcon }}
     </span>
   </button>
@@ -94,14 +94,6 @@ const buttonClasses = computed(() => {
     [props.borderStyle]: props.borderStyle
   }
 })
-
-const ICON_SIZE_MAP = {
-  small: 'small',
-  medium: 'medium',
-  large: 'medium'
-}
-
-const iconSize = computed(() => ICON_SIZE_MAP[props.size])
 </script>
 
 <style lang="scss">

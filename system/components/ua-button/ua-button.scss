@@ -24,11 +24,11 @@
       padding: spacing(1);
 
       .text {
-        @include button-2;
+        @include body-2-bold;
       }
 
       .icon {
-        font-size: 16px;
+        @include icon-4;
       }
     }
 
@@ -36,11 +36,11 @@
       padding: spacing(2);
 
       .text {
-        @include button-1;
+        @include body-1-bold;
       }
 
       .icon {
-        font-size: 24px;
+        @include icon-1;
       }
     }
 
@@ -48,11 +48,11 @@
       padding: spacing(3);
 
       .text {
-        @include button-1;
+        @include body-1-bold;
       }
 
       .icon {
-        font-size: 24px;
+        @include icon-1;
       }
     }
 
