@@ -1,0 +1,65 @@
+.sanhaua {
+  .ua-skeleton {
+    will-change: background-position;
+    animation: skeleton 1.8s ease-in-out infinite;
+    background-size: 200% auto;
+    background-repeat: no-repeat;
+    background-position-x: -50%;
+
+    &.square {
+      border-radius: map.get($border-radius, "none");
+    }
+
+    &.round {
+      border-radius: map.get($border-radius, "small");
+    }
+
+    &.circle {
+      border-radius: map.get($border-radius, "pill");
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    .ua-skeleton {
+      animation-duration: 15s;
+    }
+  }
+
+  @keyframes skeleton {
+    0% {
+      background-position: 150%;
+    }
+
+    100% {
+      background-position: -50%;
+    }
+  }
+
+  &.light {
+    .ua-skeleton {
+      background-color: #d1d5db;
+      background-image: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent 40%,
+        #f2f2f2 50%,
+        transparent 60%,
+        transparent 100%
+      );
+    }
+  }
+
+  &.dark {
+    .ua-skeleton {
+      background-color: #15191e;
+      background-image: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent 40%,
+        #1d232a 50%,
+        transparent 60%,
+        transparent 100%
+      );
+    }
+  }
+}
