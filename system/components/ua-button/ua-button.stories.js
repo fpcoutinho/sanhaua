@@ -3,7 +3,7 @@ import uaButton from './ua-button.vue'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'UA-Button',
+  title: 'Components/UA-Button',
   component: uaButton,
   tags: ['autodocs'],
   parameters: {

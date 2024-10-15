@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputTel from './ua-input-tel.vue'
 
 export default {
-  title: 'UA-Input-Tel',
+  title: 'Components/UA-Input-Tel',
   component: uaInputTel,
   tags: ['autodocs'],
   parameters: {
@@ -439,6 +439,7 @@ export default {
       description:
         'The v-model directive creates a two-way binding on a form input element or a component.',
       table: {
+        category: 'v-model',
         type: {
           summary: 'string'
         },
@@ -566,15 +567,15 @@ const Template = (args) => ({
 
 export const Example = Template.bind({})
 Example.args = {
-  label: 'Tel',
+  label: 'Phone number',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
+  icon: 'call',
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (83) 90000-0000',
   id: 'tel',
   disabled: false,
   required: false,
@@ -596,15 +597,15 @@ Example.args = {
 export const WithPrefixAndSuffix = Template.bind({})
 WithPrefixAndSuffix.storyName = 'With prefix and suffix'
 WithPrefixAndSuffix.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel1',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
-  icon: 'mail',
-  prefix: 'tel',
-  suffix: '@example.com',
+  icon: 'call',
+  prefix: '(83) 9',
+  suffix: 'mobile',
   placeholder: null,
   required: false,
   disabled: false,
@@ -613,7 +614,7 @@ WithPrefixAndSuffix.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel1',
   inputmode: 'tel',
   pattern: null,
   vModel: '',
@@ -625,8 +626,8 @@ WithPrefixAndSuffix.args = {
 
 export const Small = Template.bind({})
 Small.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel2',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -634,7 +635,7 @@ Small.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (11) 99999-9999',
   required: false,
   disabled: false,
   readonly: false,
@@ -642,7 +643,7 @@ Small.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel2',
   inputmode: 'tel',
   pattern: null,
   vModel: '',
@@ -654,8 +655,8 @@ Small.args = {
 
 export const Medium = Template.bind({})
 Medium.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel3',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -663,7 +664,7 @@ Medium.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (11) 99999-9999',
   required: false,
   disabled: false,
   readonly: false,
@@ -671,7 +672,7 @@ Medium.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel3',
   inputmode: 'tel',
   pattern: null,
   vModel: '',
@@ -683,8 +684,8 @@ Medium.args = {
 
 export const Large = Template.bind({})
 Large.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel4',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -692,7 +693,7 @@ Large.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (11) 99999-9999',
   required: false,
   disabled: false,
   readonly: false,
@@ -700,7 +701,7 @@ Large.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel4',
   inputmode: 'tel',
   pattern: null,
   vModel: '',
@@ -712,8 +713,8 @@ Large.args = {
 
 export const Round = Template.bind({})
 Round.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel5',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -721,7 +722,7 @@ Round.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (11) 99999-9999',
   required: false,
   disabled: false,
   readonly: false,
@@ -729,7 +730,7 @@ Round.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel5',
   inputmode: 'tel',
   pattern: null,
   vModel: '',
@@ -741,8 +742,8 @@ Round.args = {
 
 export const Square = Template.bind({})
 Square.args = {
-  label: 'Tel',
-  id: 'tel',
+  label: 'Phone number',
+  id: 'tel6',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -750,7 +751,7 @@ Square.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your tel address',
+  placeholder: 'Ex: (11) 99999-9999',
   required: false,
   disabled: false,
   readonly: false,
@@ -758,7 +759,7 @@ Square.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'tel',
+  name: 'tel6',
   inputmode: 'tel',
   pattern: null,
   vModel: '',

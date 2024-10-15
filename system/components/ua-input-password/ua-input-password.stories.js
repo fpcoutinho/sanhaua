@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputPassword from './ua-input-password.vue'
 
 export default {
-  title: 'UA-Input-Password',
+  title: 'Components/UA-Input-Password',
   component: uaInputPassword,
   tags: ['autodocs'],
   parameters: {
@@ -439,6 +439,7 @@ export default {
       description:
         'The v-model directive creates a two-way binding on a form input element or a component.',
       table: {
+        category: 'v-model',
         type: {
           summary: 'string'
         },
@@ -574,7 +575,7 @@ Example.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   id: 'password',
   disabled: false,
   required: false,
@@ -597,14 +598,14 @@ export const WithPrefixAndSuffix = Template.bind({})
 WithPrefixAndSuffix.storyName = 'With prefix and suffix'
 WithPrefixAndSuffix.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password2',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
   borderStyle: 'square',
   icon: null,
-  prefix: 'password',
-  suffix: '@example.com',
+  prefix: 'Unique',
+  suffix: 'new password.',
   placeholder: null,
   required: false,
   disabled: false,
@@ -613,7 +614,7 @@ WithPrefixAndSuffix.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password2',
   inputmode: 'password',
   pattern: null,
   vModel: '',
@@ -626,7 +627,7 @@ WithPrefixAndSuffix.args = {
 export const Small = Template.bind({})
 Small.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password3',
   size: 'small',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -634,7 +635,7 @@ Small.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   required: false,
   disabled: false,
   readonly: false,
@@ -642,7 +643,7 @@ Small.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password3',
   inputmode: 'password',
   pattern: null,
   vModel: '',
@@ -655,7 +656,7 @@ Small.args = {
 export const Medium = Template.bind({})
 Medium.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password4',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -663,7 +664,7 @@ Medium.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   required: false,
   disabled: false,
   readonly: false,
@@ -671,7 +672,7 @@ Medium.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password4',
   inputmode: 'password',
   pattern: null,
   vModel: '',
@@ -684,7 +685,7 @@ Medium.args = {
 export const Large = Template.bind({})
 Large.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password5',
   size: 'large',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -692,7 +693,7 @@ Large.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   required: false,
   disabled: false,
   readonly: false,
@@ -700,7 +701,7 @@ Large.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password5',
   inputmode: 'password',
   pattern: null,
   vModel: '',
@@ -713,7 +714,7 @@ Large.args = {
 export const Round = Template.bind({})
 Round.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password6',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -721,7 +722,7 @@ Round.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   required: false,
   disabled: false,
   readonly: false,
@@ -729,7 +730,7 @@ Round.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password6',
   inputmode: 'password',
   pattern: null,
   vModel: '',
@@ -742,7 +743,7 @@ Round.args = {
 export const Square = Template.bind({})
 Square.args = {
   label: 'Password',
-  id: 'password',
+  id: 'password7',
   size: 'medium',
   appearance: 'neutral',
   widthBehavior: 'auto',
@@ -750,7 +751,7 @@ Square.args = {
   icon: null,
   prefix: null,
   suffix: null,
-  placeholder: 'Enter your password address',
+  placeholder: 'Enter your password',
   required: false,
   disabled: false,
   readonly: false,
@@ -758,7 +759,7 @@ Square.args = {
   minlength: null,
   autocomplete: null,
   autofocus: false,
-  name: 'password',
+  name: 'password7',
   inputmode: 'password',
   pattern: null,
   vModel: '',
