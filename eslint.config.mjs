@@ -12,11 +12,8 @@ export default [
   {
     files: ['**/*.js', '**/*.vue'],
     rules: {
-      indent: ['error', 2],
-      quotes: ['error', 'single'],
       semi: ['error', 'never'],
       'vue/multi-word-component-names': ['error'],
-
       'vue/html-self-closing': 'off',
       'vue/require-default-prop': 'off',
       'vue/max-attributes-per-line': 'off'
