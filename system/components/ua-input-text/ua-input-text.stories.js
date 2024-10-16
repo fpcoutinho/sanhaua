@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputText from './ua-input-text.vue'
 
 export default {
-  title: 'Components/UA-Input-Text',
+  title: 'Component Library/UA-Input-Text',
   component: uaInputText,
   tags: ['autodocs'],
   parameters: {

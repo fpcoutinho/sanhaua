@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputDate from './ua-input-date.vue'
 
 export default {
-  title: 'Components/UA-Input-Date',
+  title: 'Component Library/UA-Input-Date',
   component: uaInputDate,
   tags: ['autodocs'],
   parameters: {
