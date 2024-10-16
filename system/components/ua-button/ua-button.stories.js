@@ -1,7 +1,6 @@
 import { fn } from '@storybook/test'
 import uaButton from './ua-button.vue'
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
   title: 'Components/UA-Button',
   component: uaButton,
@@ -253,7 +252,6 @@ export default {
       }
     }
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
     click: fn()
   }
@@ -285,7 +283,6 @@ const Template = (args) => ({
   `
 })
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Example = Template.bind({})
 Example.args = {
   type: 'button',
