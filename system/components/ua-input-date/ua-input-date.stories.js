@@ -500,28 +500,28 @@ const Template = (args) => ({
   },
   template: `
     <ua-input-date
-      :label="args.label"
-      :id="args.id"
-      :size="args.size"
-      :appearance="args.appearance"
-      :width-behavior="args.widthBehavior"
-      :border-style="args.borderStyle"
-      :icon="args.icon"
-      :prefix="args.prefix"
-      :suffix="args.suffix"
-      :required="args.required"
-      :disabled="args.disabled"
-      :readonly="args.readonly"
-      :max="args.max"
-      :min="args.min"
-      :autocomplete="args.autocomplete"
-      :autofocus="args.autofocus"
-      :name="args.name"
-      v-model="args.vModel"
-      @change="args.change"
-      @input="args.input"
-      @focus="args.focus"
-      @blur="args.blur"
+      :label=args.label
+      :id=args.id
+      :size=args.size
+      :appearance=args.appearance
+      :width-behavior=args.widthBehavior
+      :border-style=args.borderStyle
+      :icon=args.icon
+      :prefix=args.prefix
+      :suffix=args.suffix
+      :required=args.required
+      :disabled=args.disabled
+      :readonly=args.readonly
+      :max=args.max
+      :min=args.min
+      :autocomplete=args.autocomplete
+      :autofocus=args.autofocus
+      :name=args.name
+      v-model=args.vModel
+      @change=args.change
+      @input=args.input
+      @focus=args.focus
+      @blur=args.blur
     />
   `
 })
@@ -545,11 +545,7 @@ Example.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date1',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const WithPrefix = Template.bind({})
@@ -573,11 +569,7 @@ WithPrefix.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date2',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Small = Template.bind({})
@@ -599,11 +591,7 @@ Small.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date3',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Medium = Template.bind({})
@@ -625,11 +613,7 @@ Medium.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date4',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Large = Template.bind({})
@@ -651,11 +635,7 @@ Large.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date5',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Round = Template.bind({})
@@ -677,11 +657,7 @@ Round.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date6',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Square = Template.bind({})
@@ -703,9 +679,5 @@ Square.args = {
   autocomplete: true,
   autofocus: false,
   name: 'date7',
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }

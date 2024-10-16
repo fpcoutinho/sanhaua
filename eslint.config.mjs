@@ -16,7 +16,8 @@ export default [
       'vue/multi-word-component-names': ['error'],
       'vue/html-self-closing': 'off',
       'vue/require-default-prop': 'off',
-      'vue/max-attributes-per-line': 'off'
+      'vue/max-attributes-per-line': 'off',
+      'vue/singleline-html-element-content-newline': 'off'
     },
     ignores: [
       '**/.storybook',

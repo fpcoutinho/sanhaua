@@ -1,15 +1,15 @@
 <template>
   <div class="sanhaua light">
-    <ua-button> Button </ua-button>
+    <ua-button size="medium" type="button" appearance="ghost"> Button </ua-button>
   </div>
-  <hr>
+  <hr />
   <div class="sanhaua dark">
-    <ua-button> Button </ua-button>
+    <ua-button size="medium" type="button" appearance="ghost"> Button </ua-button>
   </div>
 </template>
 
 <script setup>
-import UaButton from '../system/components/ua-button/ua-button.vue'
+import UaButton from '@root/system/components/ua-button/ua-button.vue'
 </script>
 
 <style lang="scss">

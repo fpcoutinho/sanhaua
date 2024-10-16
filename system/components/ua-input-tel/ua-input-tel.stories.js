@@ -536,31 +536,31 @@ const Template = (args) => ({
   },
   template: `
     <ua-input-tel
-      :label="args.label"
-      :id="args.id"
-      :size="args.size"
-      :appearance="args.appearance"
-      :width-behavior="args.widthBehavior"
-      :border-style="args.borderStyle"
-      :icon="args.icon"
-      :prefix="args.prefix"
-      :suffix="args.suffix"
-      :placeholder="args.placeholder"
-      :required="args.required"
-      :disabled="args.disabled"
-      :readonly="args.readonly"
-      :maxlength="args.maxlength"
-      :minlength="args.minlength"
-      :autocomplete="args.autocomplete"
-      :autofocus="args.autofocus"
-      :name="args.name"
-      :inputmode="args.inputmode"
-      :pattern="args.pattern"
-      v-model="args.vModel"
-      @change="args.change"
-      @input="args.input"
-      @focus="args.focus"
-      @blur="args.blur"
+      :label=args.label
+      :id=args.id
+      :size=args.size
+      :appearance=args.appearance
+      :width-behavior=args.widthBehavior
+      :border-style=args.borderStyle
+      :icon=args.icon
+      :prefix=args.prefix
+      :suffix=args.suffix
+      :placeholder=args.placeholder
+      :required=args.required
+      :disabled=args.disabled
+      :readonly=args.readonly
+      :maxlength=args.maxlength
+      :minlength=args.minlength
+      :autocomplete=args.autocomplete
+      :autofocus=args.autofocus
+      :name=args.name
+      :inputmode=args.inputmode
+      :pattern=args.pattern
+      v-model=args.vModel
+      @change=args.change
+      @input=args.input
+      @focus=args.focus
+      @blur=args.blur
     />
   `
 })
@@ -587,11 +587,7 @@ Example.args = {
   name: 'tel',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const WithPrefixAndSuffix = Template.bind({})
@@ -617,11 +613,7 @@ WithPrefixAndSuffix.args = {
   name: 'tel1',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Small = Template.bind({})
@@ -646,11 +638,7 @@ Small.args = {
   name: 'tel2',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Medium = Template.bind({})
@@ -675,11 +663,7 @@ Medium.args = {
   name: 'tel3',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Large = Template.bind({})
@@ -704,11 +688,7 @@ Large.args = {
   name: 'tel4',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Round = Template.bind({})
@@ -733,11 +713,7 @@ Round.args = {
   name: 'tel5',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Square = Template.bind({})
@@ -762,9 +738,5 @@ Square.args = {
   name: 'tel6',
   inputmode: 'tel',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }

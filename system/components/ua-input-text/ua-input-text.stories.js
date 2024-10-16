@@ -559,10 +559,10 @@ export default {
     }
   },
   args: {
-    change: fn(),
     input: fn(),
     focus: fn(),
-    blur: fn()
+    blur: fn(),
+    change: fn()
   }
 }
 
@@ -573,33 +573,33 @@ const Template = (args) => ({
   },
   template: `
     <ua-input-text
-      :label="args.label"
-      :id="args.id"
-      :size="args.size"
-      :appearance="args.appearance"
-      :width-behavior="args.widthBehavior"
-      :border-style="args.borderStyle"
-      :icon="args.icon"
-      :prefix="args.prefix"
-      :suffix="args.suffix"
-      :placeholder="args.placeholder"
-      :required="args.required"
-      :disabled="args.disabled"
-      :readonly="args.readonly"
-      :maxlength="args.maxlength"
-      :minlength="args.minlength"
-      :autocomplete="args.autocomplete"
-      :autocorrect="args.autocorrect"
-      :spellcheck="args.spellcheck"
-      :autofocus="args.autofocus"
-      :name="args.name"
-      :inputmode="args.inputmode"
-      :pattern="args.pattern"
-      v-model="args.vModel"
-      @change="args.change"
-      @input="args.input"
-      @focus="args.focus"
-      @blur="args.blur"
+      :label=args.label
+      :id=args.id
+      :size=args.size
+      :appearance=args.appearance
+      :width-behavior=args.widthBehavior
+      :border-style=args.borderStyle
+      :icon=args.icon
+      :prefix=args.prefix
+      :suffix=args.suffix
+      :placeholder=args.placeholder
+      :required=args.required
+      :disabled=args.disabled
+      :readonly=args.readonly
+      :maxlength=args.maxlength
+      :minlength=args.minlength
+      :autocomplete=args.autocomplete
+      :autocorrect=args.autocorrect
+      :spellcheck=args.spellcheck
+      :autofocus=args.autofocus
+      :name=args.name
+      :inputmode=args.inputmode
+      :pattern=args.pattern
+      v-model=args.vModel
+      @change=args.change
+      @input=args.input
+      @focus=args.focus
+      @blur=args.blur
     />
   `
 })
@@ -628,11 +628,7 @@ Example.args = {
   name: 'text',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const WithPrefixAndSuffix = Template.bind({})
@@ -660,11 +656,7 @@ WithPrefixAndSuffix.args = {
   name: 'text2',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Small = Template.bind({})
@@ -691,11 +683,7 @@ Small.args = {
   name: 'text3',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Medium = Template.bind({})
@@ -722,11 +710,7 @@ Medium.args = {
   name: 'text4',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Large = Template.bind({})
@@ -753,11 +737,7 @@ Large.args = {
   name: 'text5',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Round = Template.bind({})
@@ -784,11 +764,7 @@ Round.args = {
   name: 'text6',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
 
 export const Square = Template.bind({})
@@ -815,9 +791,5 @@ Square.args = {
   name: 'text7',
   inputmode: 'text',
   pattern: null,
-  vModel: '',
-  change: null,
-  input: null,
-  focus: null,
-  blur: null
+  vModel: ''
 }
