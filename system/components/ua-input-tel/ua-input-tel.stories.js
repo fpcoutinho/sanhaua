@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputTel from './ua-input-tel.vue'
 
 export default {
-  title: 'Components/UA-Input-Tel',
+  title: 'Component Library/UA-Input-Tel',
   component: uaInputTel,
   tags: ['autodocs'],
   parameters: {

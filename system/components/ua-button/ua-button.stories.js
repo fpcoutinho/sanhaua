@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaButton from './ua-button.vue'
 
 export default {
-  title: 'Components/UA-Button',
+  title: 'Component Library/UA-Button',
   component: uaButton,
   tags: ['autodocs'],
   parameters: {

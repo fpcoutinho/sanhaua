@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputRadio from './ua-input-radio.vue'
 
 export default {
-  title: 'Components/UA-Input-Radio',
+  title: 'Component Library/UA-Input-Radio',
   component: uaInputRadio,
   tags: ['autodocs'],
   parameters: {

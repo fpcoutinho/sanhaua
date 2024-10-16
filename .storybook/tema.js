@@ -3,7 +3,6 @@ import { create } from '@storybook/theming'
 export default create({
   base: 'dark',
   brandTitle: 'Sanhauá',
-  brandUrl: 'https://fpcoutinho.github.io/sanhaua/',
   brandImage:
     'https://raw.githubusercontent.com/fpcoutinho/sanhaua/refs/heads/main/assets/logo.png',
   brandTarget: '_self',

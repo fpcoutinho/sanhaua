@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaToast from './ua-toast.vue'
 
 export default {
-  title: 'Components/UA-Toast',
+  title: 'Component Library/UA-Toast',
   component: uaToast,
   tags: ['autodocs'],
   parameters: {

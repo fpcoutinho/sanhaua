@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputEmail from './ua-input-email.vue'
 
 export default {
-  title: 'Components/UA-Input-Email',
+  title: 'Component Library/UA-Input-Email',
   component: uaInputEmail,
   tags: ['autodocs'],
   parameters: {

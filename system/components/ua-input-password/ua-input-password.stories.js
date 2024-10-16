@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import uaInputPassword from './ua-input-password.vue'
 
 export default {
-  title: 'Components/UA-Input-Password',
+  title: 'Component Library/UA-Input-Password',
   component: uaInputPassword,
   tags: ['autodocs'],
   parameters: {

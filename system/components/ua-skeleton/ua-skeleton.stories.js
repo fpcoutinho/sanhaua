@@ -1,7 +1,7 @@
 import uaSkeleton from './ua-skeleton.vue'
 
 export default {
-  title: 'Components/UA-Skeleton',
+  title: 'Component Library/UA-Skeleton',
   component: uaSkeleton,
   tags: ['autodocs'],
   parameters: {
