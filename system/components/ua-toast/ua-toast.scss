@@ -6,6 +6,7 @@
     border-radius: map.get($border-radius, "medium");
     padding: spacing(3);
     width: 100%;
+    box-sizing: border-box;
     transition:
       transform 0.3s,
       opacity 0.3s;
@@ -23,7 +24,7 @@
         gap: spacing(2);
 
         .title {
-          @include body-2-bold;
+          @include body-1-bold;
         }
       }
 
