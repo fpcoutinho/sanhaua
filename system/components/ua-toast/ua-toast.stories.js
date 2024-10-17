@@ -30,7 +30,7 @@ export default {
         }
       },
       control: { type: 'select' },
-      options: ['neutral', 'success', 'warning', 'danger', 'info']
+      options: ['neutral', 'success', 'warning', 'danger', 'informative']
     },
     title: {
       name: 'title',
@@ -134,7 +134,7 @@ Danger.args = {
 
 export const Info = Template.bind({})
 Info.args = {
-  appearance: 'info',
+  appearance: 'informative',
   title: 'Info Toast',
-  message: 'This is an info toast message.'
+  message: 'This is an informative toast message.'
 }

@@ -28,7 +28,7 @@ const props = defineProps({
   appearance: {
     type: String,
     required: true,
-    validator: (value) => ['neutral', 'success', 'warning', 'danger', 'info'].includes(value)
+    validator: (value) => ['neutral', 'success', 'warning', 'danger', 'informative'].includes(value)
   },
   title: {
     type: String,
@@ -56,7 +56,7 @@ const toastIcon = computed(() => {
       return 'warning'
     case 'danger':
       return 'error'
-    case 'info':
+    case 'informative':
       return 'info'
     default:
       return 'info'

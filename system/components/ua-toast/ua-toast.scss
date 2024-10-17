@@ -46,22 +46,58 @@
 
   &.light {
     .ua-toast {
-      background-color: #f0f0f0;
-      color: #333;
+      &.neutral {
+        background-color: map.get($color-neutral-light, "800");
+        color: map.get($color-neutral-light, "100");
+      }
 
-      .icon {
-        color: #333;
+      &.success {
+        background-color: map.get($color-success-light, "100");
+        color: map.get($color-success-light, "800");
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-light, "100");
+        color: map.get($color-warning-light, "800");
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-light, "100");
+        color: map.get($color-danger-light, "800");
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-light, "100");
+        color: map.get($color-informative-light, "800");
       }
     }
   }
 
   &.dark {
     .ua-toast {
-      background-color: #333;
-      color: #f0f0f0;
+      &.neutral {
+        background-color: map.get($color-neutral-dark, "800");
+        color: map.get($color-neutral-dark, "100");
+      }
 
-      .icon {
-        color: #f0f0f0;
+      &.success {
+        background-color: map.get($color-success-dark, "100");
+        color: map.get($color-success-dark, "800");
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-dark, "100");
+        color: map.get($color-warning-dark, "800");
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-dark, "100");
+        color: map.get($color-danger-dark, "800");
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-dark, "100");
+        color: map.get($color-informative-dark, "800");
       }
     }
   }

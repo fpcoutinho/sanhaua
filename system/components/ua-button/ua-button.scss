@@ -93,7 +93,8 @@
         background-color: map.get($color-neutral-light, "100");
         color: map.get($color-primary-light, "500");
         border-color: map.get($color-primary-light, "500");
-        border-width: map.get($border-width, "small");
+        border-width: map.get($border-width, "medium");
+        border-style: solid;
 
         &:hover {
           background-color: map.get($color-neutral-light, "200");
@@ -171,7 +172,8 @@
         background-color: map.get($color-neutral-dark, "100");
         color: map.get($color-primary-dark, "500");
         border-color: map.get($color-primary-dark, "500");
-        border-width: map.get($border-width, "small");
+        border-width: map.get($border-width, "medium");
+        border-style: solid;
 
         &:hover {
           background-color: map.get($color-neutral-dark, "200");

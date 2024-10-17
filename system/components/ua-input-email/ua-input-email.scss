@@ -102,4 +102,78 @@
       }
     }
   }
+
+  &.light {
+    .label {
+      color: map.get($color-neutral-light, "900");
+    }
+
+    .ua-input-email {
+      background-color: map.get($color-neutral-light, "100");
+      color: map.get($color-neutral-light, "900");
+
+      .field {
+        background-color: map.get($color-neutral-light, "100");
+        color: map.get($color-neutral-light, "900");
+
+        &::placeholder {
+          color: map.get($color-neutral-light, "500");
+        }
+      }
+
+      .prefix,
+      .suffix {
+        color: map.get($color-neutral-light, "900");
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-light, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-light, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-light, "600");
+      }
+    }
+  }
+
+  &.dark {
+    .label {
+      color: map.get($color-neutral-dark, "900");
+    }
+
+    .ua-input-email {
+      background-color: map.get($color-neutral-dark, "100");
+      color: map.get($color-neutral-dark, "900");
+
+      .field {
+        background-color: map.get($color-neutral-dark, "100");
+        color: map.get($color-neutral-dark, "900");
+
+        &::placeholder {
+          color: map.get($color-neutral-dark, "500");
+        }
+      }
+
+      .prefix,
+      .suffix {
+        color: map.get($color-neutral-dark, "900");
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-dark, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-dark, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-dark, "600");
+      }
+    }
+  }
 }
