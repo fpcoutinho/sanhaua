@@ -49,7 +49,7 @@ const props = defineProps({
         'success',
         'warning',
         'danger',
-        'info',
+        'informative',
         'ghost'
       ].includes(value)
   },

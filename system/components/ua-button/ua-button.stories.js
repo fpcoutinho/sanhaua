@@ -67,7 +67,16 @@ export default {
         }
       },
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'info', 'ghost']
+      options: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'success',
+        'warning',
+        'danger',
+        'informative',
+        'ghost'
+      ]
     },
     widthBehavior: {
       name: 'width-behavior',
@@ -288,6 +297,125 @@ Example.args = {
   type: 'button',
   size: 'medium',
   appearance: 'primary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'secondary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Tertiary = Template.bind({})
+Tertiary.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'tertiary',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Ghost = Template.bind({})
+Ghost.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'ghost',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Success = Template.bind({})
+Success.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'success',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Warning = Template.bind({})
+Warning.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'warning',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Danger = Template.bind({})
+Danger.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'danger',
+  widthBehavior: 'auto',
+  borderStyle: 'square',
+  leftIcon: null,
+  rightIcon: null,
+  disabled: false,
+  autofocus: false,
+  value: null,
+  name: null,
+  form: null,
+  default: 'Button'
+}
+
+export const Info = Template.bind({})
+Info.args = {
+  type: 'button',
+  size: 'medium',
+  appearance: 'informative',
   widthBehavior: 'auto',
   borderStyle: 'square',
   leftIcon: null,

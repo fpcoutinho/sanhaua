@@ -68,4 +68,160 @@
       cursor: not-allowed;
     }
   }
+
+  &.light {
+    .ua-button {
+      &.primary {
+        background-color: map.get($color-primary-light, "500");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-primary-light, "600");
+        }
+      }
+
+      &.secondary {
+        background-color: map.get($color-secondary-light, "600");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-secondary-light, "700");
+        }
+      }
+
+      &.tertiary {
+        background-color: map.get($color-neutral-light, "100");
+        color: map.get($color-primary-light, "500");
+        border-color: map.get($color-primary-light, "500");
+        border-width: map.get($border-width, "small");
+
+        &:hover {
+          background-color: map.get($color-neutral-light, "200");
+        }
+      }
+
+      &.ghost {
+        background-color: transparent;
+        color: map.get($color-neutral-light, "900");
+
+        &:hover {
+          background-color: map.get($color-neutral-light, "300");
+        }
+      }
+
+      &.success {
+        background-color: map.get($color-success-light, "600");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-success-light, "700");
+        }
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-light, "600");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-danger-light, "700");
+        }
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-light, "600");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-warning-light, "700");
+        }
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-light, "600");
+        color: map.get($color-neutral-light, "100");
+
+        &:hover {
+          background-color: map.get($color-informative-light, "700");
+        }
+      }
+    }
+  }
+
+  &.dark {
+    .ua-button {
+      &.primary {
+        background-color: map.get($color-primary-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-primary-dark, "600");
+        }
+      }
+
+      &.secondary {
+        background-color: map.get($color-secondary-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-secondary-dark, "600");
+        }
+      }
+
+      &.tertiary {
+        background-color: map.get($color-neutral-dark, "100");
+        color: map.get($color-primary-dark, "500");
+        border-color: map.get($color-primary-dark, "500");
+        border-width: map.get($border-width, "small");
+
+        &:hover {
+          background-color: map.get($color-neutral-dark, "200");
+        }
+      }
+
+      &.ghost {
+        background-color: map.get($color-neutral-dark, "100");
+        color: map.get($color-neutral-dark, "900");
+
+        &:hover {
+          background-color: map.get($color-neutral-dark, "300");
+        }
+      }
+
+      &.success {
+        background-color: map.get($color-success-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-success-dark, "600");
+        }
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-danger-dark, "600");
+        }
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-warning-dark, "600");
+        }
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+
+        &:hover {
+          background-color: map.get($color-informative-dark, "600");
+        }
+      }
+    }
+  }
 }
