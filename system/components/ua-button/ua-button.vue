@@ -13,9 +13,9 @@
     <span v-if="props.leftIcon" class="material-symbols-rounded icon">
       {{ props.leftIcon }}
     </span>
-    <div v-if="$slots.default" class="text">
+    <span v-if="$slots.default" class="text">
       <slot></slot>
-    </div>
+    </span>
     <span v-if="props.rightIcon" class="material-symbols-rounded icon">
       {{ props.rightIcon }}
     </span>
@@ -49,7 +49,7 @@ const props = defineProps({
         'success',
         'warning',
         'danger',
-        'info',
+        'informative',
         'ghost'
       ].includes(value)
   },

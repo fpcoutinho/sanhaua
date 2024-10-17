@@ -1,3 +1,15 @@
 @import "@theme/design-tokens/design-tokens";
 @import "@theme/global/global";
 @import "@theme/responsiveness/responsiveness";
+
+.sanhaua {
+  &.light {
+    background-color: map.get($color-neutral-light, "100");
+    color: map.get($color-neutral-light, "900");
+  }
+
+  &.dark {
+    background-color: map.get($color-neutral-dark, "100");
+    color: map.get($color-neutral-dark, "900");
+  }
+}
