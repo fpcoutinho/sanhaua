@@ -30,9 +30,6 @@
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <span v-if="props.suffix" class="suffix">
-        {{ props.suffix }}
-      </span>
     </div>
   </label>
 </template>
@@ -68,7 +65,6 @@ const props = defineProps({
   label: { type: String },
   icon: { type: String },
   prefix: { type: String },
-  suffix: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
   readonly: { type: Boolean },

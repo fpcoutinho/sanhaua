@@ -156,23 +156,6 @@ export default {
         }
       }
     },
-    suffix: {
-      name: 'suffix',
-      type: {
-        name: 'string',
-        required: false
-      },
-      defaultValue: null,
-      description: 'The suffix to display on the right of the input field.',
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
     required: {
       name: 'required',
       type: {
@@ -508,7 +491,6 @@ const Template = (args) => ({
       :border-style=args.borderStyle
       :icon=args.icon
       :prefix=args.prefix
-      :suffix=args.suffix
       :required=args.required
       :disabled=args.disabled
       :readonly=args.readonly
@@ -535,7 +517,6 @@ Example.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   id: 'date1',
   disabled: false,
   required: false,
@@ -559,7 +540,6 @@ WithPrefix.args = {
   borderStyle: 'square',
   icon: null,
   prefix: 'João Pessoa, ',
-  suffix: null,
   placeholder: null,
   required: false,
   disabled: false,
@@ -582,7 +562,6 @@ Small.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   required: false,
   disabled: false,
   readonly: false,
@@ -604,7 +583,6 @@ Medium.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   required: false,
   disabled: false,
   readonly: false,
@@ -626,7 +604,6 @@ Large.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   required: false,
   disabled: false,
   readonly: false,
@@ -648,7 +625,6 @@ Round.args = {
   borderStyle: 'round',
   icon: null,
   prefix: null,
-  suffix: null,
   required: false,
   disabled: false,
   readonly: false,
@@ -670,7 +646,6 @@ Square.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   required: false,
   disabled: false,
   readonly: false,

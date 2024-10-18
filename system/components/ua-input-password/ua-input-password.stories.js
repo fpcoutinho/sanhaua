@@ -156,23 +156,6 @@ export default {
         }
       }
     },
-    suffix: {
-      name: 'suffix',
-      type: {
-        name: 'string',
-        required: false
-      },
-      defaultValue: null,
-      description: 'The suffix to display on the right of the input field.',
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: {
-          summary: null
-        }
-      }
-    },
     placeholder: {
       name: 'placeholder',
       type: {
@@ -544,7 +527,6 @@ const Template = (args) => ({
       :border-style=args.borderStyle
       :icon=args.icon
       :prefix=args.prefix
-      :suffix=args.suffix
       :placeholder=args.placeholder
       :required=args.required
       :disabled=args.disabled
@@ -574,7 +556,6 @@ Example.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   id: 'password',
   disabled: false,
@@ -626,7 +607,6 @@ Small.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   required: false,
   disabled: false,
@@ -651,7 +631,6 @@ Medium.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   required: false,
   disabled: false,
@@ -676,7 +655,6 @@ Large.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   required: false,
   disabled: false,
@@ -701,7 +679,6 @@ Round.args = {
   borderStyle: 'round',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   required: false,
   disabled: false,
@@ -726,7 +703,6 @@ Square.args = {
   borderStyle: 'square',
   icon: null,
   prefix: null,
-  suffix: null,
   placeholder: 'Enter your password',
   required: false,
   disabled: false,
