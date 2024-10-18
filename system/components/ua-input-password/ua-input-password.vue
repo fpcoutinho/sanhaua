@@ -25,22 +25,25 @@
         :inputmode="props.inputmode"
         :pattern="props.pattern"
         :class="inputClasses"
-        type="password"
+        :type="inputTypeByVisibility"
         class="field"
         @input="emit('input', $event)"
         @focus="emit('focus', $event)"
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <span v-if="props.suffix" class="suffix">
-        {{ props.suffix }}
-      </span>
+      <label v-if="hasPasswordTypedIn" class="toggle-password-visibility-button">
+        <span class="material-symbols-rounded icon">
+          {{ passwordVisibilityIcon }}
+        </span>
+        <input v-model="passwordVisibilityState" class="hidden-checkbox" type="checkbox" />
+      </label>
     </div>
   </label>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 
 const inputValue = defineModel({ type: String })
 const emit = defineEmits(['input', 'focus', 'blur', 'change'])
@@ -70,7 +73,6 @@ const props = defineProps({
   label: { type: String },
   icon: { type: String },
   prefix: { type: String },
-  suffix: { type: String },
   placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
@@ -158,6 +160,22 @@ const wrapperClasses = computed(() => {
   return {
     disabled: props.disabled
   }
+})
+
+const passwordVisibilityState = ref(false)
+
+const hasPasswordTypedIn = computed(() => inputValue.value.length > 0)
+
+const passwordVisibilityIcon = computed(() => {
+  return passwordVisibilityState.value ? 'visibility_off' : 'visibility'
+})
+
+const inputTypeByVisibility = computed(() => {
+  return passwordVisibilityState.value ? 'text' : 'password'
+})
+
+onMounted(() => {
+  passwordVisibilityState.value = false
 })
 </script>
 
