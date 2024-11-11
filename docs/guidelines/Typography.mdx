@@ -4,16 +4,119 @@ import { Meta } from '@storybook/blocks'
 
 # Typography
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Typography is a key element of design that helps to create a visual hierarchy and improve readability. This guide provides an overview of the typography styles used in our design system.
 
 ## Font Family
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Our design system uses the following font family:
+
+- Lato, sans-serif
 
 ## Font Weights
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+We use a variety of font weights to create emphasis and hierarchy in our text. The available font weights are:
+
+- Regular: 400
+- Medium: 500
+- Bold: 700
+- Black: 900
 
 ## Font Tokens
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Font tokens are predefined styles that can be applied to text elements. These tokens ensure consistency and make it easy to apply typography styles across the application.
+
+Usage example:
+
+```css
+// default usage
+@include $body-1;
+
+// custom example
+@include $body-1($responsive: true, $breakpoint: 'md');
+```
+
+#### Headline 1
+
+- **Font Size**: 48px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 36px
+
+#### Headline 2
+
+- **Font Size**: 32px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 28px
+
+#### Headline 3
+
+- **Font Size**: 28px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 24px
+
+#### Headline 4
+
+- **Font Size**: 24px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 20px
+
+#### Headline 5
+
+- **Font Size**: 20px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 18px
+
+#### Headline 6
+
+- **Font Size**: 18px
+- **Font Weight**: Black (900)
+- **Responsive Font Size**: 15px
+
+#### Body 1
+
+- **Font Size**: 17px
+- **Font Weight**: Regular (400)
+- **Responsive Font Size**: 14px
+
+#### Body 2
+
+- **Font Size**: 15px
+- **Font Weight**: Regular (400)
+- **Responsive Font Size**: 12px
+
+#### Body 1 Bold
+
+- **Font Size**: 17px
+- **Font Weight**: Bold (700)
+- **Responsive Font Size**: 15px
+
+#### Body 2 Bold
+
+- **Font Size**: 15px
+- **Font Weight**: Bold (700)
+- **Responsive Font Size**: 13px
+
+#### Subtitle 1
+
+- **Font Size**: 15px
+- **Font Weight**: Light (300)
+- **Responsive Font Size**: 12px
+
+#### Subtitle 2
+
+- **Font Size**: 12px
+- **Font Weight**: Light (300)
+- **Responsive Font Size**: 10px
+
+#### Overline
+
+- **Font Size**: 11px
+- **Font Weight**: Regular (400)
+- **Text Transform**: Uppercase
+- **Letter Spacing**: 1px
+- **Responsive Font Size**: 9px
+
+#### Caption
+
+- **Font Size**: 13px
+- **Font Weight**: Regular (400)
+- **Responsive Font Size**: 11px

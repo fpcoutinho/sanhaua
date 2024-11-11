@@ -4,7 +4,7 @@ import { Meta } from '@storybook/blocks'
 
 # Iconography
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Icons are a crucial part of our design system, providing visual cues and enhancing the user experience. This guide provides an overview of the icon styles used in our design system.
 
 ## Icon Family
 
@@ -15,8 +15,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit
 <span class="material-symbols-rounded"> mail </span>
 <br />
 
-Os ícones utilizados são da família [Material Symbols Rounded](https://fonts.google.com/icons).
+The icons used are from the [Material Symbols Rounded](https://fonts.google.com/icons) family.
 
 ## Icon Sizes & Tokens
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Icon tokens are predefined styles that can be applied to icons. These tokens ensure consistency and make it easy to apply icon styles across the application. Weight and breakpoint for responsive sizes can be adjusted as needed.
+
+Usage example:
+
+```css
+// default usage
+@include $icon-1;
+
+// custom example
+@include $icon-1($responsive: true, $breakpoint: 'md', $weight: 'bold');
+```
+
+### Icon 1
+
+- **Size**: 24px
+- **Default weight**: Regular (400)
+- **Responsive Size**: 22px
+
+### Icon 2
+
+- **Size**: 22px
+- **Default weight**: Regular (400)
+- **Responsive Size**: 20px
+
+### Icon 3
+
+- **Size**: 20px
+- **Default weight**: Regular (400)
+- **Responsive Size**: 18px
+
+### Icon 4
+
+- **Size**: 16px
+- **Default weight**: Regular (400)
+- **Responsive Size**: 14px

@@ -4,16 +4,72 @@ import { Meta } from '@storybook/blocks'
 
 # Layout
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+The layout guidelines help to create a consistent and responsive design. This guide provides an overview of the layout styles used in our design system.
 
 ## Sizing
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Consistent sizing helps to maintain a uniform look and feel across the application. We use functions to calculate height and width based on predefined values. Height and Width values are based on a `1920x1080` screen size.
+
+### Height
+
+The `height` function calculates the height based on a multiplier of 90px (1080 divided by 12).
+
+- **Example**: `height(1)` returns `90px`
+- **Example**: `height(2)` returns `180px`
+- **Special Case**: `height("half")` returns `45px`
+
+### Width
+
+The `width` function calculates the width based on a multiplier of 160px (1920 divided by 12).
+
+- **Example**: `width(1)` returns `160px`
+- **Example**: `width(2)` returns `320px`
+- **Special Case**: `width("half")` returns `80px`
 
 ## Spacing
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+The `spacing` function calculates spacing based on a multiplier of 4px.
 
-## Layout Composition
+- **Example**: `spacing(1)` returns `4px`
+- **Example**: `spacing(2)` returns `8px`
+- **Special Case**: `spacing("half")` returns `2px`
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+## Responsiveness
+
+Responsive design ensures that the application looks good on all devices. We use mixins to apply styles based on breakpoints.
+
+### Breakpoints
+
+The breakpoints are defined as follows:
+
+- **nn**: 360px
+- **xs**: 576px
+- **sm**: 768px
+- **rg**: 992px
+- **md**: 1280px
+- **lg**: 1400px
+- **gt**: 1920px
+
+### Media Queries
+
+We use the following mixins to apply styles based on breakpoints:
+
+- **breakpoint-min**: Applies styles for screens larger than the specified breakpoint.
+- **breakpoint-max**: Applies styles for screens smaller than the specified breakpoint.
+- **breakpoint-between**: Applies styles for screens between the specified breakpoints.
+
+#### Example Usage
+
+```css
+@include breakpoint-min("sm") {
+  // Styles for screens larger than 768px
+}
+
+@include breakpoint-max("md") {
+  // Styles for screens smaller than 1280px
+}
+
+@include breakpoint-between("sm", "md") {
+  // Styles for screens between 768px and 1280px
+}
+```
