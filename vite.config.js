@@ -35,6 +35,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
+            silenceDeprecations: ['import'],
         additionalData: `
           @use 'sass:map';
           @import "@theme/design-tokens/design-tokens.scss";
