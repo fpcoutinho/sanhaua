@@ -2,24 +2,66 @@ import './ua-skeleton.js'
 
 export default {
   title: 'Component Library/UA-Skeleton',
+  component: 'ua-skeleton',
   tags: ['autodocs'],
+  parameters: { docs: { subtitle: "A placeholder that represents the shape of content while it loads." } },
   argTypes: {
-    format: { control: 'select', options: ['square', 'round', 'circle'] }
+  "format": {
+    "description": "Controls the format variant.",
+    "control": "select",
+    "options": [
+      "square",
+      "round",
+      "circle"
+    ]
   },
+  "width": {
+    "description": "Sets the width value.",
+    "control": "text"
+  },
+  "height": {
+    "description": "Sets the height value.",
+    "control": "text"
+  }
+},
   args: {
-    format: 'round',
-    width: '240px',
-    height: '56px'
-  }
+  "format": "square",
+  "width": "240px",
+  "height": "56px"
+}
 }
 
-export const Playground = {
-  render: (args) => {
-    const element = document.createElement('ua-skeleton')
-    element.setAttribute('format', args.format)
-    element.setAttribute('width', args.width)
-    element.setAttribute('height', args.height)
-
-    return element
+const render = (args) => {
+  const element = document.createElement('ua-skeleton')
+  for (const [key, value] of Object.entries(args)) {
+    const attribute = key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)
+    if (value === false || value == null) element.removeAttribute(attribute)
+    else if (value === true) element.setAttribute(attribute, '')
+    else element.setAttribute(attribute, String(value))
   }
+  return element
 }
+
+export const Default = { render, args: {
+  "format": "square",
+  "width": "240px",
+  "height": "56px"
+} }
+
+export const Circle = { render, args: {
+  "format": "circle",
+  "width": "56px",
+  "height": "56px"
+} }
+
+export const Round = { render, args: {
+  "format": "round",
+  "width": "240px",
+  "height": "56px"
+} }
+
+export const Square = { render, args: {
+  "format": "square",
+  "width": "240px",
+  "height": "56px"
+} }
