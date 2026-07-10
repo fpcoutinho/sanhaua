@@ -14,15 +14,15 @@ const config = {
   refs: {
     vue: {
       title: 'Vue',
-      url: process.env.NODE_ENV === 'production' ? './vue' : 'http://localhost:6007'
+      url: process.env.NODE_ENV === 'production' ? './vue/' : 'http://localhost:6007'
     },
     react: {
       title: 'React',
-      url: process.env.NODE_ENV === 'production' ? './react' : 'http://localhost:6008'
+      url: process.env.NODE_ENV === 'production' ? './react/' : 'http://localhost:6008'
     },
     wc: {
       title: 'Web Components',
-      url: process.env.NODE_ENV === 'production' ? './wc' : 'http://localhost:6009'
+      url: process.env.NODE_ENV === 'production' ? './wc/' : 'http://localhost:6009'
     }
   },
   staticDirs: ['../assets'],

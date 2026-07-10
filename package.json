@@ -58,11 +58,12 @@
     "docs:vue": "storybook dev -c .storybook/vue -p 6007",
     "docs:react": "storybook dev -c .storybook/react -p 6008",
     "docs:wc": "storybook dev -c .storybook/wc -p 6009",
-    "build-docs": "npm run build-docs:host ; npm run build-docs:vue ; npm run build-docs:react ; npm run build-docs:wc",
+    "build-docs": "npm run build-docs:host && npm run build-docs:vue && npm run build-docs:react && npm run build-docs:wc",
     "build-docs:vue": "storybook build -c .storybook/vue -o storybook-static/vue",
     "build-docs:react": "storybook build -c .storybook/react -o storybook-static/react",
     "build-docs:wc": "storybook build -c .storybook/wc -o storybook-static/wc",
-    "build-docs:host": "storybook build -c .storybook -o storybook-static"
+    "build-docs:host": "storybook build -c .storybook -o storybook-static",
+    "docs:preview": "http-server storybook-static -p 6006 -c-1"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -85,6 +86,7 @@
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.29.0",
+    "http-server": "^14.1.1",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
     "react": "18.3.1",

@@ -70,7 +70,7 @@ class UaInputText extends HTMLElement {
         <div class="ua-input-text ${size} ${appearance} ${widthBehavior} ${borderStyle}">
           ${icon ? `<span class="material-symbols-rounded icon">${icon}</span>` : ''}
           ${prefix ? `<span class="prefix">${prefix}</span>` : ''}
-          <input id="${id}" class="field ua-input-text ${size} ${appearance} ${widthBehavior} ${borderStyle}" type="text" value="${value}" placeholder="${placeholder}" ${required ? 'required' : ''} ${disabled ? 'disabled' : ''} ${readOnly ? 'readonly' : ''} ${maxLength ? `maxlength="${maxLength}"` : ''} ${minLength ? `minlength="${minLength}"` : ''} ${autoComplete ? `autocomplete="${autoComplete}"` : ''} ${autoCorrect ? `autocorrect="${autoCorrect}"` : ''} ${autoFocus ? 'autofocus' : ''} ${name ? `name="${name}"` : ''} ${inputMode ? `inputmode="${inputMode}"` : ''} ${pattern ? `pattern="${pattern}"` : ''} ${spellCheck ? 'spellcheck="true"' : 'spellcheck="false"'} />
+          <input id="${id}" class="field" type="text" value="${value}" placeholder="${placeholder}" ${required ? 'required' : ''} ${disabled ? 'disabled' : ''} ${readOnly ? 'readonly' : ''} ${maxLength ? `maxlength="${maxLength}"` : ''} ${minLength ? `minlength="${minLength}"` : ''} ${autoComplete ? `autocomplete="${autoComplete}"` : ''} ${autoCorrect ? `autocorrect="${autoCorrect}"` : ''} ${autoFocus ? 'autofocus' : ''} ${name ? `name="${name}"` : ''} ${inputMode ? `inputmode="${inputMode}"` : ''} ${pattern ? `pattern="${pattern}"` : ''} ${spellCheck ? 'spellcheck="true"' : 'spellcheck="false"'} />
           ${suffix ? `<span class="suffix">${suffix}</span>` : ''}
         </div>
       </label>

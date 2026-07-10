@@ -40,7 +40,7 @@ export default function UaInputText({
         {prefix ? <span className="prefix">{prefix}</span> : null}
         <input
           id={id}
-          className={`field ${fieldClassName}`}
+          className="field"
           type="text"
           value={value}
           placeholder={placeholder}
