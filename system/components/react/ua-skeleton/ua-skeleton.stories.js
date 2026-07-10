@@ -1,4 +1,3 @@
-import { fn } from '@storybook/test'
 import UaSkeleton from './ua-skeleton.jsx'
 
 export default {
