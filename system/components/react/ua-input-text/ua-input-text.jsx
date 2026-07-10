@@ -13,32 +13,42 @@ export default function UaInputText({
   placeholder,
   required = false,
   disabled = false,
-  readOnly = false,
+  readonly,
+  readOnly,
+  maxlength,
   maxLength,
+  minlength,
   minLength,
+  autocomplete,
   autoComplete,
+  autocorrect,
   autoCorrect,
-  autoFocus = false,
+  autofocus,
+  autoFocus,
   name,
+  inputmode,
   inputMode,
   pattern,
-  spellCheck = false,
+  spellcheck,
+  spellCheck,
   value,
   onInput,
   onFocus,
   onBlur,
-  onChange
+  onChange,
+  ...inputProps
 }) {
   const fieldClassName = ['ua-input-text', size, appearance, widthBehavior, borderStyle].join(' ')
   const wrapperClassName = ['form-element-wrapper', disabled ? 'disabled' : ''].join(' ').trim()
 
   return (
-    <label className={wrapperClassName}>
+    <label className={wrapperClassName} htmlFor={id}>
       <span className="label">{label}</span>
       <div className={fieldClassName}>
         {icon ? <span className="material-symbols-rounded icon">{icon}</span> : null}
         {prefix ? <span className="prefix">{prefix}</span> : null}
         <input
+          {...inputProps}
           id={id}
           className="field"
           type="text"
@@ -46,16 +56,16 @@ export default function UaInputText({
           placeholder={placeholder}
           required={required}
           disabled={disabled}
-          readOnly={readOnly}
-          maxLength={maxLength}
-          minLength={minLength}
-          autoComplete={autoComplete}
-          autoCorrect={autoCorrect}
-          autoFocus={autoFocus}
+          readOnly={readOnly ?? readonly ?? false}
+          maxLength={maxLength ?? maxlength}
+          minLength={minLength ?? minlength}
+          autoComplete={autoComplete ?? autocomplete}
+          autoCorrect={autoCorrect ?? autocorrect}
+          autoFocus={autoFocus ?? autofocus ?? false}
           name={name}
-          inputMode={inputMode}
+          inputMode={inputMode ?? inputmode}
           pattern={pattern}
-          spellCheck={spellCheck}
+          spellCheck={spellCheck ?? spellcheck ?? false}
           onInput={onInput}
           onFocus={onFocus}
           onBlur={onBlur}

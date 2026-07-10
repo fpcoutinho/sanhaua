@@ -35,8 +35,8 @@ class UaInputText extends HTMLElement {
     this.render()
   }
 
-  attributeChangedCallback() {
-    this.render()
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) this.render()
   }
 
   render() {
@@ -79,8 +79,13 @@ class UaInputText extends HTMLElement {
     const input = this.querySelector('input')
     if (input) {
       input.addEventListener('input', (event) => {
-        this.setAttribute('value', event.target.value)
-        this.dispatchEvent(new CustomEvent('input', { detail: event, bubbles: true }))
+        this._value = event.target.value
+      })
+      input.addEventListener('focus', (event) => {
+        this.dispatchEvent(new CustomEvent('focus', { detail: event }))
+      })
+      input.addEventListener('blur', (event) => {
+        this.dispatchEvent(new CustomEvent('blur', { detail: event }))
       })
     }
   }

@@ -51,13 +51,6 @@ class UaButton extends HTMLElement {
         ${rightIcon ? `<span class="material-symbols-rounded icon">${rightIcon}</span>` : ''}
       </button>
     `
-
-    const button = this.querySelector('button')
-    if (button) {
-      button.addEventListener('click', (event) => {
-        this.dispatchEvent(new CustomEvent('click', { detail: event, bubbles: true }))
-      })
-    }
   }
 }
 

@@ -1,13 +1,14 @@
+import { fn } from '@storybook/test'
 import UaToast from './ua-toast.jsx'
 
 export default {
   title: 'Component Library/UA-Toast',
   component: UaToast,
   tags: ['autodocs'],
-  parameters: { docs: { subtitle: "A toast displays a brief, unobtrusive message to the user." } },
+  parameters: { docs: { subtitle: "A non-modal message with semantic appearance and a dismiss action." } },
   argTypes: {
   "appearance": {
-    "description": "Controls the appearance variant.",
+    "description": "Sets appearance.",
     "control": "select",
     "options": [
       "neutral",
@@ -18,14 +19,30 @@ export default {
     ]
   },
   "title": {
-    "description": "Sets the title value.",
+    "description": "Sets title.",
     "control": "text"
   },
   "message": {
-    "description": "Sets the message value.",
+    "description": "Sets message.",
     "control": "text"
+  },
+  "onDismiss": {
+    "description": "Handles the dismiss event.",
+    "action": "dismiss",
+    "table": {
+      "category": "Events"
+    }
   }
 },
+  args: {
+  "appearance": "neutral",
+  "title": "Default Toast",
+  "message": "This is a default toast message.",
+  "onDismiss": fn()
+}
+}
+
+export const Default = {
   args: {
   "appearance": "neutral",
   "title": "Default Toast",
@@ -33,32 +50,34 @@ export default {
 }
 }
 
-export const Default = { args: {
-  "appearance": "neutral",
-  "title": "Default Toast",
-  "message": "This is a default toast message."
-} }
-
-export const Success = { args: {
+export const Success = {
+  args: {
   "appearance": "success",
   "title": "Success Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "The operation completed successfully."
+}
+}
 
-export const Warning = { args: {
+export const Warning = {
+  args: {
   "appearance": "warning",
   "title": "Warning Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "Review this information before continuing."
+}
+}
 
-export const Danger = { args: {
+export const Danger = {
+  args: {
   "appearance": "danger",
   "title": "Danger Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "The operation could not be completed."
+}
+}
 
-export const Info = { args: {
+export const Info = {
+  args: {
   "appearance": "informative",
   "title": "Info Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "Here is some useful information."
+}
+}

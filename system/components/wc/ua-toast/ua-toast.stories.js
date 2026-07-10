@@ -1,13 +1,14 @@
+import { fn } from '@storybook/test'
 import './ua-toast.js'
 
 export default {
   title: 'Component Library/UA-Toast',
   component: 'ua-toast',
   tags: ['autodocs'],
-  parameters: { docs: { subtitle: "A toast displays a brief, unobtrusive message to the user." } },
+  parameters: { docs: { subtitle: "A non-modal message with semantic appearance and a dismiss action." } },
   argTypes: {
   "appearance": {
-    "description": "Controls the appearance variant.",
+    "description": "Sets appearance.",
     "control": "select",
     "options": [
       "neutral",
@@ -18,24 +19,39 @@ export default {
     ]
   },
   "title": {
-    "description": "Sets the title value.",
+    "description": "Sets title.",
     "control": "text"
   },
   "message": {
-    "description": "Sets the message value.",
+    "description": "Sets message.",
     "control": "text"
+  },
+  "dismiss": {
+    "description": "Handles the dismiss event.",
+    "action": "dismiss",
+    "table": {
+      "category": "Events"
+    }
   }
 },
   args: {
   "appearance": "neutral",
   "title": "Default Toast",
-  "message": "This is a default toast message."
+  "message": "This is a default toast message.",
+  "dismiss": fn()
 }
 }
 
 const render = (args) => {
   const element = document.createElement('ua-toast')
+  const events = {
+  "dismiss": "dismiss"
+}
   for (const [key, value] of Object.entries(args)) {
+    if (key in events) {
+      element.addEventListener(events[key], value)
+      continue
+    }
     const attribute = key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)
     if (value === false || value == null) element.removeAttribute(attribute)
     else if (value === true) element.setAttribute(attribute, '')
@@ -44,32 +60,47 @@ const render = (args) => {
   return element
 }
 
-export const Default = { render, args: {
+export const Default = {
+  render,
+  args: {
   "appearance": "neutral",
   "title": "Default Toast",
   "message": "This is a default toast message."
-} }
+}
+}
 
-export const Success = { render, args: {
+export const Success = {
+  render,
+  args: {
   "appearance": "success",
   "title": "Success Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "The operation completed successfully."
+}
+}
 
-export const Warning = { render, args: {
+export const Warning = {
+  render,
+  args: {
   "appearance": "warning",
   "title": "Warning Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "Review this information before continuing."
+}
+}
 
-export const Danger = { render, args: {
+export const Danger = {
+  render,
+  args: {
   "appearance": "danger",
   "title": "Danger Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "The operation could not be completed."
+}
+}
 
-export const Info = { render, args: {
+export const Info = {
+  render,
+  args: {
   "appearance": "informative",
   "title": "Info Toast",
-  "message": "This is a default toast message."
-} }
+  "message": "Here is some useful information."
+}
+}

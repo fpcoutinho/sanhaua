@@ -1,13 +1,14 @@
+import { fn } from '@storybook/test'
 import UaSkeleton from './ua-skeleton.jsx'
 
 export default {
   title: 'Component Library/UA-Skeleton',
   component: UaSkeleton,
   tags: ['autodocs'],
-  parameters: { docs: { subtitle: "A placeholder that represents the shape of content while it loads." } },
+  parameters: { docs: { subtitle: "A placeholder representing content while it loads, with square, rounded and circular formats." } },
   argTypes: {
   "format": {
-    "description": "Controls the format variant.",
+    "description": "Sets format.",
     "control": "select",
     "options": [
       "square",
@@ -16,11 +17,11 @@ export default {
     ]
   },
   "width": {
-    "description": "Sets the width value.",
+    "description": "Sets width.",
     "control": "text"
   },
   "height": {
-    "description": "Sets the height value.",
+    "description": "Sets height.",
     "control": "text"
   }
 },
@@ -31,26 +32,34 @@ export default {
 }
 }
 
-export const Default = { args: {
+export const Default = {
+  args: {
   "format": "square",
   "width": "240px",
   "height": "56px"
-} }
+}
+}
 
-export const Circle = { args: {
+export const Circle = {
+  args: {
   "format": "circle",
   "width": "56px",
   "height": "56px"
-} }
+}
+}
 
-export const Round = { args: {
+export const Round = {
+  args: {
   "format": "round",
   "width": "240px",
   "height": "56px"
-} }
+}
+}
 
-export const Square = { args: {
+export const Square = {
+  args: {
   "format": "square",
   "width": "240px",
   "height": "56px"
-} }
+}
+}

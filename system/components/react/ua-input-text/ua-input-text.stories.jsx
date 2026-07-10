@@ -1,30 +1,23 @@
+import { useEffect, useState } from 'react'
+import { fn } from '@storybook/test'
 import UaInputText from './ua-input-text.jsx'
 
 export default {
   title: 'Component Library/UA-Input-Text',
   component: UaInputText,
   tags: ['autodocs'],
-  parameters: { docs: { subtitle: "A text input lets the user enter and edit plain text." } },
+  parameters: { docs: { subtitle: "A single-line text field with label, icons, prefix/suffix, validation appearances and native input behavior." } },
   argTypes: {
-  "appearance": {
-    "description": "Controls the appearance variant.",
-    "control": "select",
-    "options": [
-      "neutral",
-      "success",
-      "error"
-    ]
+  "label": {
+    "description": "Sets label.",
+    "control": "text"
   },
-  "borderStyle": {
-    "description": "Controls the borderStyle variant.",
-    "control": "select",
-    "options": [
-      "square",
-      "round"
-    ]
+  "id": {
+    "description": "Sets id.",
+    "control": "text"
   },
   "size": {
-    "description": "Controls the size variant.",
+    "description": "Sets size.",
     "control": "select",
     "options": [
       "small",
@@ -32,128 +25,552 @@ export default {
       "large"
     ]
   },
+  "appearance": {
+    "description": "Sets appearance.",
+    "control": "select",
+    "options": [
+      "neutral",
+      "success",
+      "error"
+    ]
+  },
   "widthBehavior": {
-    "description": "Controls the widthBehavior variant.",
+    "description": "Sets widthBehavior.",
     "control": "select",
     "options": [
       "auto",
       "full"
     ]
   },
-  "label": {
-    "description": "Sets the label value.",
+  "borderStyle": {
+    "description": "Sets borderStyle.",
+    "control": "select",
+    "options": [
+      "square",
+      "round"
+    ]
+  },
+  "icon": {
+    "description": "Sets icon.",
+    "control": "text"
+  },
+  "prefix": {
+    "description": "Sets prefix.",
+    "control": "text"
+  },
+  "suffix": {
+    "description": "Sets suffix.",
     "control": "text"
   },
   "placeholder": {
-    "description": "Sets the placeholder value.",
+    "description": "Sets placeholder.",
     "control": "text"
   },
-  "value": {
-    "description": "Sets the value value.",
+  "required": {
+    "description": "Sets required.",
+    "control": "boolean"
+  },
+  "disabled": {
+    "description": "Sets disabled.",
+    "control": "boolean"
+  },
+  "readonly": {
+    "description": "Sets readonly.",
+    "control": "boolean"
+  },
+  "maxlength": {
+    "description": "Sets maxlength.",
     "control": "text"
+  },
+  "minlength": {
+    "description": "Sets minlength.",
+    "control": "text"
+  },
+  "autocomplete": {
+    "description": "Sets autocomplete.",
+    "control": "select",
+    "options": [
+      "on",
+      "off"
+    ]
+  },
+  "autocorrect": {
+    "description": "Sets autocorrect.",
+    "control": "select",
+    "options": [
+      "on",
+      "off"
+    ]
+  },
+  "autofocus": {
+    "description": "Sets autofocus.",
+    "control": "boolean"
+  },
+  "name": {
+    "description": "Sets name.",
+    "control": "text"
+  },
+  "inputmode": {
+    "description": "Sets inputmode.",
+    "control": "select",
+    "options": [
+      "text",
+      "search",
+      "email",
+      "tel",
+      "url",
+      "numeric",
+      "decimal",
+      "none"
+    ]
+  },
+  "pattern": {
+    "description": "Sets pattern.",
+    "control": "text"
+  },
+  "spellcheck": {
+    "description": "Sets spellcheck.",
+    "control": "boolean"
+  },
+  "value": {
+    "description": "Sets value.",
+    "control": "text"
+  },
+  "onInput": {
+    "description": "Handles the input event.",
+    "action": "input",
+    "table": {
+      "category": "Events"
+    }
+  },
+  "onChange": {
+    "description": "Handles the change event.",
+    "action": "change",
+    "table": {
+      "category": "Events"
+    }
+  },
+  "onFocus": {
+    "description": "Handles the focus event.",
+    "action": "focus",
+    "table": {
+      "category": "Events"
+    }
+  },
+  "onBlur": {
+    "description": "Handles the blur event.",
+    "action": "blur",
+    "table": {
+      "category": "Events"
+    }
   }
 },
   args: {
-  "appearance": "neutral",
-  "borderStyle": "square",
-  "size": "medium",
-  "widthBehavior": "auto",
   "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
   "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": "",
+  "onInput": fn(),
+  "onChange": fn(),
+  "onFocus": fn(),
+  "onBlur": fn()
+}
+}
+
+const render = (args) => {
+  const [value, setValue] = useState(args.value ?? '')
+  useEffect(() => setValue(args.value ?? ''), [args.value])
+  return (
+    <UaInputText
+      {...args}
+      value={value}
+      onInput={(event) => {
+        setValue(event.currentTarget.value)
+        args.onInput(event)
+      }}
+    />
+  )
+}
+
+export const Example = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": "search",
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
   "value": ""
 }
 }
 
-export const Default = { args: {
-  "appearance": "neutral",
-  "borderStyle": "square",
-  "size": "medium",
-  "widthBehavior": "auto",
+export const WithPrefixAndSuffix = { render,
+  args: {
   "label": "Text",
-  "placeholder": "Enter your text",
-  "value": ""
-} }
-
-export const WithIcon = { args: {
-  "appearance": "neutral",
-  "borderStyle": "square",
+  "id": "text-field",
   "size": "medium",
-  "widthBehavior": "auto",
-  "label": "Text",
-  "placeholder": "Enter your text",
-  "value": "",
-  "icon": "search"
-} }
-
-export const WithPrefixAndSuffix = { args: {
   "appearance": "neutral",
-  "borderStyle": "square",
-  "size": "medium",
   "widthBehavior": "auto",
-  "label": "Text",
-  "placeholder": "Enter your text",
-  "value": "",
+  "borderStyle": "square",
+  "icon": null,
   "prefix": "R$",
-  "suffix": "BRL"
-} }
+  "suffix": "BRL",
+  "placeholder": "0,00",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": ""
+}
+}
 
-export const Success = { args: {
+export const Success = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
   "appearance": "success",
-  "borderStyle": "square",
-  "size": "medium",
   "widthBehavior": "auto",
-  "label": "Text",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
   "placeholder": "Enter your text",
-  "value": ""
-} }
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": "Valid value"
+}
+}
 
-export const Error = { args: {
+export const Error = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
   "appearance": "error",
-  "borderStyle": "square",
-  "size": "medium",
   "widthBehavior": "auto",
-  "label": "Text",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
   "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": "Invalid value"
+}
+}
+
+export const Required = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": true,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
   "value": ""
-} }
+}
+}
 
-export const Disabled = { args: {
-  "appearance": "neutral",
-  "borderStyle": "square",
-  "size": "medium",
-  "widthBehavior": "auto",
+export const Disabled = { render,
+  args: {
   "label": "Text",
-  "placeholder": "Enter your text",
-  "value": "",
-  "disabled": true
-} }
-
-export const Small = { args: {
+  "id": "text-field",
+  "size": "medium",
   "appearance": "neutral",
+  "widthBehavior": "auto",
   "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": true,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": "Disabled value"
+}
+}
+
+export const Readonly = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": true,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": "Read-only value"
+}
+}
+
+export const Small = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
   "size": "small",
-  "widthBehavior": "auto",
-  "label": "Text",
-  "placeholder": "Enter your text",
-  "value": ""
-} }
-
-export const Large = { args: {
   "appearance": "neutral",
+  "widthBehavior": "auto",
   "borderStyle": "square",
-  "size": "large",
-  "widthBehavior": "auto",
-  "label": "Text",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
   "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
   "value": ""
-} }
+}
+}
 
-export const Round = { args: {
-  "appearance": "neutral",
-  "borderStyle": "round",
-  "size": "medium",
-  "widthBehavior": "auto",
+export const Medium = { render,
+  args: {
   "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
   "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
   "value": ""
-} }
+}
+}
+
+export const Large = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "large",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": ""
+}
+}
+
+export const Round = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "round",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": ""
+}
+}
+
+export const Square = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "auto",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": ""
+}
+}
+
+export const Full = { render,
+  args: {
+  "label": "Text",
+  "id": "text-field",
+  "size": "medium",
+  "appearance": "neutral",
+  "widthBehavior": "full",
+  "borderStyle": "square",
+  "icon": null,
+  "prefix": null,
+  "suffix": null,
+  "placeholder": "Enter your text",
+  "required": false,
+  "disabled": false,
+  "readonly": false,
+  "maxlength": null,
+  "minlength": null,
+  "autocomplete": "off",
+  "autocorrect": "off",
+  "autofocus": false,
+  "name": "text",
+  "inputmode": "text",
+  "pattern": null,
+  "spellcheck": false,
+  "value": ""
+}
+}
