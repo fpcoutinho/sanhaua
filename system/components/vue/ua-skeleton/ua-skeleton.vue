@@ -13,5 +13,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@import './ua-skeleton.scss';
+@import '../../styles/ua-skeleton.scss';
 </style>

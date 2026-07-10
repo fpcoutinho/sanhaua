@@ -65,5 +65,5 @@ const toastIcon = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-toast.scss';
+@import '../../styles/ua-toast.scss';
 </style>

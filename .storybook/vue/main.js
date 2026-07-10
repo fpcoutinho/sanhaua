@@ -1,6 +1,12 @@
+import vue from '@vitejs/plugin-vue'
+import { mergeConfig } from 'vite'
+import path from 'path'
+
+const SELECTED_THEME = 'main'
+
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
 const config = {
-  stories: ['../docs/**/*.mdx'],
+  stories: ['../../system/components/vue/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -11,13 +17,42 @@ const config = {
     name: '@storybook/vue3-vite',
     options: {}
   },
-  refs: {
-    vue: {
-      title: 'Vue',
-      url: process.env.NODE_ENV === 'production' ? './vue' : 'http://localhost:6007'
-    }
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      plugins: [vue()],
+      resolve: {
+        alias: [
+          {
+            find: '@root',
+            replacement: path.resolve(process.cwd(), './')
+          },
+          {
+            find: '@theme',
+            replacement: path.resolve(process.cwd(), `./system/themes/${SELECTED_THEME}`)
+          },
+          {
+            find: '@sanhaua',
+            replacement: path.resolve(process.cwd(), './system')
+          }
+        ]
+      },
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: 'modern-compiler',
+            additionalData: `
+              @use 'sass:map';
+              @import "@theme/design-tokens/design-tokens.scss";
+              @import "@theme/responsiveness/responsiveness.scss";
+              @import "@theme/global/global.scss";
+              @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,GRAD@100..700,-25";
+            `
+          }
+        }
+      }
+    })
   },
-  staticDirs: ['../assets'],
+  staticDirs: ['../../assets'],
   previewHead: (head) => `
     ${head}
     <style>
@@ -56,4 +91,5 @@ const config = {
     </style>
   `
 }
+
 export default config

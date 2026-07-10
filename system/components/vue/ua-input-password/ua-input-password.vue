@@ -3,7 +3,7 @@
     <span class="label">
       {{ props.label }}
     </span>
-    <div :class="inputClasses" class="ua-input-text">
+    <div :class="inputClasses" class="ua-input-password">
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
@@ -20,29 +20,30 @@
         :maxlength="props.maxlength"
         :minlength="props.minlength"
         :autocomplete="props.autocomplete"
-        :autocorrect="props.autocorrect"
         :autofocus="props.autofocus"
         :name="props.name"
         :inputmode="props.inputmode"
         :pattern="props.pattern"
-        :spellcheck="props.spellcheck"
         :class="inputClasses"
-        type="text"
+        :type="inputTypeByVisibility"
         class="field"
         @input="emit('input', $event)"
         @focus="emit('focus', $event)"
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <span v-if="props.suffix" class="suffix">
-        {{ props.suffix }}
-      </span>
+      <label v-if="hasPasswordTypedIn" class="toggle-password-visibility-button">
+        <span class="material-symbols-rounded icon">
+          {{ passwordVisibilityIcon }}
+        </span>
+        <input v-model="passwordVisibilityState" class="hidden-checkbox" type="checkbox" />
+      </label>
     </div>
   </label>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 
 const inputValue = defineModel({ type: String })
 const emit = defineEmits(['input', 'focus', 'blur', 'change'])
@@ -72,7 +73,6 @@ const props = defineProps({
   label: { type: String },
   icon: { type: String },
   prefix: { type: String },
-  suffix: { type: String },
   placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
@@ -141,12 +141,10 @@ const props = defineProps({
         'impp'
       ].includes(value)
   },
-  autocorrect: { type: String, validator: (value) => ['on', 'off'].includes(value) },
   autofocus: { type: Boolean },
   name: { type: String },
   inputmode: { type: String },
-  pattern: { type: String },
-  spellcheck: { type: Boolean }
+  pattern: { type: String }
 })
 
 const inputClasses = computed(() => {
@@ -163,8 +161,24 @@ const wrapperClasses = computed(() => {
     disabled: props.disabled
   }
 })
+
+const passwordVisibilityState = ref(false)
+
+const hasPasswordTypedIn = computed(() => inputValue.value.length > 0)
+
+const passwordVisibilityIcon = computed(() => {
+  return passwordVisibilityState.value ? 'visibility_off' : 'visibility'
+})
+
+const inputTypeByVisibility = computed(() => {
+  return passwordVisibilityState.value ? 'text' : 'password'
+})
+
+onMounted(() => {
+  passwordVisibilityState.value = false
+})
 </script>
 
 <style lang="scss">
-@import './ua-input-text.scss';
+@import '../../styles/ua-input-password.scss';
 </style>

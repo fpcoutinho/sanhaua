@@ -97,5 +97,5 @@ const buttonClasses = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-button.scss';
+@import '../../styles/ua-button.scss';
 </style>

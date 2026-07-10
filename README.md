@@ -6,6 +6,17 @@ Design System named after the famous river in City of Parahyba.
 
 Check out our live **[documentation](https://fpcoutinho.github.io/sanhaua/)**.
 
+## Component structure
+
+Sanhaua is organized to support multiple frameworks:
+
+- `system/components/vue`: Vue implementation and stories
+- `system/components/react`: React implementation (reserved)
+- `system/components/wc`: Web Components implementation (reserved)
+- `system/components/styles`: Shared component styles used across frameworks
+
+This allows each framework to keep its own implementation while reusing the same CSS source.
+
 ## Usage
 
 This section describes how to import Sanhauá as an external package and use it within your project
@@ -103,6 +114,24 @@ npm run build
 
 ```sh
 npm run docs
+```
+
+#### Run Storybook composition host in dev mode
+
+```sh
+npm run docs:host
+```
+
+#### Run Vue Storybook instance for composition refs
+
+```sh
+npm run docs:vue
+```
+
+#### Build composed Storybook docs
+
+```sh
+npm run build-docs
 ```
 
 #### Lint with [ESLint](https://eslint.org/)

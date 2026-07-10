@@ -42,8 +42,8 @@
 </template>
 
 <script setup>
-import UaButton from '@root/system/components/ua-button/ua-button.vue'
-import UaInputText from '@root/system/components/ua-input-text/ua-input-text.vue'
+import UaButton from '@root/system/components/vue/ua-button/ua-button.vue'
+import UaInputText from '@root/system/components/vue/ua-input-text/ua-input-text.vue'
 </script>
 
 <style lang="scss">

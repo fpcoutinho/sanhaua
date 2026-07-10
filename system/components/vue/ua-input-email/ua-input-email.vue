@@ -3,7 +3,7 @@
     <span class="label">
       {{ props.label }}
     </span>
-    <div :class="inputClasses" class="ua-input-tel">
+    <div :class="inputClasses" class="ua-input-email">
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
@@ -16,16 +16,17 @@
         :placeholder="props.placeholder"
         :required="props.required"
         :disabled="props.disabled"
+        :multiple="props.multiple"
         :readonly="props.readonly"
         :maxlength="props.maxlength"
         :minlength="props.minlength"
-        :autocomplete="props.autocomplete"
+        :autocomplete="props.autocomplete && 'email'"
         :autofocus="props.autofocus"
         :name="props.name"
         :inputmode="props.inputmode"
         :pattern="props.pattern"
         :class="inputClasses"
-        type="tel"
+        type="email"
         class="field"
         @input="emit('input', $event)"
         @focus="emit('focus', $event)"
@@ -74,71 +75,11 @@ const props = defineProps({
   placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
+  multiple: { type: Boolean },
   readonly: { type: Boolean },
   maxlength: { type: Number },
   minlength: { type: Number },
-  autocomplete: {
-    type: String,
-    validator: (value) =>
-      [
-        'on',
-        'off',
-        'address-line1',
-        'address-line2',
-        'address-line3',
-        'address-level1',
-        'address-level2',
-        'address-level3',
-        'address-level4',
-        'street-address',
-        'country',
-        'country-name',
-        'postal-code',
-        'name',
-        'additional-name',
-        'family-name',
-        'given-name',
-        'honoric-prefix',
-        'honoric-suffix',
-        'nickname',
-        'organization-title',
-        'username',
-        'new-password',
-        'current-password',
-        'bday',
-        'bday-day',
-        'bday-month',
-        'bday-year',
-        'sex',
-        'one-time-code',
-        'organization',
-        'cc-name',
-        'cc-given-name',
-        'cc-additional-name',
-        'cc-family-name',
-        'cc-number',
-        'cc-exp',
-        'cc-exp-month',
-        'cc-exp-year',
-        'cc-csc',
-        'cc-type',
-        'transaction-currency',
-        'transaction-amount',
-        'language',
-        'url',
-        'email',
-        'photo',
-        'tel',
-        'tel-country-code',
-        'tel-national',
-        'tel-area-code',
-        'tel-local',
-        'tel-local-prefix',
-        'tel-local-suffix',
-        'tel-extension',
-        'impp'
-      ].includes(value)
-  },
+  autocomplete: { type: Boolean },
   autofocus: { type: Boolean },
   name: { type: String },
   inputmode: { type: String },
@@ -162,5 +103,5 @@ const wrapperClasses = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-input-tel.scss';
+@import '../../styles/ua-input-email.scss';
 </style>

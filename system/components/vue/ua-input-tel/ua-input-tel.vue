@@ -3,7 +3,7 @@
     <span class="label">
       {{ props.label }}
     </span>
-    <div :class="inputClasses" class="ua-input-password">
+    <div :class="inputClasses" class="ua-input-tel">
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
@@ -25,25 +25,22 @@
         :inputmode="props.inputmode"
         :pattern="props.pattern"
         :class="inputClasses"
-        :type="inputTypeByVisibility"
+        type="tel"
         class="field"
         @input="emit('input', $event)"
         @focus="emit('focus', $event)"
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
-      <label v-if="hasPasswordTypedIn" class="toggle-password-visibility-button">
-        <span class="material-symbols-rounded icon">
-          {{ passwordVisibilityIcon }}
-        </span>
-        <input v-model="passwordVisibilityState" class="hidden-checkbox" type="checkbox" />
-      </label>
+      <span v-if="props.suffix" class="suffix">
+        {{ props.suffix }}
+      </span>
     </div>
   </label>
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
+import { computed } from 'vue'
 
 const inputValue = defineModel({ type: String })
 const emit = defineEmits(['input', 'focus', 'blur', 'change'])
@@ -73,6 +70,7 @@ const props = defineProps({
   label: { type: String },
   icon: { type: String },
   prefix: { type: String },
+  suffix: { type: String },
   placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
@@ -161,24 +159,8 @@ const wrapperClasses = computed(() => {
     disabled: props.disabled
   }
 })
-
-const passwordVisibilityState = ref(false)
-
-const hasPasswordTypedIn = computed(() => inputValue.value.length > 0)
-
-const passwordVisibilityIcon = computed(() => {
-  return passwordVisibilityState.value ? 'visibility_off' : 'visibility'
-})
-
-const inputTypeByVisibility = computed(() => {
-  return passwordVisibilityState.value ? 'text' : 'password'
-})
-
-onMounted(() => {
-  passwordVisibilityState.value = false
-})
 </script>
 
 <style lang="scss">
-@import './ua-input-password.scss';
+@import '../../styles/ua-input-tel.scss';
 </style>

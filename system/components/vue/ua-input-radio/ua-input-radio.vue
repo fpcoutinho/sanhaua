@@ -71,5 +71,5 @@ const classes = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-input-radio.scss';
+@import '../../styles/ua-input-radio.scss';
 </style>

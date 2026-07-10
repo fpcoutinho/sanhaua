@@ -3,7 +3,7 @@
     <span class="label">
       {{ props.label }}
     </span>
-    <div :class="inputClasses" class="ua-input-date">
+    <div :class="inputClasses" class="ua-input-text">
       <span v-if="props.icon" class="material-symbols-rounded icon">
         {{ props.icon }}
       </span>
@@ -13,23 +13,30 @@
       <input
         :id="props.id"
         v-model="inputValue"
+        :placeholder="props.placeholder"
         :required="props.required"
         :disabled="props.disabled"
         :readonly="props.readonly"
-        :max="props.max"
-        :min="props.min"
-        :step="props.step"
+        :maxlength="props.maxlength"
+        :minlength="props.minlength"
         :autocomplete="props.autocomplete"
+        :autocorrect="props.autocorrect"
         :autofocus="props.autofocus"
         :name="props.name"
+        :inputmode="props.inputmode"
+        :pattern="props.pattern"
+        :spellcheck="props.spellcheck"
         :class="inputClasses"
-        type="date"
+        type="text"
         class="field"
         @input="emit('input', $event)"
         @focus="emit('focus', $event)"
         @blur="emit('blur', $event)"
         @change="emit('change', $event)"
       />
+      <span v-if="props.suffix" class="suffix">
+        {{ props.suffix }}
+      </span>
     </div>
   </label>
 </template>
@@ -65,12 +72,13 @@ const props = defineProps({
   label: { type: String },
   icon: { type: String },
   prefix: { type: String },
+  suffix: { type: String },
+  placeholder: { type: String },
   required: { type: Boolean },
   disabled: { type: Boolean },
   readonly: { type: Boolean },
-  max: { type: Number },
-  min: { type: Number },
-  step: { type: [Number, String] },
+  maxlength: { type: Number },
+  minlength: { type: Number },
   autocomplete: {
     type: String,
     validator: (value) =>
@@ -133,8 +141,12 @@ const props = defineProps({
         'impp'
       ].includes(value)
   },
+  autocorrect: { type: String, validator: (value) => ['on', 'off'].includes(value) },
   autofocus: { type: Boolean },
-  name: { type: String }
+  name: { type: String },
+  inputmode: { type: String },
+  pattern: { type: String },
+  spellcheck: { type: Boolean }
 })
 
 const inputClasses = computed(() => {
@@ -154,5 +166,5 @@ const wrapperClasses = computed(() => {
 </script>
 
 <style lang="scss">
-@import './ua-input-date.scss';
+@import '../../styles/ua-input-text.scss';
 </style>
