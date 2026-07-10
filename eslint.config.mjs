@@ -4,12 +4,7 @@ import js from '@eslint/js'
 
 export default [
   {
-    ignores: [
-      '**/node_modules/**',
-      '**/dist/**',
-      '**/storybook-static/**',
-      '**/public/**'
-    ]
+    ignores: ['**/node_modules/**', '**/dist/**', '**/storybook-static/**', '**/public/**']
   },
   js.configs.recommended,
   eslintConfigPrettier,
@@ -36,7 +31,7 @@ export default [
     }
   },
   {
-    files: ['.storybook/**/*.js', 'vite*.config.js'],
+    files: ['**/.storybook/**/*.js', 'vite*.config.js'],
     languageOptions: {
       parserOptions: { ecmaFeatures: { jsx: true } },
       globals: {

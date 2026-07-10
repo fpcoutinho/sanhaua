@@ -13,24 +13,16 @@ export default function UaInputText({
   placeholder,
   required = false,
   disabled = false,
-  readonly,
-  readOnly,
-  maxlength,
+  readOnly = false,
   maxLength,
-  minlength,
   minLength,
-  autocomplete,
   autoComplete,
-  autocorrect,
   autoCorrect,
-  autofocus,
-  autoFocus,
+  autoFocus = false,
   name,
-  inputmode,
   inputMode,
   pattern,
-  spellcheck,
-  spellCheck,
+  spellCheck = false,
   value,
   onInput,
   onFocus,
@@ -56,16 +48,16 @@ export default function UaInputText({
           placeholder={placeholder}
           required={required}
           disabled={disabled}
-          readOnly={readOnly ?? readonly ?? false}
-          maxLength={maxLength ?? maxlength}
-          minLength={minLength ?? minlength}
-          autoComplete={autoComplete ?? autocomplete}
-          autoCorrect={autoCorrect ?? autocorrect}
-          autoFocus={autoFocus ?? autofocus ?? false}
+          readOnly={readOnly}
+          maxLength={maxLength}
+          minLength={minLength}
+          autoComplete={autoComplete}
+          autoCorrect={autoCorrect}
+          autoFocus={autoFocus}
           name={name}
-          inputMode={inputMode ?? inputmode}
+          inputMode={inputMode}
           pattern={pattern}
-          spellCheck={spellCheck ?? spellcheck ?? false}
+          spellCheck={spellCheck}
           onInput={onInput}
           onFocus={onFocus}
           onBlur={onBlur}

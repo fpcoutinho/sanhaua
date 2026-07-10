@@ -9,25 +9,22 @@ export default function UaButton({
   leftIcon,
   rightIcon,
   disabled = false,
-  autofocus,
-  autoFocus,
+  autoFocus = false,
   value,
   name,
   form,
-  label,
-  children,
+  children = 'Button',
   onClick,
   ...buttonProps
 }) {
   const className = ['ua-button', size, appearance, widthBehavior, borderStyle].join(' ')
-  const content = children ?? label ?? 'Button'
 
   return (
     <button
       {...buttonProps}
       type={type}
       disabled={disabled}
-      autoFocus={autoFocus ?? autofocus ?? false}
+      autoFocus={autoFocus}
       value={value}
       name={name}
       form={form}
@@ -35,7 +32,7 @@ export default function UaButton({
       onClick={onClick}
     >
       {leftIcon ? <span className="material-symbols-rounded icon">{leftIcon}</span> : null}
-      {content ? <span className="text">{content}</span> : null}
+      {children ? <span className="text">{children}</span> : null}
       {rightIcon ? <span className="material-symbols-rounded icon">{rightIcon}</span> : null}
     </button>
   )

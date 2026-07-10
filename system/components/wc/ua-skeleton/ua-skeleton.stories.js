@@ -4,31 +4,32 @@ export default {
   title: 'Component Library/UA-Skeleton',
   component: 'ua-skeleton',
   tags: ['autodocs'],
-  parameters: { docs: { subtitle: "A placeholder representing content while it loads, with square, rounded and circular formats." } },
+  parameters: {
+    docs: {
+      subtitle:
+        'A placeholder representing content while it loads, with square, rounded and circular formats.'
+    }
+  },
   argTypes: {
-  "format": {
-    "description": "Sets format.",
-    "control": "select",
-    "options": [
-      "square",
-      "round",
-      "circle"
-    ]
+    format: {
+      description: 'Sets format.',
+      control: 'select',
+      options: ['square', 'round', 'circle']
+    },
+    width: {
+      description: 'Sets width.',
+      control: 'text'
+    },
+    height: {
+      description: 'Sets height.',
+      control: 'text'
+    }
   },
-  "width": {
-    "description": "Sets width.",
-    "control": "text"
-  },
-  "height": {
-    "description": "Sets height.",
-    "control": "text"
-  }
-},
   args: {
-  "format": "square",
-  "width": "240px",
-  "height": "56px"
-}
+    format: 'square',
+    width: '240px',
+    height: '56px'
+  }
 }
 
 const render = (args) => {
@@ -50,35 +51,35 @@ const render = (args) => {
 export const Default = {
   render,
   args: {
-  "format": "square",
-  "width": "240px",
-  "height": "56px"
-}
+    format: 'square',
+    width: '240px',
+    height: '56px'
+  }
 }
 
 export const Circle = {
   render,
   args: {
-  "format": "circle",
-  "width": "56px",
-  "height": "56px"
-}
+    format: 'circle',
+    width: '56px',
+    height: '56px'
+  }
 }
 
 export const Round = {
   render,
   args: {
-  "format": "round",
-  "width": "240px",
-  "height": "56px"
-}
+    format: 'round',
+    width: '240px',
+    height: '56px'
+  }
 }
 
 export const Square = {
   render,
   args: {
-  "format": "square",
-  "width": "240px",
-  "height": "56px"
-}
+    format: 'square',
+    width: '240px',
+    height: '56px'
+  }
 }
