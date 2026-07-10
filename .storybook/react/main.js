@@ -1,6 +1,11 @@
-/** @type { import('@storybook/vue3-vite').StorybookConfig } */
+import { mergeConfig } from 'vite'
+import path from 'path'
+
+const SELECTED_THEME = 'main'
+
+/** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ['../docs/**/*.mdx'],
+  stories: ['../../system/components/react/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -8,24 +13,44 @@ const config = {
     '@storybook/addon-a11y'
   ],
   framework: {
-    name: '@storybook/vue3-vite',
+    name: '@storybook/react-vite',
     options: {}
   },
-  refs: {
-    vue: {
-      title: 'Vue',
-      url: process.env.NODE_ENV === 'production' ? './vue' : 'http://localhost:6007'
-    },
-    react: {
-      title: 'React',
-      url: process.env.NODE_ENV === 'production' ? './react' : 'http://localhost:6008'
-    },
-    wc: {
-      title: 'Web Components',
-      url: process.env.NODE_ENV === 'production' ? './wc' : 'http://localhost:6009'
-    }
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      resolve: {
+        alias: [
+          {
+            find: '@root',
+            replacement: path.resolve(process.cwd(), './')
+          },
+          {
+            find: '@theme',
+            replacement: path.resolve(process.cwd(), `./system/themes/${SELECTED_THEME}`)
+          },
+          {
+            find: '@sanhaua',
+            replacement: path.resolve(process.cwd(), './system')
+          }
+        ]
+      },
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: 'modern-compiler',
+            additionalData: `
+              @use 'sass:map';
+              @import "@theme/design-tokens/design-tokens.scss";
+              @import "@theme/responsiveness/responsiveness.scss";
+              @import "@theme/global/global.scss";
+              @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,GRAD@100..700,-25";
+            `
+          }
+        }
+      }
+    })
   },
-  staticDirs: ['../assets'],
+  staticDirs: ['../../assets'],
   previewHead: (head) => `
     ${head}
     <style>
@@ -64,4 +89,5 @@ const config = {
     </style>
   `
 }
+
 export default config
