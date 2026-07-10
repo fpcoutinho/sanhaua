@@ -2,7 +2,7 @@ import '../../styles/ua-button.scss'
 
 const boolAttr = (value) => value !== null && value !== 'false'
 
-class UaWcButton extends HTMLElement {
+class UaButton extends HTMLElement {
   static get observedAttributes() {
     return [
       'type',
@@ -61,8 +61,8 @@ class UaWcButton extends HTMLElement {
   }
 }
 
-if (!customElements.get('ua-wc-button')) {
-  customElements.define('ua-wc-button', UaWcButton)
+if (!customElements.get('ua-button')) {
+  customElements.define('ua-button', UaButton)
 }
 
-export default UaWcButton
+export default UaButton

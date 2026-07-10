@@ -1,6 +1,6 @@
 import '../../styles/ua-button.scss'
 
-export default function UaButtonReact({
+export default function UaButton({
   type = 'button',
   size = 'medium',
   appearance = 'primary',

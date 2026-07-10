@@ -21,7 +21,7 @@ export default {
 
 export const Playground = {
   render: (args) => {
-    const element = document.createElement('ua-wc-input-text')
+    const element = document.createElement('ua-input-text')
     element.setAttribute('appearance', args.appearance)
     element.setAttribute('border-style', args.borderStyle)
     element.setAttribute('size', args.size)

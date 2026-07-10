@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import UaInputTextReact from './ua-input-text.jsx'
+import UaInputText from './ua-input-text.jsx'
 
 export default {
   title: 'Component Library/UA-Input-Text',
-  component: UaInputTextReact,
+  component: UaInputText,
   tags: ['autodocs'],
   args: {
     appearance: 'neutral',
@@ -19,6 +19,6 @@ export const Playground = {
   render: (args) => {
     const [value, setValue] = useState('')
 
-    return <UaInputTextReact {...args} value={value} onInput={(event) => setValue(event.target.value)} />
+    return <UaInputText {...args} value={value} onInput={(event) => setValue(event.target.value)} />
   }
 }

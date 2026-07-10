@@ -1,6 +1,6 @@
 import '../../styles/ua-skeleton.scss'
 
-class UaWcSkeleton extends HTMLElement {
+class UaSkeleton extends HTMLElement {
   static get observedAttributes() {
     return ['format', 'width', 'height']
   }
@@ -22,8 +22,8 @@ class UaWcSkeleton extends HTMLElement {
   }
 }
 
-if (!customElements.get('ua-wc-skeleton')) {
-  customElements.define('ua-wc-skeleton', UaWcSkeleton)
+if (!customElements.get('ua-skeleton')) {
+  customElements.define('ua-skeleton', UaSkeleton)
 }
 
-export default UaWcSkeleton
+export default UaSkeleton

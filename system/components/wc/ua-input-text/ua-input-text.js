@@ -2,7 +2,7 @@ import '../../styles/ua-input-text.scss'
 
 const boolAttr = (value) => value !== null && value !== 'false'
 
-class UaWcInputText extends HTMLElement {
+class UaInputText extends HTMLElement {
   static get observedAttributes() {
     return [
       'appearance',
@@ -86,8 +86,8 @@ class UaWcInputText extends HTMLElement {
   }
 }
 
-if (!customElements.get('ua-wc-input-text')) {
-  customElements.define('ua-wc-input-text', UaWcInputText)
+if (!customElements.get('ua-input-text')) {
+  customElements.define('ua-input-text', UaInputText)
 }
 
-export default UaWcInputText
+export default UaInputText

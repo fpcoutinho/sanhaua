@@ -18,7 +18,7 @@ export default {
 
 export const Playground = {
   render: (args) => {
-    const element = document.createElement('ua-wc-toast')
+    const element = document.createElement('ua-toast')
     element.setAttribute('appearance', args.appearance)
     element.setAttribute('title', args.title)
     element.setAttribute('message', args.message)

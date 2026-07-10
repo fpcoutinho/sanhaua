@@ -16,32 +16,44 @@
       "import": "./dist/sanhaua.js",
       "require": "./dist/sanhaua.cjs"
     },
-    "./dist/": {
-      "import": "./dist/",
-      "require": "./dist/"
+    "./vue": {
+      "import": "./dist/vue.js",
+      "require": "./dist/vue.cjs"
     },
-    "./system/": {
-      "import": "./system/",
-      "require": "./system/"
-    }
+    "./react": {
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./wc": {
+      "import": "./dist/wc.js",
+      "require": "./dist/wc.cjs"
+    },
+    "./style.css": "./dist/style.css",
+    "./dist/style.css": "./dist/style.css",
+    "./dist/*": "./dist/*",
+    "./system/*": "./system/*",
+    "./package.json": "./package.json"
   },
   "license": "MIT",
   "repository": "https://github.com/fpcoutinho/sanhaua.git",
   "keywords": [
     "design system",
-    "components"
+    "components",
+    "vue",
+    "react",
+    "web components"
   ],
   "private": false,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --config vite.lib.config.js",
     "preview": "vite preview",
     "eslint": "eslint .",
     "eslint:fix": "eslint --fix .",
     "stylelint": "stylelint \"**/*.scss\" --ignore-path .gitignore",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix --ignore-path .gitignore",
     "format": "prettier --write system/",
-    "docs": "concurrently -k -n VUE,REACT,WC,HOST \"storybook dev -c .storybook/vue -p 6007 --no-open --quiet\" \"storybook dev -c .storybook/react -p 6008 --no-open --quiet\" \"storybook dev -c .storybook/wc -p 6009 --no-open --quiet\" \"wait-on tcp:6007 tcp:6008 tcp:6009 && storybook dev -c .storybook -p 6006 --quiet\"",
+    "docs": "concurrently -k -n VUE,REACT,WC,HOST \"storybook dev -c .storybook/vue -p 6007 --no-open --quiet\" \"storybook dev -c .storybook/react -p 6008 --no-open --quiet\" \"storybook dev -c .storybook/wc -p 6009 --no-open --quiet\" \"wait-on tcp:6007 tcp:6008 tcp:6009 && storybook dev -c .storybook -p 6006\"",
     "docs:host": "storybook dev -c .storybook -p 6006",
     "docs:vue": "storybook dev -c .storybook/vue -p 6007",
     "docs:react": "storybook dev -c .storybook/react -p 6008",
@@ -51,10 +63,6 @@
     "build-docs:react": "storybook build -c .storybook/react -o storybook-static/react",
     "build-docs:wc": "storybook build -c .storybook/wc -o storybook-static/wc",
     "build-docs:host": "storybook build -c .storybook -o storybook-static"
-  },
-  "dependencies": {
-    "sass-embedded": "^1.79.4",
-    "vue": "^3.5.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -70,20 +78,45 @@
     "@storybook/vue3": "^8.6.18",
     "@storybook/vue3-vite": "^8.6.18",
     "@storybook/web-components-vite": "^8.6.18",
+    "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
+    "concurrently": "^9.0.1",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.29.0",
-    "prettier": "^3.2.5",
     "postcss-scss": "^4.0.9",
+    "prettier": "^3.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "sass-embedded": "^1.79.4",
     "storybook": "^8.6.18",
     "stylelint": "^16.9.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "vite": "^5.4.8",
-    "concurrently": "^9.0.1",
+    "vue": "^3.5.11",
     "wait-on": "^8.0.1"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "./dist/wc.js",
+    "./dist/wc.cjs"
+  ],
+  "peerDependencies": {
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0",
+    "vue": ">=3.3.0 <4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   }
 }

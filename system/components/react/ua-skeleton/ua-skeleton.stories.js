@@ -1,8 +1,8 @@
-import UaSkeletonReact from './ua-skeleton.jsx'
+import UaSkeleton from './ua-skeleton.jsx'
 
 export default {
   title: 'Component Library/UA-Skeleton',
-  component: UaSkeletonReact,
+  component: UaSkeleton,
   tags: ['autodocs'],
   args: {
     format: 'round',

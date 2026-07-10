@@ -1,8 +1,8 @@
-import UaToastReact from './ua-toast.jsx'
+import UaToast from './ua-toast.jsx'
 
 export default {
   title: 'Component Library/UA-Toast',
-  component: UaToastReact,
+  component: UaToast,
   tags: ['autodocs'],
   args: {
     appearance: 'neutral',

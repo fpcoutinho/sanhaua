@@ -1,8 +1,8 @@
-import UaButtonReact from './ua-button.jsx'
+import UaButton from './ua-button.jsx'
 
 export default {
   title: 'Component Library/UA-Button',
-  component: UaButtonReact,
+  component: UaButton,
   tags: ['autodocs'],
   args: {
     type: 'button',

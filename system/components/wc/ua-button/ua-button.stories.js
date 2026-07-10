@@ -25,7 +25,7 @@ export default {
 
 export const Playground = {
   render: (args) => {
-    const element = document.createElement('ua-wc-button')
+    const element = document.createElement('ua-button')
     element.setAttribute('type', args.type)
     element.setAttribute('size', args.size)
     element.setAttribute('appearance', args.appearance)

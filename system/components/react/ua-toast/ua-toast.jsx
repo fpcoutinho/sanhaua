@@ -8,7 +8,7 @@ const ICON_MAP = {
   informative: 'info'
 }
 
-export default function UaToastReact({
+export default function UaToast({
   appearance = 'neutral',
   title = 'Toast title',
   message = 'Toast message',

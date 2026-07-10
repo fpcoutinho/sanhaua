@@ -1,6 +1,6 @@
 import '../../styles/ua-input-text.scss'
 
-export default function UaInputTextReact({
+export default function UaInputText({
   appearance = 'neutral',
   borderStyle = 'square',
   size = 'medium',

@@ -11,8 +11,8 @@ Check out our live **[documentation](https://fpcoutinho.github.io/sanhaua/)**.
 Sanhaua is organized to support multiple frameworks:
 
 - `system/components/vue`: Vue implementation and stories
-- `system/components/react`: React implementation (reserved)
-- `system/components/wc`: Web Components implementation (reserved)
+- `system/components/react`: React implementation
+- `system/components/wc`: Web Components implementation
 - `system/components/styles`: Shared component styles used across frameworks
 
 This allows each framework to keep its own implementation while reusing the same CSS source.

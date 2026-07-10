@@ -15,7 +15,7 @@ export default {
 
 export const Playground = {
   render: (args) => {
-    const element = document.createElement('ua-wc-skeleton')
+    const element = document.createElement('ua-skeleton')
     element.setAttribute('format', args.format)
     element.setAttribute('width', args.width)
     element.setAttribute('height', args.height)

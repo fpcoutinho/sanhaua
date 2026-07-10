@@ -8,7 +8,7 @@ const ICON_MAP = {
   informative: 'info'
 }
 
-class UaWcToast extends HTMLElement {
+class UaToast extends HTMLElement {
   static get observedAttributes() {
     return ['appearance', 'title', 'message']
   }
@@ -49,8 +49,8 @@ class UaWcToast extends HTMLElement {
   }
 }
 
-if (!customElements.get('ua-wc-toast')) {
-  customElements.define('ua-wc-toast', UaWcToast)
+if (!customElements.get('ua-toast')) {
+  customElements.define('ua-toast', UaToast)
 }
 
-export default UaWcToast
+export default UaToast
