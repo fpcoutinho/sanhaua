@@ -1,4 +1,5 @@
 import './ua-skeleton.js'
+import { createPublicSource } from '../story-source.js'
 
 export default {
   title: 'Component Library/UA-Skeleton',
@@ -6,6 +7,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     docs: {
+      source: { language: 'html', transform: createPublicSource('ua-skeleton', []) },
       subtitle:
         'A placeholder representing content while it loads, with square, rounded and circular formats.'
     }

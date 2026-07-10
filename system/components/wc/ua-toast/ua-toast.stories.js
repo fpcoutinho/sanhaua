@@ -1,12 +1,16 @@
 import { fn } from '@storybook/test'
 import './ua-toast.js'
+import { createPublicSource } from '../story-source.js'
 
 export default {
   title: 'Component Library/UA-Toast',
   component: 'ua-toast',
   tags: ['autodocs'],
   parameters: {
-    docs: { subtitle: 'A non-modal message with semantic appearance and a dismiss action.' }
+    docs: {
+      source: { language: 'html', transform: createPublicSource('ua-toast', ['dismiss']) },
+      subtitle: 'A non-modal message with semantic appearance and a dismiss action.'
+    }
   },
   argTypes: {
     appearance: {

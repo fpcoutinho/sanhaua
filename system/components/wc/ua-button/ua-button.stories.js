@@ -1,5 +1,6 @@
 import { fn } from '@storybook/test'
 import './ua-button.js'
+import { createPublicSource } from '../story-source.js'
 
 export default {
   title: 'Component Library/UA-Button',
@@ -7,6 +8,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     docs: {
+      source: { language: 'html', transform: createPublicSource('ua-button', ['click']) },
       subtitle:
         'A button triggers an action. It supports semantic types, visual appearances, icons, sizes and fluid width.'
     }

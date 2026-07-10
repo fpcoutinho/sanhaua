@@ -1,5 +1,6 @@
 import { fn } from '@storybook/test'
 import './ua-input-text.js'
+import { createPublicSource } from '../story-source.js'
 
 export default {
   title: 'Component Library/UA-Input-Text',
@@ -7,6 +8,10 @@ export default {
   tags: ['autodocs'],
   parameters: {
     docs: {
+      source: {
+        language: 'html',
+        transform: createPublicSource('ua-input-text', ['input', 'change', 'focus', 'blur'])
+      },
       subtitle:
         'A single-line text field with label, icons, prefix/suffix, validation appearances and native input behavior.'
     }
