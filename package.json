@@ -34,7 +34,10 @@
     "./package.json": "./package.json"
   },
   "license": "MIT",
-  "repository": "https://github.com/fpcoutinho/sanhaua.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpcoutinho/sanhaua.git"
+  },
   "keywords": [
     "design system",
     "components",
@@ -101,6 +104,7 @@
   "sideEffects": [
     "**/*.css",
     "**/*.scss",
+    "./system/components/wc/**/*.js",
     "./dist/wc.js",
     "./dist/wc.cjs"
   ],
@@ -119,5 +123,9 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

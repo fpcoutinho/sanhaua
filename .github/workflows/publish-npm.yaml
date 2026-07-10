@@ -1,8 +1,13 @@
 name: Publish to NPM
+
 on:
   push:
     tags:
       - '*'
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   build:
@@ -10,14 +15,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install dependencies and build 🔧
+          package-manager-cache: false
+
+      - name: Install dependencies and build
         run: npm install && npm run build
-      - name: Publish package on NPM 📦
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package on npm
+        run: npm publish --access public
