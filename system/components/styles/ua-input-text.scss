@@ -11,6 +11,16 @@
       @include body-2-bold;
     }
 
+    .hint {
+      @include caption;
+    }
+
+    .error-message {
+      @include caption;
+
+      font-weight: map.get($font-weight, "bold");
+    }
+
     .ua-input-text {
       display: flex;
       align-items: center;
@@ -108,6 +118,18 @@
       color: map.get($color-neutral-light, "900");
     }
 
+    .required {
+      color: map.get($color-danger-light, "500");
+    }
+
+    .hint {
+      color: map.get($color-neutral-light, "500");
+    }
+
+    .error-message {
+      color: map.get($color-danger-light, "600");
+    }
+
     .ua-input-text {
       background-color: map.get($color-neutral-light, "100");
       color: map.get($color-neutral-light, "900");
@@ -143,6 +165,18 @@
   &.dark {
     .label {
       color: map.get($color-neutral-dark, "900");
+    }
+
+    .required {
+      color: map.get($color-danger-dark, "500");
+    }
+
+    .hint {
+      color: map.get($color-neutral-dark, "500");
+    }
+
+    .error-message {
+      color: map.get($color-danger-dark, "600");
     }
 
     .ua-input-text {

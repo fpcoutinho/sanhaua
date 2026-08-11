@@ -1,4 +1,4 @@
-import UaSkeleton from './ua-skeleton.jsx'
+import UaSkeleton from './ua-skeleton.tsx'
 
 export default {
   title: 'Component Library/UA-Skeleton',

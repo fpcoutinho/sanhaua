@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+
+    "paths": {
+      "@root/*": ["./*"],
+      "@sanhaua/*": ["./system/*"]
+    }
+  },
+
+  "include": [
+    "lib/react.ts",
+    "system/components/react/**/*.ts",
+    "system/components/react/**/*.tsx",
+    "system/types/**/*.ts",
+    "system/types/**/*.d.ts"
+  ],
+  "exclude": ["**/*.stories.*", "node_modules", "dist", "storybook-static"]
+}

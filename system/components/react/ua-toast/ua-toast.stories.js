@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test'
-import UaToast from './ua-toast.jsx'
+import UaToast from './ua-toast.tsx'
 
 export default {
   title: 'Component Library/UA-Toast',
@@ -19,7 +19,8 @@ export default {
       control: 'text'
     },
     message: {
-      description: 'Sets message.',
+      description:
+        'Sets the toast body. Note: the prop is `message`, not `content` — check this before wiring types by hand.',
       control: 'text'
     },
     onDismiss: {
@@ -75,5 +76,22 @@ export const Info = {
     appearance: 'informative',
     title: 'Info Toast',
     message: 'Here is some useful information.'
+  }
+}
+
+export const Dismissible = {
+  args: {
+    appearance: 'neutral',
+    title: 'Dismissible toast',
+    message: 'Tab to the close button and press Enter.'
+  }
+}
+
+export const WithoutDismiss = {
+  args: {
+    appearance: 'neutral',
+    title: 'Persistent toast',
+    message: 'No onDismiss was passed, so there is no close button.',
+    onDismiss: undefined
   }
 }

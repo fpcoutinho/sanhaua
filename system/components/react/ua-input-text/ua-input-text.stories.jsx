@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fn } from '@storybook/test'
-import UaInputText from './ua-input-text.jsx'
+import UaInputText from './ua-input-text.tsx'
 
 export default {
   title: 'Component Library/UA-Input-Text',
@@ -18,7 +18,31 @@ export default {
       control: 'text'
     },
     id: {
-      description: 'Sets id.',
+      description: 'Sets id. Optional — falls back to a generated id (`useId`) so `label` still works.',
+      control: 'text'
+    },
+    type: {
+      description: 'Sets the native input type.',
+      control: 'select',
+      options: [
+        'text',
+        'email',
+        'password',
+        'number',
+        'tel',
+        'url',
+        'search',
+        'date',
+        'datetime-local',
+        'time'
+      ]
+    },
+    hint: {
+      description: 'Permanent supporting text below the field.',
+      control: 'text'
+    },
+    error: {
+      description: 'Error message. When set, forces appearance="error" and wires aria-invalid/aria-describedby.',
       control: 'text'
     },
     size: {
@@ -144,6 +168,7 @@ export default {
   args: {
     label: 'Text',
     id: 'text-field',
+    type: 'text',
     size: 'medium',
     appearance: 'neutral',
     widthBehavior: 'auto',
@@ -152,6 +177,8 @@ export default {
     prefix: null,
     suffix: null,
     placeholder: 'Enter your text',
+    hint: null,
+    error: null,
     required: false,
     disabled: false,
     readOnly: false,
@@ -561,5 +588,68 @@ export const Full = {
     pattern: null,
     spellCheck: false,
     value: ''
+  }
+}
+
+export const Password = {
+  render,
+  args: {
+    label: 'Password',
+    id: 'password-field',
+    type: 'password',
+    size: 'medium',
+    appearance: 'neutral',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    placeholder: 'Enter your password',
+    autoComplete: 'current-password',
+    name: 'password',
+    value: ''
+  }
+}
+
+export const DateTime = {
+  render,
+  args: {
+    label: 'Inspected at',
+    id: 'inspected-at-field',
+    type: 'datetime-local',
+    size: 'medium',
+    appearance: 'neutral',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    name: 'inspectedAt',
+    value: ''
+  }
+}
+
+export const WithHint = {
+  render,
+  args: {
+    label: 'Password',
+    id: 'password-hint-field',
+    type: 'password',
+    size: 'medium',
+    appearance: 'neutral',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    hint: 'At least 8 characters.',
+    name: 'password',
+    value: ''
+  }
+}
+
+export const WithError = {
+  render,
+  args: {
+    label: 'E-mail',
+    id: 'email-error-field',
+    type: 'email',
+    size: 'medium',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    error: 'E-mail inválido.',
+    name: 'email',
+    value: 'not-an-email'
   }
 }

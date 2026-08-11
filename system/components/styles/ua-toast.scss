@@ -33,7 +33,13 @@
       }
 
       .dismiss-icon {
+        display: flex;
         cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        color: inherit;
+        font: inherit;
 
         @include icon-4;
       }

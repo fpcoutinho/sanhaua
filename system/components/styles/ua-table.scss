@@ -1,0 +1,98 @@
+.sanhaua {
+  .ua-table {
+    overflow-x: auto;
+    border-radius: map.get($border-radius, "medium");
+    border-width: map.get($border-width, "small");
+    border-style: solid;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      @include body-2;
+    }
+
+    .header {
+      padding: spacing(3) spacing(4);
+      text-align: start;
+      white-space: nowrap;
+      border-bottom-width: map.get($border-width, "small");
+      border-bottom-style: solid;
+
+      @include overline;
+    }
+
+    .cell {
+      padding: spacing(3) spacing(4);
+      vertical-align: middle;
+      text-align: start;
+    }
+
+    .row + .row {
+      border-top-width: map.get($border-width, "small");
+      border-top-style: solid;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  &.light {
+    .ua-table {
+      background-color: map.get($color-neutral-light, "100");
+      border-color: map.get($color-neutral-light, "300");
+
+      .header {
+        color: map.get($color-neutral-light, "500");
+        background-color: map.get($color-neutral-light, "200");
+        border-bottom-color: map.get($color-neutral-light, "300");
+      }
+
+      .cell {
+        color: map.get($color-neutral-light, "800");
+      }
+
+      .row {
+        border-top-color: map.get($color-neutral-light, "300");
+
+        &:hover {
+          background-color: map.get($color-neutral-light, "200");
+        }
+      }
+    }
+  }
+
+  &.dark {
+    .ua-table {
+      background-color: map.get($color-neutral-dark, "100");
+      border-color: map.get($color-neutral-dark, "300");
+
+      .header {
+        color: map.get($color-neutral-dark, "500");
+        background-color: map.get($color-neutral-dark, "200");
+        border-bottom-color: map.get($color-neutral-dark, "300");
+      }
+
+      .cell {
+        color: map.get($color-neutral-dark, "800");
+      }
+
+      .row {
+        border-top-color: map.get($color-neutral-dark, "300");
+
+        &:hover {
+          background-color: map.get($color-neutral-dark, "200");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs:react",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "docs:react"],
+      "port": 6008
+    }
+  ]
+}

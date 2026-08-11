@@ -1,4 +1,19 @@
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { BorderStyle, ButtonAppearance, Size, WidthBehavior } from '../../../types/tokens'
 import '../../styles/ua-button.scss'
+
+export interface UaButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'children'> {
+  type?: 'button' | 'submit' | 'reset'
+  size?: Size
+  appearance?: ButtonAppearance
+  widthBehavior?: WidthBehavior
+  borderStyle?: BorderStyle
+  /** Nome de ícone do Material Symbols Rounded. */
+  leftIcon?: string
+  rightIcon?: string
+  children?: ReactNode
+}
 
 export default function UaButton({
   type = 'button',
@@ -13,11 +28,12 @@ export default function UaButton({
   value,
   name,
   form,
+  className,
   children = 'Button',
   onClick,
   ...buttonProps
-}) {
-  const className = ['ua-button', size, appearance, widthBehavior, borderStyle].join(' ')
+}: UaButtonProps) {
+  const computedClassName = ['ua-button', size, appearance, widthBehavior, borderStyle].join(' ')
 
   return (
     <button
@@ -28,7 +44,7 @@ export default function UaButton({
       value={value}
       name={name}
       form={form}
-      className={className}
+      className={[computedClassName, className].filter(Boolean).join(' ')}
       onClick={onClick}
     >
       {leftIcon ? <span className="material-symbols-rounded icon">{leftIcon}</span> : null}

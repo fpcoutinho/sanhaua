@@ -1,6 +1,7 @@
 import pluginVue from 'eslint-plugin-vue'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
 
 export default [
   {
@@ -9,6 +10,10 @@ export default [
   js.configs.recommended,
   eslintConfigPrettier,
   ...pluginVue.configs['flat/recommended'],
+  ...tseslint.configs.recommended.map(config => ({
+    ...config,
+    files: ['**/*.{ts,tsx}']
+  })),
   {
     files: ['**/*.{js,jsx,vue}'],
     languageOptions: {
@@ -31,7 +36,22 @@ export default [
     }
   },
   {
-    files: ['**/.storybook/**/*.js', 'vite*.config.js'],
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      globals: {
+        document: 'readonly',
+        window: 'readonly',
+        HTMLElement: 'readonly'
+      }
+    },
+    rules: {
+      semi: ['error', 'never'],
+      '@typescript-eslint/no-unused-vars': 'error'
+    }
+  },
+  {
+    files: ['**/.storybook/**/*.js', 'vite*.config.js', 'vite*.config.ts'],
     languageOptions: {
       parserOptions: { ecmaFeatures: { jsx: true } },
       globals: {

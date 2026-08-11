@@ -80,6 +80,81 @@ export default defineConfig({
 })
 ```
 
+## TypeScript
+
+The React layer (`system/components/react`, `lib/react.ts`) is written in TypeScript and
+ships **generated** declarations — `dist/lib/react.d.ts` and the per-component `.d.ts`
+under `dist/system/components/react/`, built by `vite-plugin-dts` from the `.tsx` source
+during `npm run build`. Prop types for `UaButton`, `UaInputText`, `UaSkeleton`, `UaTable`
+and `UaToast` are therefore always in sync with the implementation — there is no
+hand-maintained `.d.ts` to drift.
+
+Vue and Web Components are still plain `.vue`/`.js`; their declarations
+(`types/vue.d.ts`, `types/wc.d.ts`, `types/sanhaua.d.ts`) are written by hand and need to
+be reviewed on every release that touches those components — the same caveat that used to
+apply to the whole package.
+
+Shared prop vocabulary (`ButtonAppearance`, `FieldAppearance`, `Size`, …) lives in
+`system/types/tokens.ts`, read off the modifier classes that actually exist in
+`system/components/styles/*.scss` — that SCSS is the source of truth, not any consumer's
+copy of the types.
+
+`npm run typecheck` runs `tsc --noEmit` over the TS layer.
+
+## Consuming the SCSS layer
+
+This is the part every consumer has had to reverse-engineer from `vite.config.ts` trial
+and error, so it is spelled out here in full. A Vite consumer needs, in this order:
+
+```js
+// vite.config.js (consumer)
+css: {
+  preprocessorOptions: {
+    scss: {
+      additionalData: `
+        @use "sass:map";
+        @import "sanhaua/system/themes/main/design-tokens/design-tokens";
+        @import "sanhaua/system/themes/main/responsiveness/responsiveness";
+      `,
+      // Sanhauá's own SCSS is entirely @import. additionalData is prepended to every
+      // file the consumer compiles, so a component .scss in the consumer's codebase
+      // can never open with @use — it would stop being the first statement in the
+      // file and Sass would abort. Silence the resulting deprecation warnings:
+      silenceDeprecations: ['import', 'global-builtin']
+    }
+  }
+}
+```
+
+Notes:
+
+- **`@use "sass:map";` first.** `_media-queries.scss` and `system.scss` call `map.get`
+  without importing the `sass:map` module themselves — they rely on the consumer's build
+  having already loaded it globally. Omit this line and any `@import` that pulls those
+  files in fails.
+- **Import the token files directly, not `system.scss`.** The recipe above never touches
+  `system/themes/system.scss` or the `@theme` alias it uses internally
+  (`@import "@theme/design-tokens/design-tokens"`) — `@theme` is a build-time alias
+  configured in *this* repo's own `vite.config.js`/`vite.lib.config.js` and is not part of
+  the published contract. A consumer that only needs tokens and component styles doesn't
+  need to declare that alias at all; it's only relevant if you import `system.scss` itself
+  (for the `.sanhaua.light`/`.sanhaua.dark` scope rules), in which case mirror the alias
+  in your own `resolve.alias` pointing at `sanhaua/system/themes/main`.
+- **Component styles are plain SCSS, not CSS custom properties.** Colors are Sass maps
+  (`map-get($color-primary-light, "500")`), spacing is a function (`spacing(4)`), and
+  typography is mixins (`@include body-1;`). Nothing emits `var(--...)`.
+- Wrap your markup in an element with `class="sanhaua light"` (or `dark`) — every
+  component style is scoped under `.sanhaua`, and the theme block picks the color set.
+
+## Known gaps
+
+- `UaTable` exists in React only. Vue and Web Components don't have a table component
+  yet — no equivalent SCSS or story either.
+- The React `UaInputText` covers every input `type` in one component; Vue keeps the
+  older pattern of one component per type (`UaInputDate`, `UaInputEmail`,
+  `UaInputPassword`, `UaInputTel`, `UaInputText`), and only `UaInputPassword` has the
+  show/hide toggle. These haven't been reconciled across frameworks.
+
 ## Development
 
 Wanna play around with the design system in dev mode? Here's how to do it.

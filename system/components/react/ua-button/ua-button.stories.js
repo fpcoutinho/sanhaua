@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test'
-import UaButton from './ua-button.jsx'
+import UaButton from './ua-button.tsx'
 
 export default {
   title: 'Component Library/UA-Button',

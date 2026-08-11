@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -22,6 +23,13 @@ export default defineConfig({
     vue(),
     react({
       jsxRuntime: 'automatic'
+    }),
+    dts({
+      include: ['lib/react.ts', 'system/components/react/**/*.tsx', 'system/types/**/*.ts'],
+      entryRoot: '.',
+      outDir: 'dist',
+      tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
+      insertTypesEntry: false
     })
   ],
 
@@ -74,7 +82,7 @@ export default defineConfig({
       entry: {
         sanhaua: path.resolve(__dirname, 'lib/sanhaua.js'),
         vue: path.resolve(__dirname, 'lib/vue.js'),
-        react: path.resolve(__dirname, 'lib/react.js'),
+        react: path.resolve(__dirname, 'lib/react.ts'),
         wc: path.resolve(__dirname, 'lib/wc.js')
       },
 
