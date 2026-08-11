@@ -66,8 +66,6 @@ export default defineConfig({
           @use 'sass:map';
           @import "@theme/design-tokens/design-tokens.scss";
           @import "@theme/responsiveness/responsiveness.scss";
-          @import "@theme/global/global.scss";
-          @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,GRAD@100..700,-25";
         `
       }
     }
