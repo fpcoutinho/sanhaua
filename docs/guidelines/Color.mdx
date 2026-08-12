@@ -6,6 +6,14 @@ import { Meta } from '@storybook/blocks'
 
 Colors play a crucial role in our design system, providing visual cues and enhancing the user experience. This guide provides an overview of the color styles used in our design system.
 
+## Concept — Cyber-Tectônico
+
+A paleta do Sanhauá parte de três ideias: **obsidiana mineral** nos neutros, **ciano-arco** na ação principal e **cobre oxidado** no accent secundário. As seis cores de papel (primary, secondary, success, warning, danger, informative) foram distribuídas em um círculo de matiz OKLCH com um mínimo de **37° de separação** entre quaisquer dois papéis — o suficiente para que nenhuma cor semântica seja confundida com a de marca, mesmo para quem enxerga cores de forma reduzida.
+
+O **dark theme não é uma inversão de luminância** do light: as escalas escuras têm progressão própria (`100` é a superfície mais escura e a cor de texto usada sobre fills coloridos; `900` é o texto mais claro), croma reduzido nos accents para diminuir fadiga visual, e camadas de elevação perceptíveis entre fundo, card e modal.
+
+Todos os pares de texto/fundo usados pelos componentes do sistema — botões, toasts, inputs, tabelas — atendem no mínimo **WCAG 2.1 AA**, a maioria em **AAA**.
+
 ## Color Palette
 
 Our color palette consists of generic, neutral, and semantic colors. Each color category has variations for light and dark themes.
@@ -19,123 +27,136 @@ Neutral colors are essential for creating balance and allowing content to stand 
 
 ##### Neutrals
 
-<div style={{ display: 'flex', gap: '10px' }}>
+Base de superfície e tipografia. Viés violeta-grafite frio — não é cinza puro. Matiz OKLCH 282° — obsidiana mineral.
+
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#fafafd',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f8fafc</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#fafafd</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e2e8f0',
+        backgroundColor: '#eeeef3',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e2e8f0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#eeeef3</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#cbd5e1',
+        backgroundColor: '#dfdfe6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#cbd5e1</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#dfdfe6</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#94a3b8',
+        backgroundColor: '#bdbdc5',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#94a3b8</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#bdbdc5</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#64748b',
+        backgroundColor: '#9897a0',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#64748b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#9897a0</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#475569',
+        backgroundColor: '#717079',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#475569</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#717079</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#1e293b',
+        backgroundColor: '#515058',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#1e293b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#515058</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#0f172a',
+        backgroundColor: '#35343b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#0f172a</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#35343b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#020617',
+        backgroundColor: '#1e1d23',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#020617</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#1e1d23</div>
   </div>
 </div>
 
@@ -145,249 +166,271 @@ Generic colors are used to add vibrancy and highlight elements that need user at
 
 ##### Primary
 
-The primary color set is designed for main interactive elements such as buttons and links, helping users to quickly identify core actions.
+Ação principal: botões, links, foco. Ciano de instrumento, deslocado do cyan de estoque. Matiz OKLCH 212° — ciano-arco.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#cac9fa',
+        backgroundColor: '#d5f7ff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#cac9fa</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#d5f7ff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#a6a7f7',
+        backgroundColor: '#a7effe',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#a6a7f7</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#a7effe</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#7f83f4',
+        backgroundColor: '#78e1f6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#7f83f4</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#78e1f6</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#6265f1',
+        backgroundColor: '#22b4cc',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#6265f1</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#22b4cc</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#4646eb',
+        backgroundColor: '#037d8f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#4646eb</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#037d8f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#413ddf',
+        backgroundColor: '#006b7a',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#413ddf</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#006b7a</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#3831d3',
+        backgroundColor: '#005865',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#3831d3</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#005865</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#3023c7',
+        backgroundColor: '#004550',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#3023c7</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#004550</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#2000b6',
+        backgroundColor: '#00353e',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#2000b6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#00353e</div>
   </div>
 </div>
 
 ##### Secondary
 
-The secondary colors complement the primary colors and provide variety for interactive and decorative elements, ensuring a cohesive look and feel.
+Accents e elementos decorativos que complementam a primária. Matiz OKLCH 55° — cobre oxidado.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f7b9f6',
+        backgroundColor: '#ffece0',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f7b9f6</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffece0</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f287f0',
+        backgroundColor: '#ffd9c0',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f287f0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffd9c0</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eb46eb',
+        backgroundColor: '#ffc096',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eb46eb</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffc096</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e400e6',
+        backgroundColor: '#d88e5a',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e400e6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#d88e5a</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#d600da',
+        backgroundColor: '#a25b23',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#d600da</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#a25b23</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c500d6',
+        backgroundColor: '#8d4a10',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c500d6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#8d4a10</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ae00d0',
+        backgroundColor: '#773c06',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ae00d0</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#773c06</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#9900cb',
+        backgroundColor: '#5e2f05',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#9900cb</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#5e2f05</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#7000c1',
+        backgroundColor: '#492201',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#7000c1</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#492201</div>
   </div>
 </div>
 
@@ -397,503 +440,541 @@ Semantic colors provide clear, context-based cues, such as success, warning, dan
 
 ##### Success
 
-Success colors signify positive actions or successful outcomes, such as completed tasks or positive feedback.
+Confirmações e resultados positivos. Matiz OKLCH 155° — verde botânico.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#daf9c4',
+        backgroundColor: '#dcf9e5',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#daf9c4</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#dcf9e5</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c1f59d',
+        backgroundColor: '#c2eed0',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c1f59d</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#c2eed0</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#a4f071',
+        backgroundColor: '#a3e0b7',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#a4f071</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#a3e0b7</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#8aeb49',
+        backgroundColor: '#6db487',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#8aeb49</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#6db487</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#70e610',
+        backgroundColor: '#388055',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#70e610</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#388055</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#5ed500',
+        backgroundColor: '#276e46',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#5ed500</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#276e46</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#42bf00',
+        backgroundColor: '#1c5c38',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#42bf00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#1c5c38</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#1cab00',
+        backgroundColor: '#15482b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#1cab00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#15482b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#080',
+        backgroundColor: '#0c3720',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#080</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#0c3720</div>
   </div>
 </div>
 
 ##### Warning
 
-Warning colors draw attention to areas that need user caution, such as alerts or other notifications that may require immediate attention.
+Atenção e cautela, sem se confundir com a secundária. Matiz OKLCH 92° — ouro/latão.
 
 <br />
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f7f8c0',
+        backgroundColor: '#fcf0cb',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f7f8c0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#fcf0cb</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f2f395',
+        backgroundColor: '#f4e0a6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f2f395</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#f4e0a6</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eeee6a',
+        backgroundColor: '#e8ce7c',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eeee6a</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#e8ce7c</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ebeb46',
+        backgroundColor: '#bd9f3a',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ebeb46</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#bd9f3a</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e7e617',
+        backgroundColor: '#876d00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e7e617</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#876d00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e9d50b',
+        backgroundColor: '#735c00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e9d50b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#735c00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e9bd00',
+        backgroundColor: '#5f4c00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e9bd00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#5f4c00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eaa400',
+        backgroundColor: '#4b3b00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eaa400</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#4b3b00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e87b00',
+        backgroundColor: '#3a2d00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e87b00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#3a2d00</div>
   </div>
 </div>
 
 ##### Danger
 
-Danger colors indicate errors, failures, or issues that require user attention. They are often used in error messages or destructive actions.
+Erros, falhas e ações destrutivas. Matiz OKLCH 18° — rubi mineral.
 
 <br />
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#fec9cf',
+        backgroundColor: '#ffebea',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#fec9cf</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffebea</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ed9494',
+        backgroundColor: '#ffd6d6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ed9494</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffd6d6</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e26a6b',
+        backgroundColor: '#ffbbbc',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e26a6b</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffbbbc</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eb4646',
+        backgroundColor: '#f3747c',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eb4646</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#f3747c</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ef3129',
+        backgroundColor: '#ba3d4b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ef3129</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#ba3d4b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e02529',
+        backgroundColor: '#a42c3c',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e02529</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#a42c3c</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ce1824',
+        backgroundColor: '#8a202f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ce1824</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#8a202f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c20d1d',
+        backgroundColor: '#6e1824',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c20d1d</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#6e1824</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#b20010',
+        backgroundColor: '#570f1a',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#b20010</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#570f1a</div>
   </div>
 </div>
 
 ##### Informative
 
-Information colors are used for informational messages, helping users understand the context or importance of a message without implying urgency.
+Mensagens de contexto, sem urgência. Matiz OKLCH 272° — índigo profundo.
 
 <br />
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#dcc2f7',
+        backgroundColor: '#ebf0ff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#dcc2f7</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ebf0ff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c499f3',
+        backgroundColor: '#d7e0ff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c499f3</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#d7e0ff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ac6cef',
+        backgroundColor: '#bfcdff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ac6cef</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#bfcdff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#9946eb',
+        backgroundColor: '#869cf1',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#9946eb</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#869cf1</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#8410e6',
+        backgroundColor: '#5668bb',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#8410e6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#5668bb</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#7906df',
+        backgroundColor: '#4657a5',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#7906df</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#4657a5</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#6a00d7',
+        backgroundColor: '#39478c',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#6a00d7</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#39478c</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#5b00d2',
+        backgroundColor: '#2c386f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#5b00d2</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#2c386f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#4300c3',
+        backgroundColor: '#202a58',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#4300c3</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#202a58</div>
   </div>
 </div>
 
@@ -901,129 +982,144 @@ Information colors are used for informational messages, helping users understand
 
 <br />
 
+> Convenção: no dark, **`100` é a superfície mais escura** (e a cor de texto usada sobre fills coloridos), **`900` é o texto mais claro** — o inverso do light. Isso mantém compatibilidade com os componentes existentes.
+
 #### Neutral Colors
 
 Neutral colors are essential for creating balance and allowing content to stand out. They are commonly used for backgrounds, borders, and typography in our design system.
 
 ##### Neutrals
 
-<div style={{ display: 'flex', gap: '10px' }}>
+Base de superfície e tipografia. Viés violeta-grafite frio — não é cinza puro. Matiz OKLCH 282° — obsidiana mineral.
+
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#020617',
+        backgroundColor: '#0f0f15',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#020617</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#0f0f15</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#0f172a',
+        backgroundColor: '#1d1e26',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#0f172a</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#1d1e26</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#1e293b',
+        backgroundColor: '#2c2d36',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#1e293b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#2c2d36</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#475569',
+        backgroundColor: '#4e4f59',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#475569</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#4e4f59</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#64748b',
+        backgroundColor: '#72737d',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#64748b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#72737d</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#94a3b8',
+        backgroundColor: '#9797a1',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#94a3b8</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#9797a1</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#cbd5e1',
+        backgroundColor: '#bcbdc5',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#cbd5e1</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#bcbdc5</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e2e8f0',
+        backgroundColor: '#dddde4',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e2e8f0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#dddde4</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#f3f3f7',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f8fafc</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#f3f3f7</div>
   </div>
 </div>
 
@@ -1031,249 +1127,271 @@ Neutral colors are essential for creating balance and allowing content to stand 
 
 ##### Primary
 
-The primary color set is designed for main interactive elements such as buttons and links, helping users to quickly identify core actions.
+Ação principal: botões, links, foco. Ciano de instrumento, deslocado do cyan de estoque. Matiz OKLCH 212° — ciano-arco.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#294a98',
+        backgroundColor: '#003740',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#294a98</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#003740</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#3468b8',
+        backgroundColor: '#004a55',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#3468b8</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#004a55</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#3979ca',
+        backgroundColor: '#005d6b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#3979ca</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#005d6b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#408bdd',
+        backgroundColor: '#028699',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#408bdd</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#028699</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#4699eb',
+        backgroundColor: '#50b6ca',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#4699eb</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#50b6ca</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#59a7ee',
+        backgroundColor: '#70cadc',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#59a7ee</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#70cadc</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#73b7f1',
+        backgroundColor: '#93ddec',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#73b7f1</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#93ddec</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#98cbf6',
+        backgroundColor: '#b4ebf6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#98cbf6</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#b4ebf6</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#bfdff9',
+        backgroundColor: '#d5f7ff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#bfdff9</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#d5f7ff</div>
   </div>
 </div>
 
 ##### Secondary
 
-The secondary colors complement the primary colors and provide variety for interactive and decorative elements, ensuring a cohesive look and feel.
+Accents e elementos decorativos que complementam a primária. Matiz OKLCH 55° — cobre oxidado.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#7000c1',
+        backgroundColor: '#47270f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#7000c1</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#47270f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#9900cb',
+        backgroundColor: '#603412',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#9900cb</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#603412</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ae00d0',
+        backgroundColor: '#794319',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ae00d0</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#794319</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c500d6',
+        backgroundColor: '#a3673b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c500d6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#a3673b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#d600da',
+        backgroundColor: '#d5966b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#d600da</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#d5966b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e400e6',
+        backgroundColor: '#e7ac84',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e400e6</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#e7ac84</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eb46eb',
+        backgroundColor: '#f7c3a1',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eb46eb</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#f7c3a1</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f287f0',
+        backgroundColor: '#ffd7bc',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f287f0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffd7bc</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f7b9f6',
+        backgroundColor: '#ffece0',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f7b9f6</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffece0</div>
   </div>
 </div>
 
@@ -1281,496 +1399,553 @@ The secondary colors complement the primary colors and provide variety for inter
 
 ##### Success
 
-Success colors signify positive actions or successful outcomes, such as completed tasks or positive feedback.
+Confirmações e resultados positivos. Matiz OKLCH 155° — verde botânico.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#080',
+        backgroundColor: '#173824',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#080</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#173824</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#1cab00',
+        backgroundColor: '#1e4c31',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#1cab00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#1e4c31</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#42bf00',
+        backgroundColor: '#28603e',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#42bf00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#28603e</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#5ed500',
+        backgroundColor: '#4b8661',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#5ed500</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#4b8661</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#70e610',
+        backgroundColor: '#7bb68f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#70e610</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#7bb68f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#8aeb49',
+        backgroundColor: '#93caa5',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#8aeb49</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#93caa5</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#a4f071',
+        backgroundColor: '#aeddbd',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#a4f071</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#aeddbd</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c1f59d',
+        backgroundColor: '#c7ead1',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c1f59d</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#c7ead1</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#daf9c4',
+        backgroundColor: '#def8e6',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#daf9c4</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#def8e6</div>
   </div>
 </div>
 
 ##### Warning
 
-Warning colors draw attention to areas that need user caution, such as alerts or other notifications that may require immediate attention.
+Atenção e cautela, sem se confundir com a secundária. Matiz OKLCH 92° — ouro/latão.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e87b00',
+        backgroundColor: '#3c2f00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e87b00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#3c2f00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eaa400',
+        backgroundColor: '#503f00',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eaa400</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#503f00</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e9bd00',
+        backgroundColor: '#645000',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e9bd00</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#645000</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e9d50b',
+        backgroundColor: '#8e7519',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e9d50b</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#8e7519</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e7e617',
+        backgroundColor: '#bea453',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e7e617</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#bea453</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ebeb46',
+        backgroundColor: '#d1b96f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ebeb46</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#d1b96f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eeee6a',
+        backgroundColor: '#e3ce91',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eeee6a</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#e3ce91</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f2f395',
+        backgroundColor: '#eedfb1',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f2f395</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#eedfb1</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#f7f8c0',
+        backgroundColor: '#fbf0ce',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#f7f8c0</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#fbf0ce</div>
   </div>
 </div>
 
 ##### Danger
 
-Danger colors indicate errors, failures, or issues that require user attention. They are often used in error messages or destructive actions.
+Erros, falhas e ações destrutivas. Matiz OKLCH 18° — rubi mineral.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#b20010',
+        backgroundColor: '#511c21',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#b20010</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#511c21</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c20d1d',
+        backgroundColor: '#6d252c',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c20d1d</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#6d252c</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ce1824',
+        backgroundColor: '#883039',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ce1824</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#883039</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e02529',
+        backgroundColor: '#b6545a',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e02529</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#b6545a</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ef3129',
+        backgroundColor: '#ea8488',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ef3129</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#ea8488</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#eb4646',
+        backgroundColor: '#fc9c9f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#eb4646</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#fc9c9f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#e26a6b',
+        backgroundColor: '#ffbbbc',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#e26a6b</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffbbbc</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ed9494',
+        backgroundColor: '#ffd3d3',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ed9494</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffd3d3</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#fec9cf',
+        backgroundColor: '#ffebeb',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#fec9cf</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ffebeb</div>
   </div>
 </div>
 
 ##### Informative
 
-Information colors are used for informational messages, helping users understand the context or importance of a message without implying urgency.
+Mensagens de contexto, sem urgência. Matiz OKLCH 272° — índigo profundo.
 
-<div style={{ display: 'flex', gap: '10px' }}>
+<br />
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#4300c3',
+        backgroundColor: '#242d53',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>100</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#4300c3</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>100</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#242d53</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#5b00d2',
+        backgroundColor: '#313d6f',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>200</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#5b00d2</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>200</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#313d6f</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#6a00d7',
+        backgroundColor: '#3f4d8b',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>300</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#6a00d7</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>300</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#3f4d8b</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#7906df',
+        backgroundColor: '#6172b8',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>400</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#7906df</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>400</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#6172b8</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#8410e6',
+        backgroundColor: '#8ea2ea',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>500</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#8410e6</div>
+    <div style={{ fontSize: '12px', color: '#9797a1' }}>500</div>
+    <div style={{ fontSize: '10px', color: '#9797a1', fontFamily: 'monospace' }}>#8ea2ea</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#9946eb',
+        backgroundColor: '#a4b7fb',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>600</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#9946eb</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>600</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#a4b7fb</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#ac6cef',
+        backgroundColor: '#bfcdff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>700</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#ac6cef</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>700</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#bfcdff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#c499f3',
+        backgroundColor: '#d5dfff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>800</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#c499f3</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>800</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#d5dfff</div>
   </div>
   <div style={{ textAlign: 'center' }}>
     <div
       style={{
-        backgroundColor: '#dcc2f7',
+        backgroundColor: '#ebf0ff',
         width: '50px',
         height: '50px',
         borderRadius: '8px',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        border: '1px solid rgba(0,0,0,0.08)'
       }}
     ></div>
-    <div style={{ fontSize: '12px', color: '#1e293b' }}>900</div>
-    <div style={{ fontSize: '10px', color: '#64748b' }}>#dcc2f7</div>
+    <div style={{ fontSize: '12px', color: '#3a3a42' }}>900</div>
+    <div style={{ fontSize: '10px', color: '#3a3a42', fontFamily: 'monospace' }}>#ebf0ff</div>
   </div>
 </div>
+
+## Contrast reference
+
+Pares reais usados pelos componentes (`ua-button`, `ua-toast`, `ua-input-*`, `ua-table`), auditados em WCAG 2.1:
+
+| Par | Light | Dark |
+| --- | --- | --- |
+| `neutral-900` sobre `neutral-100` (texto de corpo) | 16,06 · AAA | 17,26 · AAA |
+| `neutral-700` sobre `neutral-100` (texto secundário) | 7,64 · AAA | 10,21 · AAA |
+| fill `500` do papel + texto `neutral-100` (botão) | 4,65 – 5,23 · AA | 7,42 – 8,12 · AAA |
+| toast: `\<papel\>-800` sobre `\<papel\>-100` | 9,39 – 10,07 · AAA | 9,90 – 10,13 · AAA |
+| placeholder `neutral-600` sobre `neutral-100` | 4,69 · AA | 6,60 · AA |
+| cabeçalho de tabela `neutral-700` sobre `neutral-200` | ≥ 4,5 · AA | ≥ 4,5 · AA |
