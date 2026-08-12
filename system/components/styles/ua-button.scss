@@ -64,8 +64,13 @@
       border-radius: map.get($border-radius, "pill");
     }
 
-    &:disabled {
+    &:disabled,
+    &.disabled {
       cursor: not-allowed;
+    }
+
+    &:is(a) {
+      text-decoration: none;
     }
   }
 

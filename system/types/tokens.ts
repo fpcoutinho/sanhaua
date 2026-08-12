@@ -4,6 +4,8 @@ export type WidthBehavior = 'auto' | 'full'
 
 export type BorderStyle = 'square' | 'round'
 
+export type ButtonBehavior = 'button' | 'link'
+
 export type ButtonAppearance =
   | 'primary'
   | 'secondary'

@@ -12,6 +12,29 @@ export default {
     }
   },
   argTypes: {
+    behavior: {
+      description: 'Renders the component as a <button> or as an <a> styled like a button.',
+      control: 'select',
+      options: ['button', 'link']
+    },
+    href: {
+      description: 'Sets href. Only used when behavior is "link".',
+      control: 'text'
+    },
+    target: {
+      description: 'Sets target. Only used when behavior is "link".',
+      control: 'select',
+      options: [undefined, '_self', '_blank', '_parent', '_top']
+    },
+    rel: {
+      description:
+        'Sets rel. Only used when behavior is "link". Defaults to "noopener noreferrer" when target is "_blank".',
+      control: 'text'
+    },
+    download: {
+      description: 'Sets download. Only used when behavior is "link".',
+      control: 'text'
+    },
     type: {
       description: 'Sets type.',
       control: 'select',
@@ -75,6 +98,7 @@ export default {
     }
   },
   args: {
+    behavior: 'button',
     type: 'button',
     size: 'medium',
     appearance: 'primary',
@@ -86,6 +110,37 @@ export default {
     disabled: false,
     autoFocus: false,
     onClick: fn()
+  }
+}
+
+export const Link = {
+  args: {
+    behavior: 'link',
+    href: 'https://example.com',
+    target: '_blank',
+    size: 'medium',
+    appearance: 'primary',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    children: 'Link',
+    leftIcon: null,
+    rightIcon: 'open_in_new',
+    disabled: false
+  }
+}
+
+export const LinkDisabled = {
+  args: {
+    behavior: 'link',
+    href: 'https://example.com',
+    size: 'medium',
+    appearance: 'primary',
+    widthBehavior: 'auto',
+    borderStyle: 'square',
+    children: 'Link',
+    leftIcon: null,
+    rightIcon: null,
+    disabled: true
   }
 }
 
