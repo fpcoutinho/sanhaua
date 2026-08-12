@@ -31,7 +31,6 @@ coverage
 
 *.tsbuildinfo
 
-package-lock.json
 .vscode
 
 *storybook.log

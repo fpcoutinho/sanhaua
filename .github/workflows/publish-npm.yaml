@@ -23,7 +23,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies and build
-        run: npm install && npm run build
+        run: npm ci && npm run build
 
       - name: Publish package on npm
         run: npm publish --access public
