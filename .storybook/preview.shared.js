@@ -1,53 +1,89 @@
-export const parameters = {
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/i
-    },
-    sort: 'requiredFirst'
-  },
+import { addons } from '@storybook/preview-api'
 
-  html: {
-    prettier: {
-      tabWidth: 4,
-      useTabs: true,
-      htmlWhitespaceSensitivity: 'strict'
-    }
-  }
+const THEME_BACKGROUND_MAP = {
+  light: '#FFFFFF',
+  dark: '#000000'
 }
 
-export const globalTypes = {
-  templateMode: {
-    description: 'Template mode',
-    defaultValue: 'light',
-
-    toolbar: {
-      title: 'Template mode',
-      icon: 'mirror',
-      items: [
+export default {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i
+      },
+      sort: 'requiredFirst'
+    },
+    html: {
+      prettier: {
+        tabWidth: 4,
+        useTabs: true,
+        htmlWhitespaceSensitivity: 'strict'
+      }
+    },
+    backgrounds: {
+      values: [
         {
-          value: 'light',
-          title: 'Light'
+          name: 'light',
+          value: THEME_BACKGROUND_MAP.light
         },
         {
-          value: 'dark',
-          title: 'Dark'
+          name: 'dark',
+          value: THEME_BACKGROUND_MAP.dark
         }
-      ],
-      dynamicTitle: true
+      ]
     }
-  }
-}
+  },
+  initialGlobals: {
+    backgrounds: {
+      value: THEME_BACKGROUND_MAP.light
+    }
+  },
+  globalTypes: {
+    templateMode: {
+      description: 'Template mode',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Template mode',
+        icon: 'cloudhollow',
+        items: [
+          {
+            value: 'light',
+            title: 'Light',
+            icon: 'sun'
+          },
+          {
+            value: 'dark',
+            title: 'Dark',
+            icon: 'moon'
+          }
+        ],
+        dynamicTitle: true
+      }
+    }
+  },
+  decorators: [
+    (Story, context) => {
+      const { templateMode, backgrounds } = context.globals
+      const currentThemeBackground = THEME_BACKGROUND_MAP[templateMode]
 
-export function applyTemplateMode(context) {
-  const canvasElement = context.canvasElement
+      if (backgrounds?.value !== currentThemeBackground) {
+        addons.getChannel().emit('updateGlobals', {
+          globals: {
+            backgrounds: {
+              value: currentThemeBackground
+            }
+          }
+        })
+      }
 
-  if (!canvasElement) {
-    return
-  }
+      const canvas = context.canvasElement
+      if (canvas) {
+        canvas.classList.remove('light', 'dark')
+        canvas.classList.add('sanhaua', templateMode)
+      }
 
-  const templateMode = context.globals?.templateMode ?? 'light'
-
-  canvasElement.classList.remove('light', 'dark')
-  canvasElement.classList.add('sanhaua', templateMode)
+      return Story()
+    }
+  ]
 }
