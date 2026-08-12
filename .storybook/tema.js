@@ -11,30 +11,30 @@ export default create({
   fontBase: '"Lato", sans-serif',
   fontCode: 'monospace',
 
-  // Base Colors
-  colorPrimary: '#1E4950',
-  colorSecondary: '#027C9B',
+  // Base Colors — primary-400 / primary-500 (Cyber-Tectônico, ciano-arco)
+  colorPrimary: '#028699',
+  colorSecondary: '#50B6CA',
 
-  // UI
-  appBg: '#09141B',
-  appContentBg: '#0C1A24',
+  // UI — neutral-100 / neutral-200 (obsidiana mineral)
+  appBg: '#0F0F15',
+  appContentBg: '#1D1E26',
   appPreviewBg: '#FFFFFF',
-  appBorderColor: '#09141B',
+  appBorderColor: '#0F0F15',
   appBorderRadius: 4,
 
-  // Text colors
-  textColor: '#C9CDCF',
-  textInverseColor: '#17384C',
+  // Text colors — neutral-700 / primary-100
+  textColor: '#BCBDC5',
+  textInverseColor: '#003740',
 
-  // Toolbar default and active colors
-  barTextColor: '#C9CDCF',
-  barSelectedColor: '#50A3B5',
-  barHoverColor: '#1BBCDD',
-  barBg: '#09141B',
+  // Toolbar default and active colors — neutral-700 / primary-600 / primary-700
+  barTextColor: '#BCBDC5',
+  barSelectedColor: '#70CADC',
+  barHoverColor: '#93DDEC',
+  barBg: '#0F0F15',
 
   // Form colors
-  inputBg: '#09141B',
-  inputBorder: '#1E4950',
-  inputTextColor: '#C9CDCF',
+  inputBg: '#0F0F15',
+  inputBorder: '#028699',
+  inputTextColor: '#BCBDC5',
   inputBorderRadius: 2
 })
