@@ -15,12 +15,15 @@
     &.button,
     &.link {
       cursor: pointer;
-      transition: border-color 0.2s;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
     }
 
     &.button:disabled {
       cursor: not-allowed;
-      opacity: 0.5;
+      opacity: map.get($opacity, "medium");
+      box-shadow: none;
     }
   }
 
@@ -29,12 +32,14 @@
       background-color: map.get($color-neutral-light, "100");
       border-color: map.get($color-neutral-light, "300");
       color: map.get($color-neutral-light, "900");
+      box-shadow: 0 1px 3px rgba(map.get($color-neutral-light, "900"), 0.08);
 
       &.button:hover:not(:disabled),
       &.button:focus-visible:not(:disabled),
       &.link:hover,
       &.link:focus-visible {
         border-color: map.get($color-primary-light, "500");
+        box-shadow: 0 2px 6px rgba(map.get($color-primary-light, "500"), 0.12);
       }
     }
   }
@@ -44,12 +49,14 @@
       background-color: map.get($color-neutral-dark, "100");
       border-color: map.get($color-neutral-dark, "300");
       color: map.get($color-neutral-dark, "900");
+      box-shadow: 0 1px 3px rgba(map.get($color-neutral-dark, "100"), 0.08);
 
       &.button:hover:not(:disabled),
       &.button:focus-visible:not(:disabled),
       &.link:hover,
       &.link:focus-visible {
         border-color: map.get($color-primary-dark, "500");
+        box-shadow: 0 2px 6px rgba(map.get($color-primary-dark, "500"), 0.12);
       }
     }
   }
