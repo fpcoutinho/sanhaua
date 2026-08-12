@@ -16,10 +16,8 @@ export interface UaAlertProps {
   appearance?: AlertAppearance
   title?: string
   description?: ReactNode
-  /** Nome de ícone do Material Symbols Rounded. Use `false` para esconder o ícone. */
   icon?: string | false
   actionLabel?: string
-  /** `link` renderiza um `<a>` (precisa de `actionHref`), `button` renderiza um `<button>`. */
   actionAs?: 'button' | 'link'
   actionHref?: string
   actionTarget?: string

@@ -1,14 +1,3 @@
-/*
- * Folha do UaInputField (React), que cobre todos os `type` num só componente.
- *
- * As versões Vue e Web Component ainda seguem o formato antigo — um componente e
- * uma folha por tipo (`ua-input-text`, `ua-input-email`, `ua-input-date`,
- * `ua-input-password`, `ua-input-tel`), todas praticamente idênticas a esta.
- * Ao migrá-las para o formato unificado, elas passam a apontar para cá e os
- * arquivos por tipo somem — inclusive o `ua-input-text.scss`, que hoje é o
- * duplicado mais direto deste.
- */
-
 .sanhaua {
   .form-element-wrapper {
     display: flex;

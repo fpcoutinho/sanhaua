@@ -5,12 +5,9 @@ export type CardBehavior = 'container' | 'button' | 'link'
 
 export interface UaCardProps {
   children?: ReactNode
-  /** `container` renderiza um `<div>`, `button` um `<button>` e `link` um `<a>`. */
   behavior?: CardBehavior
-  /** Usado apenas quando `behavior` é `link`. */
   href?: string
   target?: string
-  /** Usado apenas quando `behavior` é `button`. */
   disabled?: boolean
   className?: string
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void

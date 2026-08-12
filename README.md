@@ -85,7 +85,7 @@ export default defineConfig({
 The React layer (`system/components/react`, `lib/react.ts`) is written in TypeScript and
 ships **generated** declarations — `dist/lib/react.d.ts` and the per-component `.d.ts`
 under `dist/system/components/react/`, built by `vite-plugin-dts` from the `.tsx` source
-during `npm run build`. Prop types for `UaButton`, `UaInputText`, `UaSkeleton`, `UaTable`
+during `npm run build`. Prop types for `UaAlert`, `UaButton`, `UaCard`, `UaInputField`, `UaInputRadio`, `UaSkeleton`, `UaTable`
 and `UaToast` are therefore always in sync with the implementation — there is no
 hand-maintained `.d.ts` to drift.
 
@@ -150,10 +150,16 @@ Notes:
 
 - `UaTable` exists in React only. Vue and Web Components don't have a table component
   yet — no equivalent SCSS or story either.
-- The React `UaInputText` covers every input `type` in one component; Vue keeps the
+- The React `UaInputField` covers every input `type` in one component; Vue keeps the
   older pattern of one component per type (`UaInputDate`, `UaInputEmail`,
   `UaInputPassword`, `UaInputTel`, `UaInputText`), and only `UaInputPassword` has the
-  show/hide toggle. These haven't been reconciled across frameworks.
+  show/hide toggle. These haven't been reconciled across frameworks. Because of that,
+  `styles/ua-input-field.scss` (React) and `styles/ua-input-text.scss` (Vue and Web
+  Components) are near-identical duplicates today — same rules, different block class.
+  Migrating Vue and Web Components to the unified format collapses the per-type sheets
+  into `ua-input-field.scss`; the duplication is deliberate until then, and the note is
+  repeated at the top of that file.
+- `UaAlert` and `UaCard` exist in React only. `UaInputRadio` exists in React and Vue.
 
 ## Development
 

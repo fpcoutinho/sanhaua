@@ -9,7 +9,6 @@ export interface UaButtonProps
   appearance?: ButtonAppearance
   widthBehavior?: WidthBehavior
   borderStyle?: BorderStyle
-  /** Nome de ícone do Material Symbols Rounded. */
   leftIcon?: string
   rightIcon?: string
   children?: ReactNode
