@@ -11,6 +11,7 @@ export default {
         'A radio button lets the user pick a single option out of a set of mutually exclusive ones.'
     }
   },
+  decorators: [(Story) => <div style={{ width: '200px' }}>{Story()}</div>],
   argTypes: {
     size: {
       description: 'Sets the size of the radio.',
