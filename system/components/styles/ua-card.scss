@@ -1,0 +1,56 @@
+.sanhaua {
+  .ua-card {
+    display: block;
+    border-radius: map.get($border-radius, "large");
+    border-width: map.get($border-width, "medium");
+    border-style: solid;
+    padding: spacing(6);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+
+    &.button,
+    &.link {
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    &.button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &.light {
+    .ua-card {
+      background-color: map.get($color-neutral-light, "100");
+      border-color: map.get($color-neutral-light, "300");
+      color: map.get($color-neutral-light, "900");
+
+      &.button:hover:not(:disabled),
+      &.button:focus-visible:not(:disabled),
+      &.link:hover,
+      &.link:focus-visible {
+        border-color: map.get($color-primary-light, "500");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-card {
+      background-color: map.get($color-neutral-dark, "100");
+      border-color: map.get($color-neutral-dark, "300");
+      color: map.get($color-neutral-dark, "900");
+
+      &.button:hover:not(:disabled),
+      &.button:focus-visible:not(:disabled),
+      &.link:hover,
+      &.link:focus-visible {
+        border-color: map.get($color-primary-dark, "500");
+      }
+    }
+  }
+}

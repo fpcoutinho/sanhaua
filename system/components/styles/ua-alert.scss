@@ -1,0 +1,125 @@
+.sanhaua {
+  .ua-alert {
+    display: flex;
+
+    /* Alinha o ícone à primeira linha do conteúdo: título quando existe, senão descrição. */
+    align-items: flex-start;
+    gap: spacing(3);
+    border-radius: map.get($border-radius, "medium");
+    border-left: map.get($border-width, "large") solid transparent;
+    padding: spacing(4);
+    width: 100%;
+    box-sizing: border-box;
+
+    .icon {
+      flex-shrink: 0;
+      line-height: 1;
+
+      @include icon-3;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: spacing(1);
+
+      .title {
+        margin: 0;
+
+        @include body-1-bold;
+      }
+
+      .description {
+        @include body-2;
+      }
+    }
+
+    .action {
+      align-self: flex-start;
+      margin-top: spacing(1);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      @include body-2-bold;
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &.light {
+    .ua-alert {
+      &.neutral {
+        background-color: map.get($color-neutral-light, "800");
+        border-left-color: map.get($color-neutral-light, "500");
+        color: map.get($color-neutral-light, "100");
+      }
+
+      &.success {
+        background-color: map.get($color-success-light, "100");
+        border-left-color: map.get($color-success-light, "500");
+        color: map.get($color-success-light, "800");
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-light, "100");
+        border-left-color: map.get($color-warning-light, "500");
+        color: map.get($color-warning-light, "800");
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-light, "100");
+        border-left-color: map.get($color-danger-light, "500");
+        color: map.get($color-danger-light, "800");
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-light, "100");
+        border-left-color: map.get($color-informative-light, "500");
+        color: map.get($color-informative-light, "800");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-alert {
+      &.neutral {
+        background-color: map.get($color-neutral-dark, "800");
+        border-left-color: map.get($color-neutral-dark, "500");
+        color: map.get($color-neutral-dark, "100");
+      }
+
+      &.success {
+        background-color: map.get($color-success-dark, "100");
+        border-left-color: map.get($color-success-dark, "500");
+        color: map.get($color-success-dark, "800");
+      }
+
+      &.warning {
+        background-color: map.get($color-warning-dark, "100");
+        border-left-color: map.get($color-warning-dark, "500");
+        color: map.get($color-warning-dark, "800");
+      }
+
+      &.danger {
+        background-color: map.get($color-danger-dark, "100");
+        border-left-color: map.get($color-danger-dark, "500");
+        color: map.get($color-danger-dark, "800");
+      }
+
+      &.informative {
+        background-color: map.get($color-informative-dark, "100");
+        border-left-color: map.get($color-informative-dark, "500");
+        color: map.get($color-informative-dark, "800");
+      }
+    }
+  }
+}
