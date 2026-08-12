@@ -52,7 +52,7 @@
       border-color: map.get($color-neutral-light, "300");
 
       .header {
-        color: map.get($color-neutral-light, "500");
+        color: map.get($color-neutral-light, "700");
         background-color: map.get($color-neutral-light, "200");
         border-bottom-color: map.get($color-neutral-light, "300");
       }
@@ -77,7 +77,7 @@
       border-color: map.get($color-neutral-dark, "300");
 
       .header {
-        color: map.get($color-neutral-dark, "500");
+        color: map.get($color-neutral-dark, "700");
         background-color: map.get($color-neutral-dark, "200");
         border-bottom-color: map.get($color-neutral-dark, "300");
       }

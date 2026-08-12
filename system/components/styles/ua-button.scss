@@ -181,7 +181,7 @@
       }
 
       &.ghost {
-        background-color: map.get($color-neutral-dark, "100");
+        background-color: transparent;
         color: map.get($color-neutral-dark, "900");
 
         &:hover {

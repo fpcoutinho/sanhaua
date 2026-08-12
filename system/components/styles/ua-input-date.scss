@@ -116,7 +116,7 @@
         color: map.get($color-neutral-light, "900");
 
         &::placeholder {
-          color: map.get($color-neutral-light, "500");
+          color: map.get($color-neutral-light, "600");
         }
       }
 
@@ -152,7 +152,7 @@
         color: map.get($color-neutral-dark, "900");
 
         &::placeholder {
-          color: map.get($color-neutral-dark, "500");
+          color: map.get($color-neutral-dark, "600");
         }
       }
 
