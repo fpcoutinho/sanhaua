@@ -69,10 +69,10 @@ const config = {
     ${head}
     <style>
       @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,GRAD@100..700,-25";
-      @import "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap";
+      @import "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap";
 
       body * {
-        font-family: "Lato", sans-serif !important;
+        font-family: "Plus Jakarta Sans", sans-serif !important;
       }
 
       .material-symbols-rounded {
@@ -96,10 +96,10 @@ const config = {
     ${head}
     <link rel="shortcut icon" href="/favicon.ico" />
     <style>
-      @import "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap";
+      @import "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap";
 
       body * {
-        font-family: "Lato", sans-serif !important;
+        font-family: "Plus Jakarta Sans", sans-serif !important;
       }
     </style>
   `

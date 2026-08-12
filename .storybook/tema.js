@@ -8,7 +8,7 @@ export default create({
   brandTarget: '_self',
 
   // Typography
-  fontBase: '"Lato", sans-serif',
+  fontBase: '"Plus Jakarta Sans", sans-serif',
   fontCode: 'monospace',
 
   // Base Colors — primary-400 / primary-500 (Cyber-Tectônico, ciano-arco)

@@ -1,31 +1,7 @@
 @font-face {
-  font-family: Lato;
-  src: url("../assets/fonts/Lato-Light.woff2") format("woff2");
-  font-weight: map.get($font-weight, "light");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Lato;
-  src: url("../assets/fonts/Lato-Regular.woff2") format("woff2");
-  font-weight: map.get($font-weight, "regular");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Lato;
-  src: url("../assets/fonts/Lato-Bold.woff2") format("woff2");
-  font-weight: map.get($font-weight, "bold");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Lato;
-  src: url("../assets/fonts/Lato-Black.woff2") format("woff2");
-  font-weight: map.get($font-weight, "black");
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/Plus-Jakarta-Sans.woff2") format("woff2-variations");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
