@@ -1,4 +1,4 @@
-import { addons } from '@storybook/preview-api'
+import { addons } from 'storybook/preview-api'
 
 const THEME_BACKGROUND_MAP = {
   light: '#FFFFFF',
@@ -22,27 +22,30 @@ export default {
       }
     },
     backgrounds: {
-      values: [
-        {
-          name: 'light',
+      options: {
+        light: {
+          name: 'Light',
           value: THEME_BACKGROUND_MAP.light
         },
-        {
-          name: 'dark',
+        dark: {
+          name: 'Dark',
           value: THEME_BACKGROUND_MAP.dark
         }
-      ]
+      }
+    },
+    docs: { 
+      codePanel: true
     }
   },
   initialGlobals: {
+    templateMode: 'light',
     backgrounds: {
-      value: THEME_BACKGROUND_MAP.light
+      value: 'light'
     }
   },
   globalTypes: {
     templateMode: {
       description: 'Template mode',
-      defaultValue: 'light',
       toolbar: {
         title: 'Template mode',
         icon: 'cloudhollow',
@@ -65,13 +68,12 @@ export default {
   decorators: [
     (Story, context) => {
       const { templateMode, backgrounds } = context.globals
-      const currentThemeBackground = THEME_BACKGROUND_MAP[templateMode]
 
-      if (backgrounds?.value !== currentThemeBackground) {
+      if (backgrounds?.value !== templateMode) {
         addons.getChannel().emit('updateGlobals', {
           globals: {
             backgrounds: {
-              value: currentThemeBackground
+              value: templateMode
             }
           }
         })

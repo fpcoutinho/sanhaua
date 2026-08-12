@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import UaToast from './ua-toast.tsx'
 
 export default {

@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import UaCard from './ua-card.tsx'
 
 export default {

@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import uaInputEmail from './ua-input-email.vue'
 
 export default {

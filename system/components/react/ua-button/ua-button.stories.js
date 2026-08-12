@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import UaButton from './ua-button.tsx'
 
 export default {

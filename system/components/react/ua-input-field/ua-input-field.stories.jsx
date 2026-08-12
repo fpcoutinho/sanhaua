@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import UaInputField from './ua-input-field.tsx'
 
 export default {

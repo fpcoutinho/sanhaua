@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import uaToast from './ua-toast.vue'
 
 export default {

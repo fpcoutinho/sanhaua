@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import uaButton from './ua-button.vue'
 
 export default {

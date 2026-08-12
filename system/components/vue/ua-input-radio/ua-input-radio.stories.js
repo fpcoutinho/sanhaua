@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import uaInputRadio from './ua-input-radio.vue'
 
 export default {

@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import './ua-button.js'
 import { createPublicSource } from '../story-source.js'
 

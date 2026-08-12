@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/blocks'
+import { Meta } from '@storybook/addon-docs/blocks'
 
 <Meta title="Guidelines & Principles/Color" />
 
@@ -1941,11 +1941,56 @@ Mensagens de contexto, sem urgência. Matiz OKLCH 272° — índigo profundo.
 
 Pares reais usados pelos componentes (`ua-button`, `ua-toast`, `ua-input-*`, `ua-table`), auditados em WCAG 2.1:
 
-| Par | Light | Dark |
-| --- | --- | --- |
-| `neutral-900` sobre `neutral-100` (texto de corpo) | 16,06 · AAA | 17,26 · AAA |
-| `neutral-700` sobre `neutral-100` (texto secundário) | 7,64 · AAA | 10,21 · AAA |
-| fill `500` do papel + texto `neutral-100` (botão) | 4,65 – 5,23 · AA | 7,42 – 8,12 · AAA |
-| toast: `\<papel\>-800` sobre `\<papel\>-100` | 9,39 – 10,07 · AAA | 9,90 – 10,13 · AAA |
-| placeholder `neutral-600` sobre `neutral-100` | 4,69 · AA | 6,60 · AA |
-| cabeçalho de tabela `neutral-700` sobre `neutral-200` | ≥ 4,5 · AA | ≥ 4,5 · AA |
+<table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '14px' }}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid rgba(128,128,128,0.4)' }}>Par</th>
+      <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid rgba(128,128,128,0.4)' }}>Light</th>
+      <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid rgba(128,128,128,0.4)' }}>Dark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>
+        <code>neutral-900</code> sobre <code>neutral-100</code> (texto de corpo)
+      </td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>16,06 · AAA</td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>17,26 · AAA</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>
+        <code>neutral-700</code> sobre <code>neutral-100</code> (texto secundário)
+      </td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>7,64 · AAA</td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>10,21 · AAA</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>
+        fill <code>500</code> do papel + texto <code>neutral-100</code> (botão)
+      </td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>4,65 – 5,23 · AA</td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>7,42 – 8,12 · AAA</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>
+        toast: <code>{'<papel>'}-800</code> sobre <code>{'<papel>'}-100</code>
+      </td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>9,39 – 10,07 · AAA</td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>9,90 – 10,13 · AAA</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>
+        placeholder <code>neutral-600</code> sobre <code>neutral-100</code>
+      </td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>4,69 · AA</td>
+      <td style={{ padding: '8px 12px', borderBottom: '1px solid rgba(128,128,128,0.2)' }}>6,60 · AA</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '8px 12px' }}>
+        cabeçalho de tabela <code>neutral-700</code> sobre <code>neutral-200</code>
+      </td>
+      <td style={{ padding: '8px 12px' }}>≥ 4,5 · AA</td>
+      <td style={{ padding: '8px 12px' }}>≥ 4,5 · AA</td>
+    </tr>
+  </tbody>
+</table>

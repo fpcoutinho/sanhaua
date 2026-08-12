@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import UaInputRadio from './ua-input-radio.tsx'
 
 export default {

@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import uaInputTel from './ua-input-tel.vue'
 
 export default {
