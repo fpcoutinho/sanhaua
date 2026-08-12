@@ -1,9 +1,17 @@
 import { type InputHTMLAttributes, type ReactNode, useId } from 'react'
-import type { BorderStyle, FieldAppearance, InputTextType, Size, WidthBehavior } from '../../../types/tokens'
-import '../../styles/ua-input-text.scss'
+import type {
+  BorderStyle,
+  FieldAppearance,
+  InputTextType,
+  Size,
+  WidthBehavior
+} from '../../../types/tokens'
+import '../../styles/ua-input-field.scss'
 
-export interface UaInputTextProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix' | 'type' | 'id'> {
+export interface UaInputFieldProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'size' | 'prefix' | 'type' | 'id'
+> {
   type?: InputTextType
   appearance?: FieldAppearance
   size?: Size
@@ -18,7 +26,7 @@ export interface UaInputTextProps
   hint?: string
 }
 
-export default function UaInputText({
+export default function UaInputField({
   appearance = 'neutral',
   borderStyle = 'square',
   size = 'medium',
@@ -51,7 +59,7 @@ export default function UaInputText({
   onBlur,
   onChange,
   ...inputProps
-}: UaInputTextProps) {
+}: UaInputFieldProps) {
   const generatedId = useId()
   const inputId = id ?? generatedId
   const hintId = `${inputId}-hint`
@@ -59,7 +67,7 @@ export default function UaInputText({
   const resolvedAppearance: FieldAppearance = error ? 'error' : appearance
 
   const fieldClassName = [
-    'ua-input-text',
+    'ua-input-field',
     size,
     resolvedAppearance,
     widthBehavior,

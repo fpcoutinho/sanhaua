@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { fn } from '@storybook/test'
-import UaInputText from './ua-input-text.tsx'
+import UaInputField from './ua-input-field.tsx'
 
 export default {
-  title: 'Component Library/UA-Input-Text',
-  component: UaInputText,
+  title: 'Component Library/UA-Input-Field',
+  component: UaInputField,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -18,7 +18,8 @@ export default {
       control: 'text'
     },
     id: {
-      description: 'Sets id. Optional — falls back to a generated id (`useId`) so `label` still works.',
+      description:
+        'Sets id. Optional — falls back to a generated id (`useId`) so `label` still works.',
       control: 'text'
     },
     type: {
@@ -42,7 +43,8 @@ export default {
       control: 'text'
     },
     error: {
-      description: 'Error message. When set, forces appearance="error" and wires aria-invalid/aria-describedby.',
+      description:
+        'Error message. When set, forces appearance="error" and wires aria-invalid/aria-describedby.',
       control: 'text'
     },
     size: {
@@ -203,7 +205,7 @@ const render = (args) => {
   const [value, setValue] = useState(args.value ?? '')
   useEffect(() => setValue(args.value ?? ''), [args.value])
   return (
-    <UaInputText
+    <UaInputField
       {...args}
       value={value}
       onInput={(event) => {

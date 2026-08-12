@@ -1,0 +1,224 @@
+/*
+ * Folha do UaInputField (React), que cobre todos os `type` num só componente.
+ *
+ * As versões Vue e Web Component ainda seguem o formato antigo — um componente e
+ * uma folha por tipo (`ua-input-text`, `ua-input-email`, `ua-input-date`,
+ * `ua-input-password`, `ua-input-tel`), todas praticamente idênticas a esta.
+ * Ao migrá-las para o formato unificado, elas passam a apontar para cá e os
+ * arquivos por tipo somem — inclusive o `ua-input-text.scss`, que hoje é o
+ * duplicado mais direto deste.
+ */
+
+.sanhaua {
+  .form-element-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(2);
+    font-family: $font-family;
+
+    .label {
+      cursor: pointer;
+
+      @include body-2-bold;
+    }
+
+    .hint {
+      @include caption;
+    }
+
+    .error-message {
+      @include caption;
+
+      font-weight: map.get($font-weight, "bold");
+    }
+
+    .ua-input-field {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline-width: map.get($border-width, "small");
+      outline-style: solid;
+      cursor: text;
+
+      @include body-1;
+
+      .field {
+        flex: 1;
+        width: 100%;
+        font: inherit;
+        border: none;
+      }
+
+      .prefix,
+      .suffix {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include body-2;
+      }
+
+      &.small {
+        padding: spacing(1);
+        gap: spacing(1);
+
+        .icon {
+          @include icon-3;
+        }
+      }
+
+      &.medium {
+        padding: spacing(2);
+        gap: spacing(2);
+
+        .icon {
+          @include icon-2;
+        }
+      }
+
+      &.large {
+        padding: spacing(3);
+        gap: spacing(2);
+
+        .icon {
+          @include icon-1;
+        }
+      }
+
+      &.square {
+        border-radius: map.get($border-radius, "small");
+      }
+
+      &.round {
+        border-radius: map.get($border-radius, "pill");
+      }
+
+      &.auto {
+        width: inherit;
+      }
+
+      &.full {
+        width: 100%;
+      }
+
+      &:focus-within {
+        outline-width: map.get($border-width, "medium");
+        outline-offset: calc(-1 * map.get($border-width, "small"));
+        outline-style: solid;
+
+        .field {
+          outline: none;
+        }
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: map.get($opacity, "high");
+      user-select: none;
+
+      & * {
+        cursor: not-allowed;
+        opacity: map.get($opacity, "high");
+      }
+    }
+  }
+
+  &.light {
+    .label {
+      color: map.get($color-neutral-light, "900");
+    }
+
+    .required {
+      color: map.get($color-danger-light, "500");
+    }
+
+    .hint {
+      color: map.get($color-neutral-light, "600");
+    }
+
+    .error-message {
+      color: map.get($color-danger-light, "600");
+    }
+
+    .ua-input-field {
+      background-color: map.get($color-neutral-light, "100");
+      color: map.get($color-neutral-light, "900");
+
+      .field {
+        background-color: map.get($color-neutral-light, "100");
+        color: map.get($color-neutral-light, "900");
+
+        &::placeholder {
+          color: map.get($color-neutral-light, "600");
+        }
+      }
+
+      .prefix,
+      .suffix {
+        color: map.get($color-neutral-light, "900");
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-light, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-light, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-light, "600");
+      }
+    }
+  }
+
+  &.dark {
+    .label {
+      color: map.get($color-neutral-dark, "900");
+    }
+
+    .required {
+      color: map.get($color-danger-dark, "500");
+    }
+
+    .hint {
+      color: map.get($color-neutral-dark, "600");
+    }
+
+    .error-message {
+      color: map.get($color-danger-dark, "600");
+    }
+
+    .ua-input-field {
+      background-color: map.get($color-neutral-dark, "100");
+      color: map.get($color-neutral-dark, "900");
+
+      .field {
+        background-color: map.get($color-neutral-dark, "100");
+        color: map.get($color-neutral-dark, "900");
+
+        &::placeholder {
+          color: map.get($color-neutral-dark, "600");
+        }
+      }
+
+      .prefix,
+      .suffix {
+        color: map.get($color-neutral-dark, "900");
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-dark, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-dark, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-dark, "600");
+      }
+    }
+  }
+}
