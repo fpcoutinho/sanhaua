@@ -1,0 +1,60 @@
+.sanhaua {
+  .ua-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: spacing(3);
+
+    .summary {
+      margin: 0;
+
+      @include caption;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: spacing(1);
+      flex-wrap: wrap;
+    }
+
+    &.bare {
+      width: 100%;
+
+      .controls {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .gap {
+      padding: 0 spacing(1);
+
+      @include caption;
+    }
+
+    @include breakpoint-min("sm") {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.light {
+    .ua-pagination {
+      .summary,
+      .gap {
+        color: map.get($color-neutral-light, "600");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-pagination {
+      .summary,
+      .gap {
+        color: map.get($color-neutral-dark, "600");
+      }
+    }
+  }
+}

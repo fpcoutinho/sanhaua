@@ -87,7 +87,7 @@ export default function UaTable<Row>({
         <caption className="visually-hidden">{caption}</caption>
         <thead>
           <tr>
-            {columns.map(column => {
+            {columns.map((column) => {
               const isSorted = sort?.key === column.key
               const isSortable = Boolean(column.sortable && onSortChange)
 
@@ -114,13 +114,13 @@ export default function UaTable<Row>({
           </tr>
         </thead>
         <tbody>
-          {rows.map(row => (
+          {rows.map((row) => (
             <tr
               className={rowClassName}
               key={rowKey(row)}
-              onClick={isInteractive ? event => handleRowClick(row, event) : undefined}
+              onClick={isInteractive ? (event) => handleRowClick(row, event) : undefined}
             >
-              {columns.map(column => (
+              {columns.map((column) => (
                 <td key={column.key} className="cell">
                   {column.render(row)}
                 </td>

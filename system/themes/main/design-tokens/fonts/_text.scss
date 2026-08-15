@@ -167,3 +167,15 @@
     }
   }
 }
+
+@mixin caption-bold($responsive: false, $breakpoint: $default-breakpoint) {
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: map.get($font-weight, "bold");
+
+  @if $responsive {
+    @include breakpoint-min($breakpoint) {
+      font-size: 11px;
+    }
+  }
+}

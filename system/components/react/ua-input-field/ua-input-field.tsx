@@ -33,7 +33,7 @@ export default function UaInputField({
   widthBehavior = 'auto',
   type = 'text',
   id,
-  label = 'Text',
+  label,
   icon,
   prefix,
   suffix,
@@ -79,17 +79,21 @@ export default function UaInputField({
 
   const describedBy = [hint ? hintId : null, error ? errorId : null].filter(Boolean).join(' ')
 
+  const Wrapper = label ? 'label' : 'div'
+
   return (
-    <label className={wrapperClassName} htmlFor={inputId}>
-      <span className="label">
-        {label}
-        {required ? (
-          <span aria-hidden="true" className="required">
-            {' '}
-            *
-          </span>
-        ) : null}
-      </span>
+    <Wrapper className={wrapperClassName} htmlFor={label ? inputId : undefined}>
+      {label ? (
+        <span className="label">
+          {label}
+          {required ? (
+            <span aria-hidden="true" className="required">
+              {' '}
+              *
+            </span>
+          ) : null}
+        </span>
+      ) : null}
       <div className={fieldClassName}>
         {icon ? <span className="material-symbols-rounded icon">{icon}</span> : null}
         {prefix ? <span className="prefix">{prefix}</span> : null}
@@ -131,6 +135,6 @@ export default function UaInputField({
           {error}
         </span>
       ) : null}
-    </label>
+    </Wrapper>
   )
 }

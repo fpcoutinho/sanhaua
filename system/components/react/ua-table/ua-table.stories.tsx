@@ -15,12 +15,12 @@ const rows: Report[] = [
 ]
 
 const columns: Column<Report>[] = [
-  { key: 'locationCode', header: 'Local', render: row => row.locationCode },
-  { key: 'inspectedAt', header: 'Inspecionado em', render: row => row.inspectedAt },
-  { key: 'status', header: 'Status', render: row => row.status }
+  { key: 'locationCode', header: 'Local', render: (row) => row.locationCode },
+  { key: 'inspectedAt', header: 'Inspecionado em', render: (row) => row.inspectedAt },
+  { key: 'status', header: 'Status', render: (row) => row.status }
 ]
 
-const sortableColumns: Column<Report>[] = columns.map(column =>
+const sortableColumns: Column<Report>[] = columns.map((column) =>
   column.key === 'status' ? column : { ...column, sortable: true }
 )
 

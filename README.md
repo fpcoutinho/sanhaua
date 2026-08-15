@@ -146,10 +146,24 @@ Notes:
 - Wrap your markup in an element with `class="sanhaua light"` (or `dark`) — every
   component style is scoped under `.sanhaua`, and the theme block picks the color set.
 
+## Breaking changes in 0.17.0
+
+- `UaButton` now requires `children`. An icon with no text is `UaButtonIcon`, which keeps the
+  symmetric padding a square or circular button needs — `UaButton` pads its sides more than
+  its top and bottom, so an icon-only `UaButton` came out lopsided.
+- `UaInputField` and `UaSelect` no longer default `label` to `'Text'` / `'Select'`. Omit it
+  for a bare control and pass `aria-label`; the wrapper degrades from `<label>` to `<div>`.
+- Button sizes shifted down one step: `medium` now carries what `small` used to, and `large`
+  what `medium` used to. Padding is no longer uniform.
+
 ## Known gaps
 
 - `UaTable` exists in React only. Vue and Web Components don't have a table component
   yet — no equivalent SCSS or story either.
+- `UaSelect` reuses the `.form-element-wrapper`, `.label`, `.hint` and `.error-message`
+  rules declared in `styles/ua-input-field.scss`. The two fields share that anatomy on
+  purpose, but the sheets are coupled: removing the wrapper block from the input sheet
+  would strip the select's label styling too.
 - The React `UaInputField` covers every input `type` in one component; Vue keeps the
   older pattern of one component per type (`UaInputDate`, `UaInputEmail`,
   `UaInputPassword`, `UaInputTel`, `UaInputText`), and only `UaInputPassword` has the
@@ -159,7 +173,17 @@ Notes:
   Migrating Vue and Web Components to the unified format collapses the per-type sheets
   into `ua-input-field.scss`; the duplication is deliberate until then, and the note is
   repeated at the top of that file.
-- `UaAlert` and `UaCard` exist in React only. `UaInputRadio` exists in React and Vue.
+- `UaAccordion`, `UaAlert`, `UaAvatar`, `UaBadge`, `UaButtonIcon`, `UaCard`, `UaPagination`
+  and `UaSelect` exist in React only. `UaInputRadio` exists in React and Vue. The SCSS in
+  `styles/` is framework-agnostic, so the Vue and Web Component ports are
+  implementation-only work.
+- `UaButtonIcon` renders `<button>` only. There is no `behavior="link"` branch yet, so an
+  icon that navigates still needs a `UaButton`.
+- `UaSelect` opts into the customizable `<select>` (`appearance: base-select`, the inner
+  `<button>` and `<selectedcontent>`, and the `::picker(select)` rules). That styling only
+  lands in Chromium 135+; Firefox and Safari ignore the unknown value and the unknown
+  children, falling back to the platform control with our border, padding and size. The
+  fallback loses the leading `icon` and the custom chevron, which live inside that button.
 
 ## Development
 

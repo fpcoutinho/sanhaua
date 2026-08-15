@@ -1,0 +1,133 @@
+.sanhaua {
+  .ua-accordion {
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      margin: 0;
+    }
+
+    .trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: spacing(3);
+      padding: spacing(4);
+      border: 0;
+      background: none;
+      color: inherit;
+      text-align: start;
+      cursor: pointer;
+
+      @include body-1-bold;
+
+      .icon {
+        flex-shrink: 0;
+        transition: transform 0.2s;
+
+        @include icon-2;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: map.get($opacity, "medium");
+      }
+    }
+
+    .panel {
+      padding: 0 spacing(4) spacing(4);
+
+      @include body-2;
+
+      > :first-child {
+        margin-top: 0;
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .item.open .trigger .icon {
+      transform: rotate(180deg);
+    }
+
+    &.boxed {
+      border-radius: map.get($border-radius, "medium");
+      border-width: map.get($border-width, "small");
+      border-style: solid;
+      overflow: hidden;
+
+      .item + .item {
+        border-top-width: map.get($border-width, "small");
+        border-top-style: solid;
+      }
+    }
+
+    &.underlined {
+      .item {
+        border-bottom-width: map.get($border-width, "medium");
+        border-bottom-style: solid;
+      }
+
+      .trigger {
+        padding-inline: 0;
+      }
+
+      .panel {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  &.light {
+    .ua-accordion {
+      .trigger {
+        color: map.get($color-neutral-light, "900");
+      }
+
+      .panel {
+        color: map.get($color-neutral-light, "800");
+      }
+
+      &.boxed {
+        background-color: map.get($color-neutral-light, "100");
+        border-color: map.get($color-neutral-light, "300");
+
+        .item + .item {
+          border-top-color: map.get($color-neutral-light, "300");
+        }
+      }
+
+      &.underlined .item {
+        border-bottom-color: map.get($color-neutral-light, "300");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-accordion {
+      .trigger {
+        color: map.get($color-neutral-dark, "900");
+      }
+
+      .panel {
+        color: map.get($color-neutral-dark, "800");
+      }
+
+      &.boxed {
+        background-color: map.get($color-neutral-dark, "100");
+        border-color: map.get($color-neutral-dark, "300");
+
+        .item + .item {
+          border-top-color: map.get($color-neutral-dark, "300");
+        }
+      }
+
+      &.underlined .item {
+        border-bottom-color: map.get($color-neutral-dark, "300");
+      }
+    }
+  }
+}

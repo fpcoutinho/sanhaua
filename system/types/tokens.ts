@@ -6,6 +6,8 @@ export type BorderStyle = 'square' | 'round'
 
 export type ButtonBehavior = 'button' | 'link'
 
+export type HoverMode = 'color' | 'aura'
+
 export type ButtonAppearance =
   | 'primary'
   | 'secondary'
@@ -19,6 +21,8 @@ export type ButtonAppearance =
 export type FieldAppearance = 'neutral' | 'success' | 'error'
 
 export type ToastAppearance = 'neutral' | 'success' | 'warning' | 'danger' | 'informative'
+
+export type BadgeAppearance = 'neutral' | 'success' | 'warning' | 'danger' | 'informative'
 
 export type SkeletonFormat = 'square' | 'round' | 'circle'
 
