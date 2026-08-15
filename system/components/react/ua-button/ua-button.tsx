@@ -20,7 +20,7 @@ interface UaButtonBaseProps {
   borderStyle?: BorderStyle
   leftIcon?: string
   rightIcon?: string
-  children?: ReactNode
+  children: ReactNode
 }
 
 export interface UaButtonAsButtonProps
@@ -51,7 +51,7 @@ export default function UaButton({
   rightIcon,
   disabled = false,
   className,
-  children = 'Button',
+  children,
   onClick,
   ...restProps
 }: UaButtonProps) {

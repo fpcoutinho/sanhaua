@@ -1,0 +1,18 @@
+.sanhaua {
+  .ua-button.ua-button-icon {
+    aspect-ratio: 1;
+    width: fit-content;
+
+    &.small {
+      padding: spacing(1);
+    }
+
+    &.medium {
+      padding: spacing(2);
+    }
+
+    &.large {
+      padding: spacing(3);
+    }
+  }
+}

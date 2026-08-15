@@ -21,10 +21,22 @@
     }
 
     &.small {
-      padding: spacing(3);
+      padding: spacing(1) spacing(3);
 
       .text {
         @include body-2-bold;
+      }
+
+      .icon {
+        @include icon-4;
+      }
+    }
+
+    &.medium {
+      padding: spacing(2) spacing(4);
+
+      .text {
+        @include body-1-bold;
       }
 
       .icon {
@@ -32,20 +44,8 @@
       }
     }
 
-    &.medium {
-      padding: spacing(3);
-
-      .text {
-        @include body-1-bold;
-      }
-
-      .icon {
-        @include icon-1;
-      }
-    }
-
     &.large {
-      padding: spacing(4);
+      padding: spacing(3) spacing(5);
 
       .text {
         @include body-1-bold;
