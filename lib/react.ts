@@ -18,5 +18,11 @@ export type {
   UaInputRadioProps
 } from '@sanhaua/components/react/ua-input-radio/ua-input-radio'
 export type { UaSkeletonProps } from '@sanhaua/components/react/ua-skeleton/ua-skeleton'
-export type { Column, UaTableProps } from '@sanhaua/components/react/ua-table/ua-table'
+export type {
+  Column,
+  RowBehavior,
+  SortDirection,
+  TableSort,
+  UaTableProps
+} from '@sanhaua/components/react/ua-table/ua-table'
 export type { UaToastProps } from '@sanhaua/components/react/ua-toast/ua-toast'

@@ -20,6 +20,25 @@
       border-bottom-style: solid;
 
       @include overline;
+
+      .sort {
+        display: inline-flex;
+        align-items: center;
+        gap: spacing(1);
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: none;
+        color: inherit;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        cursor: pointer;
+
+        .icon {
+          @include icon-4;
+        }
+      }
     }
 
     .cell {
@@ -31,6 +50,10 @@
     .row + .row {
       border-top-width: map.get($border-width, "small");
       border-top-style: solid;
+    }
+
+    .row.interactive {
+      cursor: pointer;
     }
 
     .visually-hidden {
@@ -55,6 +78,11 @@
         color: map.get($color-neutral-light, "700");
         background-color: map.get($color-neutral-light, "200");
         border-bottom-color: map.get($color-neutral-light, "300");
+
+        .sort:hover,
+        .sort:focus-visible {
+          color: map.get($color-primary-light, "600");
+        }
       }
 
       .cell {
@@ -64,7 +92,7 @@
       .row {
         border-top-color: map.get($color-neutral-light, "300");
 
-        &:hover {
+        &.interactive:hover {
           background-color: map.get($color-neutral-light, "200");
         }
       }
@@ -80,6 +108,11 @@
         color: map.get($color-neutral-dark, "700");
         background-color: map.get($color-neutral-dark, "200");
         border-bottom-color: map.get($color-neutral-dark, "300");
+
+        .sort:hover,
+        .sort:focus-visible {
+          color: map.get($color-primary-dark, "600");
+        }
       }
 
       .cell {
@@ -89,7 +122,7 @@
       .row {
         border-top-color: map.get($color-neutral-dark, "300");
 
-        &:hover {
+        &.interactive:hover {
           background-color: map.get($color-neutral-dark, "200");
         }
       }
