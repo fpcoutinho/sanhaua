@@ -1,0 +1,123 @@
+.sanhaua {
+  .form-element-wrapper {
+    .ua-textarea {
+      box-sizing: border-box;
+      display: flex;
+      outline-width: map.get($border-width, "small");
+      outline-style: solid;
+      cursor: text;
+
+      @include body-1;
+
+      .field {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+        font: inherit;
+        border: none;
+        background: none;
+        color: inherit;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      &.resize-none .field {
+        resize: none;
+      }
+
+      &.resize-vertical .field {
+        resize: vertical;
+      }
+
+      &.resize-both .field {
+        resize: both;
+      }
+
+      &.small {
+        padding: spacing(1);
+      }
+
+      &.medium {
+        padding: spacing(2);
+      }
+
+      &.large {
+        padding: spacing(3);
+      }
+
+      &.square {
+        border-radius: map.get($border-radius, "micro");
+      }
+
+      &.round {
+        border-radius: map.get($border-radius, "medium");
+      }
+
+      &.auto {
+        width: inherit;
+      }
+
+      &.full {
+        width: 100%;
+      }
+
+      &:focus-within {
+        outline-width: map.get($border-width, "medium");
+        outline-offset: calc(-1 * map.get($border-width, "small"));
+        outline-style: solid;
+      }
+    }
+  }
+
+  &.light {
+    .ua-textarea {
+      background-color: map.get($color-neutral-light, "100");
+      color: map.get($color-neutral-light, "900");
+
+      .field {
+        &::placeholder {
+          color: map.get($color-neutral-light, "600");
+        }
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-light, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-light, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-light, "600");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-textarea {
+      background-color: map.get($color-neutral-dark, "100");
+      color: map.get($color-neutral-dark, "900");
+
+      .field {
+        &::placeholder {
+          color: map.get($color-neutral-dark, "600");
+        }
+      }
+
+      &.neutral {
+        outline-color: map.get($color-neutral-dark, "900");
+      }
+
+      &.success {
+        outline-color: map.get($color-success-dark, "600");
+      }
+
+      &.error {
+        outline-color: map.get($color-danger-dark, "600");
+      }
+    }
+  }
+}
