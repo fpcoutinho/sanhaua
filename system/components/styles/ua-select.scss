@@ -5,53 +5,35 @@
     outline-width: map.get($border-width, "small");
     outline-style: solid;
     cursor: pointer;
-    appearance: none;
-    appearance: base-select;
 
     @include body-1;
 
-    .trigger {
-      display: flex;
-      align-items: center;
+    .field {
+      flex: 1;
       width: 100%;
-      border: 0;
-      padding: 0;
+      min-width: 0;
+      border: none;
       background: none;
       color: inherit;
       font: inherit;
       cursor: inherit;
       appearance: none;
-      appearance: base-select;
-    }
 
-    .value {
-      flex: 1;
-      text-align: start;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
 
     .arrow {
       flex-shrink: 0;
+      pointer-events: none;
 
       @include icon-4;
     }
 
-    &::picker-icon {
-      display: none;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-
     &.small {
       padding: spacing(1) spacing(2);
-
-      .trigger {
-        gap: spacing(1);
-      }
+      gap: spacing(1);
 
       .icon {
         @include icon-3;
@@ -60,10 +42,7 @@
 
     &.medium {
       padding: spacing(2) spacing(3);
-
-      .trigger {
-        gap: spacing(2);
-      }
+      gap: spacing(2);
 
       .icon {
         @include icon-2;
@@ -72,10 +51,7 @@
 
     &.large {
       padding: spacing(3) spacing(4);
-
-      .trigger {
-        gap: spacing(2);
-      }
+      gap: spacing(2);
 
       .icon {
         @include icon-1;
@@ -102,30 +78,9 @@
       outline-width: map.get($border-width, "medium");
       outline-offset: calc(-1 * map.get($border-width, "small"));
       outline-style: solid;
-    }
-  }
 
-  &::picker(select) {
-    appearance: base-select;
-    border-width: map.get($border-width, "small");
-    border-style: solid;
-    border-radius: map.get($border-radius, "small");
-    padding: spacing(1);
-    margin-block-start: spacing(1);
-
-    option {
-      display: flex;
-      align-items: center;
-      gap: spacing(2);
-      padding: spacing(2) spacing(3);
-      border-radius: map.get($border-radius, "micro");
-      cursor: pointer;
-
-      @include body-2;
-
-      &:disabled {
-        cursor: not-allowed;
-        opacity: map.get($opacity, "medium");
+      .field {
+        outline: none;
       }
     }
   }
@@ -134,6 +89,11 @@
     .ua-select {
       background-color: map.get($color-neutral-light, "100");
       color: map.get($color-neutral-light, "900");
+
+      option {
+        background-color: map.get($color-neutral-light, "100");
+        color: map.get($color-neutral-light, "900");
+      }
 
       .arrow {
         color: map.get($color-neutral-light, "600");
@@ -149,24 +109,6 @@
 
       &.error {
         outline-color: map.get($color-danger-light, "600");
-      }
-    }
-
-    &::picker(select) {
-      background-color: map.get($color-neutral-light, "100");
-      border-color: map.get($color-neutral-light, "300");
-      color: map.get($color-neutral-light, "900");
-
-      option {
-        &:hover,
-        &:focus {
-          background-color: map.get($color-neutral-light, "200");
-        }
-
-        &:checked {
-          background-color: map.get($color-primary-light, "100");
-          color: map.get($color-primary-light, "800");
-        }
       }
     }
   }
@@ -195,24 +137,6 @@
 
       &.error {
         outline-color: map.get($color-danger-dark, "600");
-      }
-    }
-
-    &::picker(select) {
-      background-color: map.get($color-neutral-dark, "100");
-      border-color: map.get($color-neutral-dark, "300");
-      color: map.get($color-neutral-dark, "900");
-
-      option {
-        &:hover,
-        &:focus {
-          background-color: map.get($color-neutral-dark, "200");
-        }
-
-        &:checked {
-          background-color: map.get($color-primary-dark, "100");
-          color: map.get($color-primary-dark, "800");
-        }
       }
     }
   }

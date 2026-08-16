@@ -1,8 +1,6 @@
-import { type ElementType, type ReactNode, type SelectHTMLAttributes, useId } from 'react'
+import { type ReactNode, type SelectHTMLAttributes, useId } from 'react'
 import type { BorderStyle, FieldAppearance, Size, WidthBehavior } from '../../../types/tokens'
 import '../../styles/ua-select.scss'
-
-const SelectedContent = 'selectedcontent' as unknown as ElementType
 
 export interface SelectOption {
   value: string
@@ -79,35 +77,33 @@ export default function UaSelect({
           ) : null}
         </span>
       ) : null}
-      <select
-        {...selectProps}
-        id={selectId}
-        className={fieldClassName}
-        name={name}
-        value={value}
-        required={required}
-        disabled={disabled}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={describedBy || undefined}
-        onChange={onChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      >
-        <button type="button" className="trigger">
-          {icon ? <span className="material-symbols-rounded icon">{icon}</span> : null}
-          <SelectedContent className="value" />
-          <span aria-hidden="true" className="material-symbols-rounded arrow">
-            expand_more
-          </span>
-        </button>
-
-        {placeholder ? <option value="">{placeholder}</option> : null}
-        {options.map((option) => (
-          <option key={option.value} value={option.value} disabled={option.disabled}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+      <div className={fieldClassName}>
+        {icon ? <span className="material-symbols-rounded icon">{icon}</span> : null}
+        <select
+          {...selectProps}
+          id={selectId}
+          className="field"
+          name={name}
+          value={value}
+          required={required}
+          disabled={disabled}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy || undefined}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        >
+          {placeholder ? <option value="">{placeholder}</option> : null}
+          {options.map((option) => (
+            <option key={option.value} value={option.value} disabled={option.disabled}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <span aria-hidden="true" className="material-symbols-rounded arrow">
+          expand_more
+        </span>
+      </div>
       {hint ? (
         <span className="hint" id={hintId}>
           {hint}
