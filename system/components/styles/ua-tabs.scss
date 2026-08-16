@@ -1,0 +1,166 @@
+.sanhaua {
+  .ua-tabs {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: spacing(2);
+      border: 0;
+      background: none;
+      color: inherit;
+      white-space: nowrap;
+      cursor: pointer;
+
+      .icon {
+        flex-shrink: 0;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: map.get($opacity, "medium");
+      }
+    }
+
+    &.small .tab {
+      @include caption;
+
+      .icon {
+        @include icon-4;
+      }
+    }
+
+    &.medium .tab {
+      @include body-2;
+
+      .icon {
+        @include icon-4;
+      }
+    }
+
+    &.large .tab {
+      @include body-1;
+
+      .icon {
+        @include icon-3;
+      }
+    }
+
+    &.full {
+      overflow-x: visible;
+
+      .tab {
+        flex: 1 1 0;
+      }
+    }
+
+    &.underlined {
+      gap: spacing(6);
+      border-bottom-width: map.get($border-width, "small");
+      border-bottom-style: solid;
+
+      .tab {
+        padding: spacing(2) 0 spacing(3);
+        border-bottom: map.get($border-width, "medium") solid transparent;
+        margin-bottom: map.get($border-width, "small") * -1;
+
+        &.active {
+          font-weight: map.get($font-weight, "bold");
+        }
+      }
+    }
+
+    &.pill {
+      gap: spacing(1);
+      padding: spacing(1);
+      border-radius: map.get($border-radius, "pill");
+
+      .tab {
+        padding: spacing(2) spacing(4);
+        border-radius: map.get($border-radius, "pill");
+
+        &.active {
+          font-weight: map.get($font-weight, "bold");
+        }
+      }
+    }
+  }
+
+  &.light {
+    .ua-tabs {
+      .tab {
+        color: map.get($color-neutral-light, "700");
+
+        &:hover:not(:disabled) {
+          color: map.get($color-neutral-light, "900");
+        }
+
+        &:focus-visible {
+          outline: map.get($border-width, "medium") solid map.get($color-primary-light, "500");
+          outline-offset: 2px;
+        }
+      }
+
+      &.underlined {
+        border-bottom-color: map.get($color-neutral-light, "300");
+
+        .tab.active {
+          color: map.get($color-primary-light, "500");
+          border-bottom-color: map.get($color-primary-light, "500");
+        }
+      }
+
+      &.pill {
+        background-color: map.get($color-neutral-light, "200");
+
+        .tab.active {
+          background-color: map.get($color-primary-light, "500");
+          color: map.get($color-neutral-light, "100");
+        }
+      }
+    }
+  }
+
+  &.dark {
+    .ua-tabs {
+      .tab {
+        color: map.get($color-neutral-dark, "700");
+
+        &:hover:not(:disabled) {
+          color: map.get($color-neutral-dark, "900");
+        }
+
+        &:focus-visible {
+          outline: map.get($border-width, "medium") solid map.get($color-primary-dark, "500");
+          outline-offset: 2px;
+        }
+      }
+
+      &.underlined {
+        border-bottom-color: map.get($color-neutral-dark, "300");
+
+        .tab.active {
+          color: map.get($color-primary-dark, "500");
+          border-bottom-color: map.get($color-primary-dark, "500");
+        }
+      }
+
+      &.pill {
+        background-color: map.get($color-neutral-dark, "200");
+
+        .tab.active {
+          background-color: map.get($color-primary-dark, "500");
+          color: map.get($color-neutral-dark, "100");
+        }
+      }
+    }
+  }
+}

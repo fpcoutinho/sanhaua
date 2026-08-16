@@ -86,7 +86,7 @@ The React layer (`system/components/react`, `lib/react.ts`) is written in TypeSc
 ships **generated** declarations — `dist/lib/react.d.ts` and the per-component `.d.ts`
 under `dist/system/components/react/`, built by `vite-plugin-dts` from the `.tsx` source
 during `npm run build`. Prop types for `UaAlert`, `UaButton`, `UaCard`, `UaCheckbox`, `UaInputField`,
-`UaInputGroup`, `UaModal`, `UaRadio`, `UaSkeleton`, `UaTable`, `UaTextarea`
+`UaInputGroup`, `UaModal`, `UaRadio`, `UaSkeleton`, `UaTable`, `UaTabs`, `UaTextarea`
 and `UaToast` are therefore always in sync with the implementation — there is no
 hand-maintained `.d.ts` to drift.
 
@@ -177,8 +177,8 @@ Notes:
   into `ua-input-field.scss`; the duplication is deliberate until then, and the note is
   repeated at the top of that file.
 - `UaAccordion`, `UaAlert`, `UaAvatar`, `UaBadge`, `UaButtonIcon`, `UaCard`, `UaCheckbox`,
-  `UaInputGroup`, `UaModal`, `UaPagination`, `UaSelect` and `UaTextarea` exist in React
-  only. `UaRadio` exists in React and Vue. The SCSS in `styles/` is framework-agnostic, so
+  `UaInputGroup`, `UaModal`, `UaPagination`, `UaSelect`, `UaTabs` and `UaTextarea` exist in
+  React only. `UaRadio` exists in React and Vue. The SCSS in `styles/` is framework-agnostic, so
   the Vue and Web Component ports are implementation-only work.
 - `UaModal` renders in place — no portal — so it stays inside the `.sanhaua.light` /
   `.sanhaua.dark` scope that every sheet keys off. Mount it from a container that is not

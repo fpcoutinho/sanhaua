@@ -14,6 +14,7 @@ import UaRadio from '@sanhaua/components/react/ua-radio/ua-radio'
 import UaSelect from '@sanhaua/components/react/ua-select/ua-select'
 import UaSkeleton from '@sanhaua/components/react/ua-skeleton/ua-skeleton'
 import UaTable from '@sanhaua/components/react/ua-table/ua-table'
+import UaTabs from '@sanhaua/components/react/ua-tabs/ua-tabs'
 import UaTextarea from '@sanhaua/components/react/ua-textarea/ua-textarea'
 import UaToast from '@sanhaua/components/react/ua-toast/ua-toast'
 
@@ -34,6 +35,7 @@ export {
   UaSelect,
   UaSkeleton,
   UaTable,
+  UaTabs,
   UaTextarea,
   UaToast
 }
@@ -69,6 +71,12 @@ export type {
   TableSort,
   UaTableProps
 } from '@sanhaua/components/react/ua-table/ua-table'
+export type {
+  TabItem,
+  TabsActivation,
+  TabsAppearance,
+  UaTabsProps
+} from '@sanhaua/components/react/ua-tabs/ua-tabs'
 export type {
   TextareaResize,
   UaTextareaProps
