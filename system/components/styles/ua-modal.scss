@@ -1,0 +1,133 @@
+.sanhaua {
+  .ua-modal-overlay {
+    box-sizing: border-box;
+    position: fixed;
+    inset: 0;
+    z-index: map.get($z-index, "modal-backdrop");
+    display: flex;
+    justify-content: center;
+
+    // Mobile is a bottom sheet whatever the mode says.
+    align-items: flex-end;
+    padding: 0;
+    background-color: rgb(0 0 0 / 50%);
+    font-family: $font-family;
+
+    @include breakpoint-min("sm") {
+      align-items: center;
+      padding: spacing(4);
+
+      // A bottom sheet is docked, not floating: it spans the full width and keeps
+      // touching the edge it slides from, so only the top corners stay rounded.
+      &.bottom {
+        align-items: flex-end;
+        padding: 0;
+      }
+    }
+  }
+
+  .ua-modal {
+    box-sizing: border-box;
+    position: relative;
+    z-index: map.get($z-index, "modal");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 90dvh;
+    overflow: hidden;
+    box-shadow: 0 spacing(1) spacing(6) rgb(0 0 0 / 20%);
+    border-radius: map.get($border-radius, "medium") map.get($border-radius, "medium") 0 0;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    .close {
+      position: absolute;
+      inset-block-start: spacing(2);
+      inset-inline-end: spacing(2);
+      z-index: 1;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: spacing(2);
+      flex-shrink: 0;
+      padding: spacing(4);
+      padding-inline-end: spacing(12);
+      padding-block-end: spacing(2);
+
+      .title {
+        margin: 0;
+
+        @include headline-6;
+      }
+    }
+
+    .content {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: spacing(4);
+
+      @include body-1;
+    }
+
+    // Without a header the close button needs room of its own.
+    &:not(:has(.header)) .content {
+      padding-block-start: spacing(12);
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: spacing(2);
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      padding: spacing(4);
+      padding-block-start: spacing(2);
+    }
+
+    @include breakpoint-min("sm") {
+      max-height: 85dvh;
+
+      &.small {
+        max-width: 400px;
+      }
+
+      &.medium {
+        max-width: 560px;
+      }
+
+      &.large {
+        max-width: 800px;
+      }
+
+      &.centered {
+        border-radius: map.get($border-radius, "medium");
+      }
+
+      // The docked sheet spans the viewport — `size` only caps the centred dialog.
+      &.bottom {
+        max-width: none;
+      }
+    }
+  }
+
+  &.light {
+    .ua-modal {
+      background-color: map.get($color-neutral-light, "100");
+      color: map.get($color-neutral-light, "900");
+    }
+  }
+
+  &.dark {
+    .ua-modal {
+      background-color: map.get($color-neutral-dark, "100");
+      color: map.get($color-neutral-dark, "900");
+    }
+  }
+}
