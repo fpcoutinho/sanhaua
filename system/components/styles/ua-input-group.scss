@@ -1,0 +1,97 @@
+.sanhaua {
+  .ua-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(2);
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 0;
+    font-family: $font-family;
+
+    .legend {
+      padding: 0;
+      margin-block-end: spacing(1);
+
+      @include body-2-bold;
+    }
+
+    .options {
+      display: flex;
+      gap: spacing(2);
+    }
+
+    .hint {
+      @include caption;
+    }
+
+    .error-message {
+      @include caption;
+
+      font-weight: map.get($font-weight, "bold");
+    }
+
+    &.vertical {
+      .options {
+        flex-direction: column;
+      }
+    }
+
+    &.horizontal {
+      .options {
+        flex-flow: row wrap;
+        column-gap: spacing(4);
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: map.get($opacity, "high");
+      user-select: none;
+
+      & * {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &.light {
+    .ua-input-group {
+      .legend {
+        color: map.get($color-neutral-light, "900");
+      }
+
+      .required {
+        color: map.get($color-danger-light, "500");
+      }
+
+      .hint {
+        color: map.get($color-neutral-light, "600");
+      }
+
+      .error-message {
+        color: map.get($color-danger-light, "600");
+      }
+    }
+  }
+
+  &.dark {
+    .ua-input-group {
+      .legend {
+        color: map.get($color-neutral-dark, "900");
+      }
+
+      .required {
+        color: map.get($color-danger-dark, "500");
+      }
+
+      .hint {
+        color: map.get($color-neutral-dark, "600");
+      }
+
+      .error-message {
+        color: map.get($color-danger-dark, "600");
+      }
+    }
+  }
+}
