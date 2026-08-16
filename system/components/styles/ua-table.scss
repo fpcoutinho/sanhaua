@@ -1,7 +1,7 @@
 .sanhaua {
   .ua-table {
     overflow-x: auto;
-    border-radius: map.get($border-radius, "medium");
+    border-radius: map.get($border-radius, "small");
     border-width: map.get($border-width, "small");
     border-style: solid;
 

@@ -64,7 +64,7 @@
       }
 
       &.square {
-        border-radius: map.get($border-radius, "small");
+        border-radius: map.get($border-radius, "micro");
       }
 
       &.round {

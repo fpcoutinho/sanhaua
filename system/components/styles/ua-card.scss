@@ -1,7 +1,7 @@
 .sanhaua {
   .ua-card {
     display: block;
-    border-radius: map.get($border-radius, "large");
+    border-radius: map.get($border-radius, "medium");
     border-width: map.get($border-width, "medium");
     border-style: solid;
     padding: spacing(6);

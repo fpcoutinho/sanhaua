@@ -3,7 +3,7 @@
     display: flex;
     align-items: flex-start;
     gap: spacing(3);
-    border-radius: map.get($border-radius, "medium");
+    border-radius: map.get($border-radius, "small");
     border-left: map.get($border-width, "large") solid transparent;
     padding: spacing(4);
     width: 100%;
