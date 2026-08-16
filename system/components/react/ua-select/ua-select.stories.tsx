@@ -15,7 +15,7 @@ export default {
   parameters: {
     docs: {
       subtitle:
-        'A native select wearing the field anatomy of UaInputField. Native on purpose: it keeps the platform keyboard handling, type-ahead and mobile picker.'
+        'A listbox built from a combobox trigger and an option list, wearing the field anatomy of UaInputField. Custom on purpose: the browser gives no styling hook for the native picker rows. Keyboard, type-ahead and roving `aria-activedescendant` are implemented here.'
     }
   },
   argTypes: {
@@ -30,6 +30,18 @@ export default {
     },
     placeholder: {
       description: 'Adds a leading option with an empty value — the "no choice" row.',
+      control: 'text'
+    },
+    value: {
+      description: 'Controlled selection. Omit it and use `defaultValue` to let the field own it.',
+      control: false
+    },
+    defaultValue: {
+      description: 'Initial selection when the field is uncontrolled.',
+      control: false
+    },
+    name: {
+      description: 'Renders a hidden input under this name so the field posts with a plain form.',
       control: 'text'
     },
     appearance: {
@@ -64,7 +76,8 @@ export default {
     },
     disabled: { description: 'Disables the control.', control: 'boolean' },
     onChange: {
-      description: 'Fires when the selection changes.',
+      description:
+        'Fires when the selection changes, with `(value, option)`. `option` is `null` for the placeholder row.',
       action: 'change',
       table: { category: 'Events' }
     }

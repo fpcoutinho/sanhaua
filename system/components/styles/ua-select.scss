@@ -1,5 +1,7 @@
 .sanhaua {
   .ua-select {
+    box-sizing: border-box;
+    position: relative;
     display: flex;
     align-items: center;
     outline-width: map.get($border-width, "small");
@@ -8,32 +10,78 @@
 
     @include body-1;
 
-    .field {
-      flex: 1;
+    .trigger {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
       width: 100%;
-      min-width: 0;
       border: none;
       background: none;
       color: inherit;
       font: inherit;
+      text-align: start;
       cursor: inherit;
-      appearance: none;
 
       &:disabled {
         cursor: not-allowed;
       }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .value {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .arrow {
       flex-shrink: 0;
-      pointer-events: none;
 
       @include icon-4;
     }
 
+    .listbox {
+      box-sizing: border-box;
+      position: absolute;
+      z-index: 1;
+      inset-inline: 0;
+      inset-block-start: 100%;
+      max-height: 280px;
+      overflow-y: auto;
+      margin: spacing(1) 0 0;
+      padding: spacing(1);
+      list-style: none;
+      border-width: map.get($border-width, "small");
+      border-style: solid;
+      border-radius: map.get($border-radius, "small");
+
+      .option {
+        display: flex;
+        align-items: center;
+        gap: spacing(2);
+        padding: spacing(2) spacing(3);
+        border-radius: map.get($border-radius, "micro");
+        cursor: pointer;
+
+        @include body-2;
+
+        &.disabled {
+          cursor: not-allowed;
+          opacity: map.get($opacity, "medium");
+        }
+      }
+    }
+
     &.small {
-      padding: spacing(1) spacing(2);
-      gap: spacing(1);
+      .trigger {
+        gap: spacing(1);
+        padding: spacing(1) spacing(2);
+      }
 
       .icon {
         @include icon-3;
@@ -41,8 +89,10 @@
     }
 
     &.medium {
-      padding: spacing(2) spacing(3);
-      gap: spacing(2);
+      .trigger {
+        gap: spacing(2);
+        padding: spacing(2) spacing(3);
+      }
 
       .icon {
         @include icon-2;
@@ -50,8 +100,10 @@
     }
 
     &.large {
-      padding: spacing(3) spacing(4);
-      gap: spacing(2);
+      .trigger {
+        gap: spacing(2);
+        padding: spacing(3) spacing(4);
+      }
 
       .icon {
         @include icon-1;
@@ -78,10 +130,6 @@
       outline-width: map.get($border-width, "medium");
       outline-offset: calc(-1 * map.get($border-width, "small"));
       outline-style: solid;
-
-      .field {
-        outline: none;
-      }
     }
   }
 
@@ -90,9 +138,8 @@
       background-color: map.get($color-neutral-light, "100");
       color: map.get($color-neutral-light, "900");
 
-      option {
-        background-color: map.get($color-neutral-light, "100");
-        color: map.get($color-neutral-light, "900");
+      .placeholder {
+        color: map.get($color-neutral-light, "600");
       }
 
       .arrow {
@@ -107,6 +154,23 @@
         outline-color: map.get($color-success-light, "600");
       }
 
+      .listbox {
+        background-color: map.get($color-neutral-light, "100");
+        border-color: map.get($color-neutral-light, "300");
+        color: map.get($color-neutral-light, "900");
+
+        .option {
+          &.active {
+            background-color: map.get($color-neutral-light, "200");
+          }
+
+          &[aria-selected="true"] {
+            background-color: map.get($color-primary-light, "100");
+            color: map.get($color-primary-light, "800");
+          }
+        }
+      }
+
       &.error {
         outline-color: map.get($color-danger-light, "600");
       }
@@ -118,9 +182,8 @@
       background-color: map.get($color-neutral-dark, "100");
       color: map.get($color-neutral-dark, "900");
 
-      option {
-        background-color: map.get($color-neutral-dark, "100");
-        color: map.get($color-neutral-dark, "900");
+      .placeholder {
+        color: map.get($color-neutral-dark, "600");
       }
 
       .arrow {
@@ -133,6 +196,23 @@
 
       &.success {
         outline-color: map.get($color-success-dark, "600");
+      }
+
+      .listbox {
+        background-color: map.get($color-neutral-dark, "100");
+        border-color: map.get($color-neutral-dark, "300");
+        color: map.get($color-neutral-dark, "900");
+
+        .option {
+          &.active {
+            background-color: map.get($color-neutral-dark, "200");
+          }
+
+          &[aria-selected="true"] {
+            background-color: map.get($color-primary-dark, "100");
+            color: map.get($color-primary-dark, "800");
+          }
+        }
       }
 
       &.error {
