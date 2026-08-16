@@ -47,7 +47,7 @@ interface UaInputFieldProps {
   pattern?: string
 }
 
-interface UaInputRadioProps {
+interface UaRadioProps {
   size?: Size
   disabled?: boolean
   name?: string
@@ -70,7 +70,7 @@ export const UaButton: DefineComponent<UaButtonProps, object, object, object, ob
 export const UaInputDate: DefineComponent<UaInputFieldProps>
 export const UaInputEmail: DefineComponent<UaInputFieldProps>
 export const UaInputPassword: DefineComponent<UaInputFieldProps>
-export const UaInputRadio: DefineComponent<UaInputRadioProps>
+export const UaRadio: DefineComponent<UaRadioProps>
 export const UaInputTel: DefineComponent<UaInputFieldProps>
 export const UaInputText: DefineComponent<UaInputFieldProps>
 export const UaSkeleton: DefineComponent<UaSkeletonProps>
@@ -80,7 +80,7 @@ export const uaButton: typeof UaButton
 export const uaInputDate: typeof UaInputDate
 export const uaInputEmail: typeof UaInputEmail
 export const uaInputPassword: typeof UaInputPassword
-export const uaInputRadio: typeof UaInputRadio
+export const uaRadio: typeof UaRadio
 export const uaInputTel: typeof UaInputTel
 export const uaInputText: typeof UaInputText
 export const uaSkeleton: typeof UaSkeleton

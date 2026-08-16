@@ -85,7 +85,8 @@ export default defineConfig({
 The React layer (`system/components/react`, `lib/react.ts`) is written in TypeScript and
 ships **generated** declarations — `dist/lib/react.d.ts` and the per-component `.d.ts`
 under `dist/system/components/react/`, built by `vite-plugin-dts` from the `.tsx` source
-during `npm run build`. Prop types for `UaAlert`, `UaButton`, `UaCard`, `UaInputField`, `UaInputRadio`, `UaSkeleton`, `UaTable`
+during `npm run build`. Prop types for `UaAlert`, `UaButton`, `UaCard`, `UaCheckbox`, `UaInputField`,
+`UaInputGroup`, `UaModal`, `UaRadio`, `UaSkeleton`, `UaTable`, `UaTextarea`
 and `UaToast` are therefore always in sync with the implementation — there is no
 hand-maintained `.d.ts` to drift.
 
@@ -160,10 +161,12 @@ Notes:
 
 - `UaTable` exists in React only. Vue and Web Components don't have a table component
   yet — no equivalent SCSS or story either.
-- `UaSelect` reuses the `.form-element-wrapper`, `.label`, `.hint` and `.error-message`
-  rules declared in `styles/ua-input-field.scss`. The two fields share that anatomy on
-  purpose, but the sheets are coupled: removing the wrapper block from the input sheet
-  would strip the select's label styling too.
+- `UaSelect` and `UaTextarea` reuse the `.form-element-wrapper`, `.label`, `.hint` and
+  `.error-message` rules declared in `styles/ua-input-field.scss`. The fields share that
+  anatomy on purpose, but the sheets are coupled: removing the wrapper block from the
+  input sheet would strip the select's and the textarea's label styling too.
+  `UaInputGroup` deliberately does not — it is a `fieldset` with its own `legend`, and it
+  declares its own hint and error rules so it stands alone.
 - The React `UaInputField` covers every input `type` in one component; Vue keeps the
   older pattern of one component per type (`UaInputDate`, `UaInputEmail`,
   `UaInputPassword`, `UaInputTel`, `UaInputText`), and only `UaInputPassword` has the
@@ -173,10 +176,14 @@ Notes:
   Migrating Vue and Web Components to the unified format collapses the per-type sheets
   into `ua-input-field.scss`; the duplication is deliberate until then, and the note is
   repeated at the top of that file.
-- `UaAccordion`, `UaAlert`, `UaAvatar`, `UaBadge`, `UaButtonIcon`, `UaCard`, `UaPagination`
-  and `UaSelect` exist in React only. `UaInputRadio` exists in React and Vue. The SCSS in
-  `styles/` is framework-agnostic, so the Vue and Web Component ports are
-  implementation-only work.
+- `UaAccordion`, `UaAlert`, `UaAvatar`, `UaBadge`, `UaButtonIcon`, `UaCard`, `UaCheckbox`,
+  `UaInputGroup`, `UaModal`, `UaPagination`, `UaSelect` and `UaTextarea` exist in React
+  only. `UaRadio` exists in React and Vue. The SCSS in `styles/` is framework-agnostic, so
+  the Vue and Web Component ports are implementation-only work.
+- `UaModal` renders in place — no portal — so it stays inside the `.sanhaua.light` /
+  `.sanhaua.dark` scope that every sheet keys off. Mount it from a container that is not
+  inside a `transform`, `filter` or `contain` ancestor, or the fixed overlay will be
+  clipped to that ancestor instead of the viewport.
 - `UaButtonIcon` renders `<button>` only. There is no `behavior="link"` branch yet, so an
   icon that navigates still needs a `UaButton`.
 - `UaSelect` opts into the customizable `<select>` (`appearance: base-select`, the inner
