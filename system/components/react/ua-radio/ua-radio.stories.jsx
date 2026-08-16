@@ -1,9 +1,9 @@
 import { fn } from 'storybook/test'
-import UaInputRadio from './ua-input-radio.tsx'
+import UaRadio from './ua-radio.tsx'
 
 export default {
-  title: 'Component Library/UA-Input-Radio',
-  component: UaInputRadio,
+  title: 'Component Library/UA-Radio',
+  component: UaRadio,
   tags: ['autodocs'],
   parameters: {
     docs: {

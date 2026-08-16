@@ -1,9 +1,9 @@
 import { fn } from 'storybook/test'
-import uaInputRadio from './ua-input-radio.vue'
+import uaRadio from './ua-radio.vue'
 
 export default {
-  title: 'Component Library/UA-Input-Radio',
-  component: uaInputRadio,
+  title: 'Component Library/UA-Radio',
+  component: uaRadio,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -258,12 +258,12 @@ export default {
 }
 
 const Template = (args) => ({
-  components: { uaInputRadio },
+  components: { uaRadio },
   setup() {
     return { args }
   },
   template: `
-    <ua-input-radio
+    <ua-radio
       :size=args.size
       :value=args.value
       :name=args.name

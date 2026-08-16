@@ -1,5 +1,5 @@
 .sanhaua {
-  .ua-input-radio {
+  .ua-radio {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,7 +70,7 @@
   }
 
   &.light {
-    .ua-input-radio {
+    .ua-radio {
       .radio-button {
         border-color: map.get($color-neutral-light, "900");
 
@@ -90,7 +90,7 @@
   }
 
   &.dark {
-    .ua-input-radio {
+    .ua-radio {
       .radio-button {
         border-color: map.get($color-neutral-dark, "900");
 

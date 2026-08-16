@@ -1,10 +1,10 @@
 import { type InputHTMLAttributes, type ReactNode, useId } from 'react'
 import type { Size } from '../../../types/tokens'
-import '../../styles/ua-input-radio.scss'
+import '../../styles/ua-radio.scss'
 
 export type RadioMode = 'normal' | 'reverse'
 
-export interface UaInputRadioProps extends Omit<
+export interface UaRadioProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'size' | 'type' | 'id'
 > {
@@ -15,7 +15,7 @@ export interface UaInputRadioProps extends Omit<
   className?: string
 }
 
-export default function UaInputRadio({
+export default function UaRadio({
   size = 'medium',
   mode = 'normal',
   id,
@@ -33,11 +33,11 @@ export default function UaInputRadio({
   onFocus,
   onBlur,
   ...inputProps
-}: UaInputRadioProps) {
+}: UaRadioProps) {
   const generatedId = useId()
   const inputId = id ?? generatedId
 
-  const wrapperClassName = ['ua-input-radio', size, mode, disabled ? 'disabled' : '', className]
+  const wrapperClassName = ['ua-radio', size, mode, disabled ? 'disabled' : '', className]
     .filter(Boolean)
     .join(' ')
 

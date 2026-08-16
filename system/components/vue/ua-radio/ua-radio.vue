@@ -1,5 +1,5 @@
 <template>
-  <label :class="classes" class="ua-input-radio">
+  <label :class="classes" class="ua-radio">
     <input
       :id="props.id"
       v-model="modelValue"
@@ -71,5 +71,5 @@ const classes = computed(() => {
 </script>
 
 <style lang="scss">
-@import '../../styles/ua-input-radio.scss';
+@import '../../styles/ua-radio.scss';
 </style>
