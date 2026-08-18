@@ -7,6 +7,12 @@
     justify-content: center;
     gap: spacing(2);
     border-width: map.get($border-width, "none");
+    transition:
+      background-color 0.2s,
+      border-color 0.2s,
+      box-shadow 0.2s,
+      color 0.2s,
+      transform 0.2s;
 
     .text {
       font-family: $font-family;
@@ -57,7 +63,7 @@
     }
 
     &.square {
-      border-radius: map.get($border-radius, "micro");
+      border-radius: map.get($border-radius, "small");
     }
 
     &.round {
@@ -67,21 +73,60 @@
     &:disabled,
     &.disabled {
       cursor: not-allowed;
+      opacity: map.get($opacity, "medium");
+    }
+
+    &:focus-visible {
+      outline-width: map.get($border-width, "medium");
+      outline-offset: map.get($border-width, "medium");
+      outline-style: solid;
+    }
+
+    &:active:not(:disabled, .disabled) {
+      transform: translateY(1px);
     }
 
     &:is(a) {
       text-decoration: none;
     }
+
+    @media (prefers-reduced-motion) {
+      transition: none;
+
+      &:active:not(:disabled, .disabled) {
+        transform: none;
+      }
+    }
   }
 
   &.light {
     .ua-button {
+      &:focus-visible {
+        outline-color: map.get($color-neutral-light, "900");
+      }
+
+      &:not(.tertiary, .ghost, :disabled, .disabled) {
+        box-shadow: 0 1px 3px rgba(map.get($color-neutral-light, "900"), 0.08);
+
+        &:hover {
+          box-shadow: 0 2px 6px rgba(map.get($color-neutral-light, "900"), 0.12);
+        }
+
+        &:active {
+          box-shadow: 0 1px 2px rgba(map.get($color-neutral-light, "900"), 0.08);
+        }
+      }
+
       &.primary {
         background-color: map.get($color-primary-light, "500");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-primary-light, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-primary-light, "700");
         }
       }
 
@@ -89,8 +134,12 @@
         background-color: map.get($color-secondary-light, "600");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-secondary-light, "700");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-secondary-light, "800");
         }
       }
 
@@ -101,8 +150,12 @@
         border-width: map.get($border-width, "medium");
         border-style: solid;
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-neutral-light, "200");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-neutral-light, "300");
         }
       }
 
@@ -110,8 +163,12 @@
         background-color: transparent;
         color: map.get($color-neutral-light, "900");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-neutral-light, "300");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-neutral-light, "400");
         }
       }
 
@@ -119,8 +176,12 @@
         background-color: map.get($color-success-light, "600");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-success-light, "700");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-success-light, "800");
         }
       }
 
@@ -128,8 +189,12 @@
         background-color: map.get($color-danger-light, "600");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-danger-light, "700");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-danger-light, "800");
         }
       }
 
@@ -137,8 +202,12 @@
         background-color: map.get($color-warning-light, "600");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-warning-light, "700");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-warning-light, "800");
         }
       }
 
@@ -146,8 +215,12 @@
         background-color: map.get($color-informative-light, "600");
         color: map.get($color-neutral-light, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-informative-light, "700");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-informative-light, "800");
         }
       }
     }
@@ -155,12 +228,32 @@
 
   &.dark {
     .ua-button {
+      &:focus-visible {
+        outline-color: map.get($color-neutral-dark, "900");
+      }
+
+      &:not(.tertiary, .ghost, :disabled, .disabled) {
+        box-shadow: 0 1px 3px rgba(map.get($color-neutral-dark, "100"), 0.08);
+
+        &:hover {
+          box-shadow: 0 2px 6px rgba(map.get($color-neutral-dark, "100"), 0.12);
+        }
+
+        &:active {
+          box-shadow: 0 1px 2px rgba(map.get($color-neutral-dark, "100"), 0.08);
+        }
+      }
+
       &.primary {
         background-color: map.get($color-primary-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-primary-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-primary-dark, "700");
         }
       }
 
@@ -168,8 +261,12 @@
         background-color: map.get($color-secondary-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-secondary-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-secondary-dark, "700");
         }
       }
 
@@ -180,8 +277,12 @@
         border-width: map.get($border-width, "medium");
         border-style: solid;
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-neutral-dark, "200");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-neutral-dark, "300");
         }
       }
 
@@ -189,8 +290,12 @@
         background-color: transparent;
         color: map.get($color-neutral-dark, "900");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-neutral-dark, "300");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-neutral-dark, "400");
         }
       }
 
@@ -198,8 +303,12 @@
         background-color: map.get($color-success-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-success-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-success-dark, "700");
         }
       }
 
@@ -207,8 +316,12 @@
         background-color: map.get($color-danger-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-danger-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-danger-dark, "700");
         }
       }
 
@@ -216,8 +329,12 @@
         background-color: map.get($color-warning-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-warning-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-warning-dark, "700");
         }
       }
 
@@ -225,8 +342,12 @@
         background-color: map.get($color-informative-dark, "500");
         color: map.get($color-neutral-dark, "100");
 
-        &:hover {
+        &:hover:not(:disabled, .disabled) {
           background-color: map.get($color-informative-dark, "600");
+        }
+
+        &:active:not(:disabled, .disabled) {
+          background-color: map.get($color-informative-dark, "700");
         }
       }
     }

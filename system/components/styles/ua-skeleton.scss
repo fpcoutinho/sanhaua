@@ -11,7 +11,7 @@
     }
 
     &.round {
-      border-radius: map.get($border-radius, "micro");
+      border-radius: map.get($border-radius, "small");
     }
 
     &.circle {
