@@ -79,7 +79,7 @@ const config = {
   `,
   managerHead: (head) => `
     ${head}
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="./favicon.ico" />
     <style>
       @import "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap";
 
